@@ -6,7 +6,7 @@ public interface GameConfig {
     String GAME_VERSION = "0.0.1";
 
     // Scale of cells
-    int CELL_SCALE = 64;
+    int CELL_SCALE = 32;
 
     // Time to take in order to
     // move to the next cell
