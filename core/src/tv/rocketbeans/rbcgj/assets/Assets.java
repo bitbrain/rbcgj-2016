@@ -22,7 +22,7 @@ public final class Assets {
      */
     public enum Textures {
 
-        TEST("");
+        EDDY("textures/nut-eddy.png");
 
         private String path;
 

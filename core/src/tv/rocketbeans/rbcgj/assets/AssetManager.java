@@ -53,17 +53,18 @@ public class AssetManager {
 
     public static void init() {
         for (Assets.Fonts font : Assets.Fonts.values()) {
-            assetManager.load(font.getPath(), BitmapFont.class);
+            //assetManager.load(font.getPath(), BitmapFont.class);
         }
         for (Assets.Textures texture : Assets.Textures.values()) {
             assetManager.load(texture.getPath(), Texture.class);
         }
         for (Assets.Musics music : Assets.Musics.values()) {
-            assetManager.load(music.getPath(), Music.class);
+            //assetManager.load(music.getPath(), Music.class);
         }
         for (Assets.Sounds sound : Assets.Sounds.values()) {
-            assetManager.load(sound.getPath(), Sound.class);
+            //assetManager.load(sound.getPath(), Sound.class);
         }
+        assetManager.finishLoading();
     }
 
     public static float getProgress() {

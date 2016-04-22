@@ -9,8 +9,7 @@ public class NutGame extends Game {
 
     @Override
     public void create() {
-        // TODO
-        //AssetManager.init();
+        AssetManager.init();
         setScreen(new IngameScreen(this));
     }
 
