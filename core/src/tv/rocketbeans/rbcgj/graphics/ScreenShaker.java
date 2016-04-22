@@ -2,8 +2,7 @@ package tv.rocketbeans.rbcgj.graphics;
 
 import com.badlogic.gdx.math.Vector2;
 
-import java.security.SecureRandom;
-import java.util.UUID;
+import java.util.Random;
 
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenEquations;
@@ -21,7 +20,7 @@ class ScreenShaker {
     private TweenManager tweenManager;
 
     // We use a random to select an angle at random
-    private SecureRandom random = new SecureRandom(UUID.randomUUID().toString().getBytes());
+    private Random random = new Random();
 
     static {
         // it is important to tell Universal Tween Engine how
