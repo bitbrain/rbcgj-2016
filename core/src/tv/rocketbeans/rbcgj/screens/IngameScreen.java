@@ -2,10 +2,12 @@ package tv.rocketbeans.rbcgj.screens;
 
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
+import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectType;
+import tv.rocketbeans.rbcgj.core.controller.PlayerController;
 import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
 
 public class IngameScreen extends AbstractScreen {
@@ -19,8 +21,9 @@ public class IngameScreen extends AbstractScreen {
         super.onCreateStage(stage, width, height);
         GameObject eddy = world.addObject();
         eddy.setPosition(0f, 0f);
-        eddy.setDimensions(64f, 64f);
+        eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
         eddy.setType(GameObjectType.EDDY);
         world.registerRenderer(GameObjectType.EDDY, new SpriteRenderer(Assets.Textures.EDDY));
+        world.setController(eddy, new PlayerController());
     }
 }

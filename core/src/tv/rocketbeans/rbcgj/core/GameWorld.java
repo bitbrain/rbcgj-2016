@@ -7,7 +7,9 @@ import com.badlogic.gdx.utils.Pool;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import tv.rocketbeans.rbcgj.graphics.CameraTracker;
 import tv.rocketbeans.rbcgj.graphics.RenderManager;
@@ -25,6 +27,8 @@ public class GameWorld {
     private final List<GameObject> removals = new ArrayList<GameObject>();
 
     private final List<GameObject> objects = new ArrayList<GameObject>();
+
+    private final Map<GameObject, GameObjectController> controllers = new HashMap<GameObject, GameObjectController>();
 
     private final Pool<GameObject> pool;
 
@@ -90,6 +94,10 @@ public class GameWorld {
         renderManager.register(gameObjectId, renderer);
     }
 
+    public void setController(GameObject object, GameObjectController controller) {
+        controllers.put(object, controller);
+    }
+
     /**
      * Enables camera tracking for the given object. Tracking can be disabled by providing null.
      *
@@ -137,11 +145,17 @@ public class GameWorld {
                 removals.add(object);
                 continue;
             }
+            GameObjectController c = controllers.get(object);
+            if (c != null) {
+                c.act(object, delta);
+            }
             renderManager.render(object, batch, delta);
         }
         tracker.update(delta);
         for (GameObject removal : removals) {
-            remove(removal);
+            objects.remove(removal);
+            controllers.remove(removal);
+            pool.free(removal);
         }
         removals.clear();
     }
@@ -173,10 +187,5 @@ public class GameWorld {
         for (GameObject object : objects) {
             removals.add(object);
         }
-    }
-
-    private void remove(GameObject object) {
-        pool.free(object);
-        objects.remove(object);
     }
 }
