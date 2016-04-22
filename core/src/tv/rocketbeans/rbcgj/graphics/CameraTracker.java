@@ -31,7 +31,7 @@ public class CameraTracker {
             return;
         }
         velocity.x = (float) (target.getLeft() + Math.floor(target.getWidth() / 2.0f) - (camera.position.x));
-        velocity.y = (float) (target.getTop() + Math.floor(target.getHeight() / 2.0f) - (camera.position.y + 100f));
+        velocity.y = (float) (target.getTop() + Math.floor(target.getHeight() / 2.0f) - (camera.position.y));
 
         float distance = velocity.len();
         velocity.nor();
@@ -40,7 +40,7 @@ public class CameraTracker {
         // Round it up to prevent camera shaking
         camera.position.x = (float) (camera.position.x + (velocity.x * overAllSpeed * delta));
         camera.position.y = (float) (camera.position.y + (velocity.y * overAllSpeed * delta));
-        camera.zoom = 1.0f + zoomScale * distance;
+        camera.zoom = 0.7f;
     }
 
     public void setSpeed(float speed) {

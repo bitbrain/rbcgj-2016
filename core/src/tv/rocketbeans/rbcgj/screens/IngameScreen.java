@@ -1,7 +1,10 @@
 package tv.rocketbeans.rbcgj.screens;
 
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -13,10 +16,12 @@ import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectType;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
+import tv.rocketbeans.rbcgj.util.Colors;
 
 public class IngameScreen extends AbstractScreen {
 
     private OrthogonalTiledMapRenderer mapRenderer;
+    private MapLayers layers;
 
     public IngameScreen(NutGame game) {
         super(game);
@@ -25,14 +30,17 @@ public class IngameScreen extends AbstractScreen {
     @Override
     protected void onCreateStage(Stage stage, int width, int height) {
         super.onCreateStage(stage, width, height);
+        setBackgroundColor(Colors.BG_LEVEL_1);
         GameObject eddy = world.addObject();
         eddy.setPosition(0f, 0f);
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
         eddy.setType(GameObjectType.EDDY);
+        world.setCameraTracking(eddy);
         world.registerRenderer(GameObjectType.EDDY, new SpriteRenderer(Assets.Textures.EDDY));
         world.setController(eddy, new WASDMovementController());
 
         TiledMap map = new TmxMapLoader().load("maps/level_1.tmx");
+        layers = map.getLayers();
         mapRenderer = new OrthogonalTiledMapRenderer(map);
     }
 
@@ -41,7 +49,21 @@ public class IngameScreen extends AbstractScreen {
         super.beforeWorldRender(batch, delta);
         batch.end();
         mapRenderer.setView(camera);
-        mapRenderer.render();
+        mapRenderer.getBatch().begin();
+        mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(0));
+        mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(1));
+        mapRenderer.getBatch().end();
+        batch.begin();
+    }
+
+    @Override
+    protected void afterWorldRender(Batch batch, float delta) {
+        super.afterWorldRender(batch, delta);
+        batch.end();
+        mapRenderer.getBatch().begin();
+        mapRenderer.setView(camera);
+        mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(2));
+        mapRenderer.getBatch().end();
         batch.begin();
     }
 }

@@ -1203,9 +1203,19 @@
    </properties>
   </tile>
  </tileset>
- <layer name="Kachelebene 1" width="30" height="20">
+ <layer name="base" width="30" height="20">
   <data encoding="base64" compression="zlib">
    eJzLYWBgyKUzzgPiGiCupTOuG7V31N5Re0ftHbV31N5Re0eUvT1A3Etn3AfEADFhJQg=
+  </data>
+ </layer>
+ <layer name="obstacle-base" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgwn8AuLfA+2IQQx+APHPgXbEKBiU4CsQfwPi70SoHc1nAwdIiadRgAlGy8ChAwCpZw2R
+  </data>
+ </layer>
+ <layer name="obstacle" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztkkkKgEAMBOf//1JBz+5nHZdPWB8QEgwaIQV1a2hIJyUZNTbCrCUTzh/0Hngq8nGf4I4CS6xe7m2xw16QHXA06l1wxSzIbrgb9T7lDztZotnJM5a/q8HT7wY+uQC0vSBP
   </data>
  </layer>
 </map>
