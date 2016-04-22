@@ -1,5 +1,6 @@
 package tv.rocketbeans.rbcgj.screens;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.maps.MapLayers;
@@ -7,8 +8,13 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
+import box2dLight.PointLight;
+import box2dLight.RayHandler;
 import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.Assets;
@@ -23,13 +29,22 @@ public class IngameScreen extends AbstractScreen {
     private OrthogonalTiledMapRenderer mapRenderer;
     private MapLayers layers;
 
+    // Lighting
+    private World boxWorld;
+    private RayHandler rayHandler;
+
     public IngameScreen(NutGame game) {
         super(game);
     }
 
     @Override
     protected void onCreateStage(Stage stage, int width, int height) {
-        super.onCreateStage(stage, width, height);
+        boxWorld = new World(new Vector2(), false);
+        RayHandler.useDiffuseLight(true);
+        boxWorld.createBody(new BodyDef());
+        rayHandler = new RayHandler(boxWorld);
+        rayHandler.setAmbientLight(0.1f, 0.1f, 0.4f, 1.0f);
+        new PointLight(rayHandler, 50, new Color(1,1,1,1), 250, 250f, 250f);
         setBackgroundColor(Colors.BG_LEVEL_1);
         GameObject eddy = world.addObject();
         eddy.setPosition(0f, 0f);
@@ -64,6 +79,8 @@ public class IngameScreen extends AbstractScreen {
         mapRenderer.setView(camera);
         mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(2));
         mapRenderer.getBatch().end();
+        rayHandler.setCombinedMatrix(camera);
+        rayHandler.updateAndRender();
         batch.begin();
     }
 }
