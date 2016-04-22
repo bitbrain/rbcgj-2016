@@ -1,5 +1,25 @@
 # rbcgj-2016
-The gamejam submission of the #rbcgj 2016
+The gamejam submission of the #rbcgj 2016, created within 48 hours. 
+
+RocketBeans TV - Alles muss. Nix kann.
+
+## Gameplay
+
+/todo
+
+## Prequisites
+
+* [Android Studio](http://developer.android.com/sdk/index.html)
+* Java installed
+
+## How to build
+
+This game is built from the Command Line Interface (CLI) by [running the following commands](https://github.com/libgdx/libgdx/wiki/Gradle-on-the-Commandline).
+
+## Technologies used
+
+* libgdx
+* Java
 
 ## License
 
