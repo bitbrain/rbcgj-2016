@@ -10,5 +10,5 @@ public interface GameConfig {
 
     // Time to take in order to
     // move to the next cell
-    float MOVEMENT_TIME = 0.16f;
+    float MOVEMENT_TIME = 0.26f;
 }

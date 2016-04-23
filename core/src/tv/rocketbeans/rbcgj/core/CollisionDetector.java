@@ -5,6 +5,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 
+import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.core.tmx.Tmx;
 
 public class CollisionDetector {
@@ -38,6 +39,12 @@ public class CollisionDetector {
             // Out of bounds should be a collision as well
             return true;
         }
+    }
+
+    public boolean isCollision(float x, float y) {
+        int indexX = (int)Math.floor(x / GameConfig.CELL_SCALE);
+        int indexY = (int)Math.floor(y / GameConfig.CELL_SCALE);
+        return isCollision(indexX, indexY);
     }
 
     private boolean isValidIndex(int indexX, int indexY) {

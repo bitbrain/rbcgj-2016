@@ -22,7 +22,8 @@ public final class Assets {
      */
     public enum Textures {
 
-        EDDY("textures/nut-eddy.png");
+        EDDY("textures/nut-eddy.png"),
+        SHADOW("textures/shadow.png");
 
         private String path;
 
@@ -39,7 +40,7 @@ public final class Assets {
      * Contains map definitions
      */
     public enum Maps {
-        LEVEL_1("maps/level_1.tmx");
+        DEFAULT("maps/default.tmx");
 
         private String path;
 

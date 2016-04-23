@@ -14,4 +14,5 @@ public interface Tmx {
     String WIDTH = "width";
     String HEIGHT = "height";
     String COLLISION = "collision";
+    String SPAWN = "spawn";
 }
