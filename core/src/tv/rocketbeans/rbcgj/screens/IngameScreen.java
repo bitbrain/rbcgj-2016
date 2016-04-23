@@ -21,6 +21,7 @@ import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
 import tv.rocketbeans.rbcgj.ui.Styles;
+import tv.rocketbeans.rbcgj.ui.TooltipHandler;
 import tv.rocketbeans.rbcgj.util.Colors;
 
 public class IngameScreen extends AbstractScreen {
@@ -65,6 +66,7 @@ public class IngameScreen extends AbstractScreen {
 
         teleporter = new Teleporter(levelManager);
         handler.addListener(teleporter);
+        handler.addListener(new TooltipHandler());
     }
 
     @Override
