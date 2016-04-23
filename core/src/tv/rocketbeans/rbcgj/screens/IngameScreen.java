@@ -1,23 +1,14 @@
 package tv.rocketbeans.rbcgj.screens;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.maps.MapLayers;
-import com.badlogic.gdx.maps.tiled.TiledMap;
-import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
-import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
 import box2dLight.PointLight;
-import box2dLight.RayHandler;
 import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.Assets;
+import tv.rocketbeans.rbcgj.core.CollisionDetector;
 import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectType;
 import tv.rocketbeans.rbcgj.core.LevelManager;
@@ -37,6 +28,8 @@ public class IngameScreen extends AbstractScreen {
 
     private LevelManager levelManager;
 
+    private CollisionDetector collisions;
+
     public IngameScreen(NutGame game) {
         super(game);
     }
@@ -55,7 +48,8 @@ public class IngameScreen extends AbstractScreen {
         lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.37f));
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
 
-        levelManager = new LevelManager(lightingManager);
+        collisions = new CollisionDetector();
+        levelManager = new LevelManager(lightingManager, collisions);
         levelManager.loadMap(Assets.Maps.LEVEL_1);
     }
 

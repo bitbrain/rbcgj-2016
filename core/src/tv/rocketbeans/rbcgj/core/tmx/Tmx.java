@@ -11,4 +11,7 @@ public interface Tmx {
     String BLUE = "b";
     String ALPHA = "a";
     String RADIUS = "radius";
+    String WIDTH = "width";
+    String HEIGHT = "height";
+    String COLLISION = "collision";
 }

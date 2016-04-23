@@ -30,9 +30,12 @@ public class LevelManager {
 
     private List<PointLight> staticLights;
 
-    public LevelManager(LightingManager lightingManager) {
+    private CollisionDetector collisions;
+
+    public LevelManager(LightingManager lightingManager, CollisionDetector collisions) {
         this.lightingManager = lightingManager;
         staticLights = new ArrayList<PointLight>();
+        this.collisions = collisions;
     }
 
     public void loadMap(Assets.Maps maps) {
@@ -47,6 +50,7 @@ public class LevelManager {
         layers = map.getLayers();
         mapRenderer = new OrthogonalTiledMapRenderer(map);
         updateLights();
+        collisions.updateCollisions(map);
     }
 
     public void renderForeground(OrthographicCamera camera) {
