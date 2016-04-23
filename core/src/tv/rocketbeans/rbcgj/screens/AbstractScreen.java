@@ -77,17 +77,19 @@ public class AbstractScreen implements Screen {
         beforeWorldRender(batch, delta);
         world.updateAndRender(batch, delta);
         afterWorldRender(batch, delta);
-        fx.render(batch, delta);
         batch.end();
         stage.draw();
+        batch.begin();
+        fx.render(batch, delta);
+        batch.end();
         fx.end();
     }
 
     public void setScreen(final Screen screen) {
-        dispose();
         fx.fadeOut(2f, TweenEquations.easeInQuad, new TweenCallback() {
             @Override
             public void onEvent(int type, BaseTween<?> source) {
+                dispose();
                 game.setScreen(screen);
             }
         });

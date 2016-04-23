@@ -40,7 +40,7 @@ public class LoadingScreen extends AbstractScreen {
                 .setCallback(new TweenCallback() {
                     @Override
                     public void onEvent(int type, BaseTween<?> source) {
-                        LoadingScreen.this.setScreen(new IngameScreen(game));
+                        LoadingScreen.this.setScreen(new MenuScreen(game));
                     }
                 }).start(tweenManager);
     }
