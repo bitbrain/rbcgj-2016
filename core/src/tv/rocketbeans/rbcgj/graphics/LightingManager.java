@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
 
 import aurelienribon.tweenengine.TweenManager;
+import box2dLight.PointLight;
 import box2dLight.RayHandler;
 import tv.rocketbeans.rbcgj.tweens.SharedTweenManager;
 import tv.rocketbeans.rbcgj.tweens.TweenUtils;
@@ -28,6 +29,11 @@ public class LightingManager {
 
     public void fadeToAmbientLight(float r, float g, float b, float a) {
         TweenUtils.toColor(ambientLight, new Color(r, g, b, a), 1f);
+    }
+
+    public PointLight addPointLight(float radius, Color color, float x, float y) {
+        PointLight light = new PointLight(handler, 20, color, radius, x, y);
+        return light;
     }
 
     public void setAmbientLight(Color color) {

@@ -33,6 +33,10 @@ public class IngameScreen extends AbstractScreen {
     // Lighting
     private LightingManager lightingManager;
 
+    private GameObject eddy;
+
+    private PointLight lantern;
+
     public IngameScreen(NutGame game) {
         super(game);
     }
@@ -40,7 +44,7 @@ public class IngameScreen extends AbstractScreen {
     @Override
     protected void onCreateStage(Stage stage, int width, int height) {
         setBackgroundColor(Colors.BG_LEVEL_1);
-        GameObject eddy = world.addObject();
+        eddy = world.addObject();
         eddy.setPosition(0f, 0f);
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
         eddy.setType(GameObjectType.EDDY);
@@ -51,12 +55,14 @@ public class IngameScreen extends AbstractScreen {
         TiledMap map = new TmxMapLoader().load("maps/level_1.tmx");
         layers = map.getLayers();
         mapRenderer = new OrthogonalTiledMapRenderer(map);
-
         lightingManager = new LightingManager();
+        lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.3f));
+        lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
     }
 
     @Override
     protected void beforeWorldRender(Batch batch, float delta) {
+        lantern.setPosition(eddy.getOffset().x + eddy.getLeft() + eddy.getWidth() / 2f, eddy.getOffset().y + eddy.getTop() + eddy.getHeight() / 2f);
         super.beforeWorldRender(batch, delta);
         batch.end();
         mapRenderer.setView(camera);
