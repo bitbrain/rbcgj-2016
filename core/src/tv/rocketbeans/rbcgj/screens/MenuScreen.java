@@ -2,6 +2,7 @@ package tv.rocketbeans.rbcgj.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -21,14 +22,17 @@ import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.tweens.ActorTween;
+import tv.rocketbeans.rbcgj.tweens.SpriteTween;
 import tv.rocketbeans.rbcgj.ui.Styles;
 import tv.rocketbeans.rbcgj.util.Colors;
 
 public class MenuScreen extends AbstractScreen {
 
     static {
-        Tween.registerAccessor(Actor.class, new ActorTween());
+        Tween.registerAccessor(Sprite.class, new SpriteTween());
     }
+
+    private Sprite logo;
 
     public MenuScreen(NutGame game) {
         super(game);
@@ -43,10 +47,11 @@ public class MenuScreen extends AbstractScreen {
         Table layout = new Table();
         layout.setFillParent(true);
 
-        Image logo = new Image(new Sprite(AssetManager.getTexture(Assets.Textures.LOGO)));
-        layout.add(logo).center().padBottom(90f).row();
+        logo = new Sprite(AssetManager.getTexture(Assets.Textures.LOGO));
+        logo.setScale(0.65f);
+        Tween.to(logo, SpriteTween.SCALE, 1f).target(0.8f).ease(TweenEquations.easeOutCubic).repeatYoyo(Tween.INFINITY, 0f).start(tweenManager);
         logo.getColor().a = 0f;
-        Tween.to(logo, ActorTween.ALPHA, 2f).target(1f).ease(TweenEquations.easeInCubic).start(tweenManager);
+        Tween.to(logo, SpriteTween.ALPHA, 2f).target(1f).ease(TweenEquations.easeInCubic).start(tweenManager);
 
         TextButton playButton = new TextButton("Starten", Styles.MENU_BUTTON);
         playButton.addListener(new ClickListener() {
@@ -65,7 +70,7 @@ public class MenuScreen extends AbstractScreen {
                 }
             }
         });
-        layout.center().add(playButton).height(70).width(270f).padBottom(20f).row();
+        layout.center().add(playButton).height(70).width(270f).padBottom(20f).padTop(150f).row();
         TextButton closeButton = new TextButton("Beenden", Styles.MENU_BUTTON);
         closeButton.addListener(new ClickListener() {
             @Override
@@ -89,6 +94,13 @@ public class MenuScreen extends AbstractScreen {
         layout.center().add(credits).padTop(90f).row();
 
         stage.addActor(layout);
+    }
+
+    @Override
+    protected void afterWorldRender(Batch batch, float delta) {
+        super.afterWorldRender(batch, delta);
+        logo.setPosition(Gdx.graphics.getWidth() / 2f - logo.getWidth() / 2f, Gdx.graphics.getHeight() / 1.6f);
+        logo.draw(batch);
     }
 
     @Override
