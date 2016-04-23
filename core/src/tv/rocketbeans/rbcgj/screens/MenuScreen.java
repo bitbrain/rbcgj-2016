@@ -58,7 +58,6 @@ public class MenuScreen extends AbstractScreen {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 AssetManager.getMusic(Assets.Musics.TITLE_SCREEN).stop();
-                AssetManager.getSound(Assets.Sounds.START_GAME).play(1f, 1f, 0f);
                 setScreen(new StoryScreen(game));
             }
 
