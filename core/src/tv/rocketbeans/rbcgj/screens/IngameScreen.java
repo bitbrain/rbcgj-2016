@@ -41,7 +41,7 @@ public class IngameScreen extends AbstractScreen {
 
     @Override
     protected void onCreateStage(Stage stage, int width, int height) {
-        setBackgroundColor(Colors.BG_LEVEL_1);
+        setBackgroundColor(Colors.BACKGROUND);
         eddy = world.addObject();
         eddy.setPosition(0f, 0f);
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);

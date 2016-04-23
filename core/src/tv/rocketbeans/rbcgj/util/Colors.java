@@ -4,5 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 
 public interface Colors {
 
-    Color BG_LEVEL_1 = Color.valueOf("846e59");
+    Color BACKGROUND = Color.valueOf("0f0421");
+    Color UI = Color.valueOf("c5913f");
+    Color UI_HIGHLIGHTED = Color.valueOf("ddaf65");
 }
