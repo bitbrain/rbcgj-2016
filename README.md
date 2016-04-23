@@ -3,9 +3,9 @@ The gamejam submission of the #rbcgj 2016, created within 48 hours.
 
 RocketBeans TV - Alles muss. Nix kann.
 
-## Gameplay
+## Gameplay (German Edition)
 
-/todo
+Eddy die Erdnuss ist ein geselliger, freundlicher Kompane, der mit seinen Freunden Rosina die Rosine, Bernhardt die Mandel, Lord William Cashew II und Jeremy die teils querschnittsgelähmte Paranuss ein wundervolles Leben in einer Studentenfutter-Packung führt. Eines Tages gab es ein Krachen und Rumpeln und das Schicksal der 5 Freunde wurde auf eine harte Probe gestellt. Die Packung wurde von ihrem Besitzer, einem faulen und unachtsamen Studenten, fallengelassen - und das auch noch mitten im Wald. Unglücklicherweise direkt neben einem großen Baum, welcher von einem Eichhörnchen bewohnt war. Dieses griff sofort die Freunde an und Eddy musste mitansehen, wie seine Freunde von dem Ungeheuer in dessen Bau verschleppt wurden. Nun liegt das Schicksal der in Eddies kleinen Nusshänden.
 
 ## Prequisites
 

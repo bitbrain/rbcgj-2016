@@ -3,7 +3,7 @@ package tv.rocketbeans.rbcgj.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import tv.rocketbeans.rbcgj.Game;
+import tv.rocketbeans.rbcgj.NutGame;
 
 public class HtmlLauncher extends GwtApplication {
 
@@ -14,6 +14,6 @@ public class HtmlLauncher extends GwtApplication {
 
         @Override
         public ApplicationListener createApplicationListener () {
-                return new Game();
+                return new NutGame();
         }
 }
