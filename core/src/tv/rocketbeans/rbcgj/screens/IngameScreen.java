@@ -1,12 +1,16 @@
 package tv.rocketbeans.rbcgj.screens;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
 import box2dLight.PointLight;
 import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.NutGame;
+import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.core.CollisionDetector;
 import tv.rocketbeans.rbcgj.core.GameObject;
@@ -30,6 +34,8 @@ public class IngameScreen extends AbstractScreen {
 
     private CollisionDetector collisions;
 
+    private boolean camPositionFix = false;
+
     public IngameScreen(NutGame game) {
         super(game);
     }
@@ -41,7 +47,6 @@ public class IngameScreen extends AbstractScreen {
         eddy.setPosition(0f, 0f);
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
         eddy.setType(GameObjectType.EDDY);
-        world.setCameraTracking(eddy);
         world.registerRenderer(GameObjectType.EDDY, new DirectionalSpriteRenderer(Assets.Textures.EDDY));
         lightingManager = new LightingManager();
         lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.37f));
@@ -51,10 +56,23 @@ public class IngameScreen extends AbstractScreen {
         levelManager = new LevelManager(lightingManager, collisions);
         world.setController(eddy, new WASDMovementController(collisions));
         levelManager.loadMap(Assets.Maps.DEFAULT, eddy);
+        AssetManager.getMusic(Assets.Musics.LEVEL_1).setLooping(true);
+        AssetManager.getMusic(Assets.Musics.LEVEL_1).play();
+        fx.setFadeColor(Color.BLACK);
+        fx.fadeIn(2f);
+        world.setCameraTracking(eddy);
     }
 
     @Override
     protected void beforeWorldRender(Batch batch, float delta) {
+        if (!camPositionFix) {
+            camera.position.x = eddy.getLeft() + eddy.getWidth() / 2f;
+            camera.position.y = eddy.getTop() + eddy.getHeight() / 2f;
+            camPositionFix = true;
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
+            Gdx.app.exit();
+        }
         lantern.setPosition(eddy.getOffset().x + eddy.getLeft() + eddy.getWidth() / 2f, eddy.getOffset().y + eddy.getTop() + eddy.getHeight() / 2f);
         super.beforeWorldRender(batch, delta);
         batch.end();

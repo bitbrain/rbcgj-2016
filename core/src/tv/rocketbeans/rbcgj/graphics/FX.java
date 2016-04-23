@@ -13,6 +13,10 @@ import tv.rocketbeans.rbcgj.tweens.SpriteTween;
 
 public final class FX {
 
+    static {
+        Tween.registerAccessor(Sprite.class, new SpriteTween());
+    }
+
     private static final FX INSTANCE = new FX();
 
     private TweenManager tweenManager;

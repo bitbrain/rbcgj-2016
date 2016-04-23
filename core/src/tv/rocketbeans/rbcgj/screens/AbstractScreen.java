@@ -84,12 +84,13 @@ public class AbstractScreen implements Screen {
             stage = new Stage(getViewport(width, height));
             input.addProcessor(stage);
             tooltip.init(stage, camera);
+            camera.setToOrtho(false, width, height);
             onCreateStage(stage, width, height);
             Gdx.input.setInputProcessor(input);
         } else {
+            camera.setToOrtho(false, width, height);
             stage.getViewport().update(width, height);
         }
-        camera.setToOrtho(false, width, height);
     }
 
     @Override

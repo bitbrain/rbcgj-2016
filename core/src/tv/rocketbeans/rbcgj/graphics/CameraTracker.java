@@ -50,13 +50,4 @@ public class CameraTracker {
     public void setZoomScale(float zoomScale) {
         this.zoomScale = zoomScale;
     }
-
-    public void focus() {
-        if (target == null) {
-            return;
-        }
-        camera.position.x = target.getLeft();
-        camera.position.y = target.getTop();
-        camera.zoom = 1;
-    }
 }

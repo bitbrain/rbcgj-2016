@@ -915,10 +915,10 @@
   <object id="1" name="spawn" type="spawn" x="227" y="134" width="34" height="37"/>
   <object id="2" name="light" type="light" x="453" y="21" width="41" height="40">
    <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="1"/>
-    <property name="g" type="float" value="1"/>
-    <property name="r" type="float" value="1"/>
+    <property name="a" type="float" value="0"/>
+    <property name="b" type="float" value="0"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
     <property name="radius" type="float" value="50"/>
    </properties>
    <ellipse/>

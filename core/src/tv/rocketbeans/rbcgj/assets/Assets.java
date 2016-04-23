@@ -58,7 +58,12 @@ public final class Assets {
      */
     public enum Musics {
 
-        TEST("");
+        LEVEL_1("music/Level_1.ogg"),
+        LEVEL_2("music/Level_2.ogg"),
+        LEVEL_3("music/Level_3.ogg"),
+        LEVEL_4("music/Level_4.ogg"),
+        TITLE_SCREEN("music/Title_Screen.ogg"),
+        PAUSE_SCREEN("music/Pause_Screen.ogg");
 
         private String path;
 

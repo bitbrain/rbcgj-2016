@@ -108,13 +108,6 @@ public class GameWorld {
     }
 
     /**
-     * Focuses the camera on its target (if available)
-     */
-    public void focusCamera() {
-        tracker.focus();
-    }
-
-    /**
      * Sets the speed the camera should follow its target
      *
      * @param speed camera tracking speed

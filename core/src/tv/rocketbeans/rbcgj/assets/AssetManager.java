@@ -69,7 +69,7 @@ public class AssetManager {
             assetManager.load(map.getPath(), TiledMap.class);
         }
         for (Assets.Musics music : Assets.Musics.values()) {
-            //assetManager.load(music.getPath(), Music.class);
+            assetManager.load(music.getPath(), Music.class);
         }
         for (Assets.Sounds sound : Assets.Sounds.values()) {
             //assetManager.load(sound.getPath(), Sound.class);
