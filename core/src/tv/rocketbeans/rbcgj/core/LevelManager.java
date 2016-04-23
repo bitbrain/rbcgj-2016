@@ -9,6 +9,7 @@ import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Vector2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,13 +33,17 @@ public class LevelManager {
 
     private CollisionDetector collisions;
 
+    private Vector2 spawnPoint = new Vector2();
+
+    private Vector2 spawn = new Vector2();
+
     public LevelManager(LightingManager lightingManager, CollisionDetector collisions) {
         this.lightingManager = lightingManager;
         staticLights = new ArrayList<PointLight>();
         this.collisions = collisions;
     }
 
-    public void loadMap(Assets.Maps maps) {
+    public void loadMap(Assets.Maps maps, GameObject player) {
         for (PointLight light : staticLights) {
             light.remove(true);
         }
@@ -49,8 +54,9 @@ public class LevelManager {
         TiledMap map = AssetManager.getMap(maps);
         layers = map.getLayers();
         mapRenderer = new OrthogonalTiledMapRenderer(map);
-        updateLights();
+        updateObjects();
         collisions.updateCollisions(map);
+        player.setPosition(spawn.x, spawn.y);
     }
 
     public void renderForeground(OrthographicCamera camera) {
@@ -72,7 +78,7 @@ public class LevelManager {
         }
     }
 
-    private void updateLights() {
+    private void updateObjects() {
         TiledMap map = mapRenderer.getMap();
         for (MapLayer layer : map.getLayers()) {
             for (MapObject object : layer.getObjects()) {
@@ -87,6 +93,9 @@ public class LevelManager {
                     Float y = (Float)properties.get(Tmx.Y) + GameConfig.CELL_SCALE / 2f;
                     PointLight light = lightingManager.addPointLight(radius, new Color(r, g, b, a), x, y);
                     staticLights.add(light);
+                } else if (properties.get(Tmx.TYPE).equals(Tmx.SPAWN)) {
+                    spawn.x = (Float)properties.get(Tmx.X) + GameConfig.CELL_SCALE / 2f;
+                    spawn.y = (Float)properties.get(Tmx.Y) + GameConfig.CELL_SCALE / 2f;
                 }
             }
         }

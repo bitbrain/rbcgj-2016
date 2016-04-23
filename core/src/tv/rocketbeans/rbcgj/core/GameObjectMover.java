@@ -16,12 +16,15 @@ public class GameObjectMover {
 
     private GameObject object;
 
+    private CollisionDetector collisions;
+
     private TweenManager tweenManager = SharedTweenManager.getInstance();
 
     private DeltaTimer timer = new DeltaTimer();
 
-    public GameObjectMover(GameObject object) {
+    public GameObjectMover(GameObject object, CollisionDetector collisions) {
         this.object = object;
+        this.collisions = collisions;
         timer.update(GameConfig.MOVEMENT_TIME);
     }
 
@@ -30,7 +33,7 @@ public class GameObjectMover {
     }
 
     public void moveLeft() {
-        if (isReadyToMove()) {
+        if (isReadyToMove() && canMoveLeft()) {
             timer.reset();
             object.move(-GameConfig.CELL_SCALE, 0f);
             object.setOffset(GameConfig.CELL_SCALE, 0f);
@@ -41,7 +44,7 @@ public class GameObjectMover {
     }
 
     public void moveRight() {
-        if (isReadyToMove()) {
+        if (isReadyToMove() && canMoveRight()) {
             timer.reset();
             object.move(GameConfig.CELL_SCALE, 0f);
             object.setOffset(-GameConfig.CELL_SCALE, 0f);
@@ -52,7 +55,7 @@ public class GameObjectMover {
     }
 
     public void moveUp() {
-        if (isReadyToMove()) {
+        if (isReadyToMove() && canMoveUp()) {
             timer.reset();
             object.move(0f, GameConfig.CELL_SCALE);
             object.setOffset(0f, -GameConfig.CELL_SCALE);
@@ -63,7 +66,7 @@ public class GameObjectMover {
     }
 
     public void moveDown() {
-        if (isReadyToMove()) {
+        if (isReadyToMove() && canMoveDown()) {
             timer.reset();
             object.move(0f, -GameConfig.CELL_SCALE);
             object.setOffset(0f, GameConfig.CELL_SCALE);
@@ -76,4 +79,21 @@ public class GameObjectMover {
     private boolean isReadyToMove() {
         return timer.reached(GameConfig.MOVEMENT_TIME);
     }
+
+    private boolean canMoveLeft() {
+        return !collisions.isCollision(object.getLeft() - GameConfig.CELL_SCALE, object.getTop());
+    }
+
+    private boolean canMoveRight() {
+        return !collisions.isCollision(object.getLeft() + GameConfig.CELL_SCALE, object.getTop());
+    }
+
+    private boolean canMoveDown() {
+        return !collisions.isCollision(object.getLeft(), object.getTop() - GameConfig.CELL_SCALE);
+    }
+
+    private boolean canMoveUp() {
+        return !collisions.isCollision(object.getLeft(), object.getTop() + GameConfig.CELL_SCALE);
+    }
 }
+
