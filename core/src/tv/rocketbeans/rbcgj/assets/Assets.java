@@ -36,6 +36,23 @@ public final class Assets {
     }
 
     /**
+     * Contains map definitions
+     */
+    public enum Maps {
+        LEVEL_1("maps/level_1.tmx");
+
+        private String path;
+
+        Maps(String path) {
+            this.path = path;
+        }
+
+        public String getPath() {
+            return path;
+        }
+    }
+
+    /**
      * Contains music definitions
      */
     public enum Musics {

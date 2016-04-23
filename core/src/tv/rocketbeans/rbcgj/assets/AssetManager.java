@@ -4,6 +4,8 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 
 public class AssetManager {
 
@@ -32,6 +34,10 @@ public class AssetManager {
         return assetManager.get(fonts.getPath(), BitmapFont.class);
     }
 
+    public static TiledMap getMap(Assets.Maps maps) {
+        return assetManager.get(maps.getPath(), TiledMap.class);
+    }
+
     public static boolean isLoaded(String path) {
         return assetManager.isLoaded(path);
     }
@@ -50,11 +56,17 @@ public class AssetManager {
     }
 
     public static void init() {
+
+        assetManager.setLoader(TiledMap.class, new TmxMapLoader());
+
         for (Assets.Fonts font : Assets.Fonts.values()) {
             //assetManager.load(font.getPath(), BitmapFont.class);
         }
         for (Assets.Textures texture : Assets.Textures.values()) {
             assetManager.load(texture.getPath(), Texture.class);
+        }
+        for (Assets.Maps map : Assets.Maps.values()) {
+            assetManager.load(map.getPath(), TiledMap.class);
         }
         for (Assets.Musics music : Assets.Musics.values()) {
             //assetManager.load(music.getPath(), Music.class);

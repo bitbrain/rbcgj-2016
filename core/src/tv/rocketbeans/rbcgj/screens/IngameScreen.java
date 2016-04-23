@@ -20,6 +20,7 @@ import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectType;
+import tv.rocketbeans.rbcgj.core.LevelManager;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
 import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
@@ -27,15 +28,14 @@ import tv.rocketbeans.rbcgj.util.Colors;
 
 public class IngameScreen extends AbstractScreen {
 
-    private OrthogonalTiledMapRenderer mapRenderer;
-    private MapLayers layers;
-
     // Lighting
     private LightingManager lightingManager;
 
     private GameObject eddy;
 
     private PointLight lantern;
+
+    private LevelManager levelManager;
 
     public IngameScreen(NutGame game) {
         super(game);
@@ -51,12 +51,10 @@ public class IngameScreen extends AbstractScreen {
         world.setCameraTracking(eddy);
         world.registerRenderer(GameObjectType.EDDY, new SpriteRenderer(Assets.Textures.EDDY));
         world.setController(eddy, new WASDMovementController());
-
-        TiledMap map = new TmxMapLoader().load("maps/level_1.tmx");
-        layers = map.getLayers();
-        mapRenderer = new OrthogonalTiledMapRenderer(map);
+        levelManager = new LevelManager();
+        levelManager.loadMap(Assets.Maps.LEVEL_1);
         lightingManager = new LightingManager();
-        lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.3f));
+        lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.37f));
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
     }
 
@@ -65,11 +63,7 @@ public class IngameScreen extends AbstractScreen {
         lantern.setPosition(eddy.getOffset().x + eddy.getLeft() + eddy.getWidth() / 2f, eddy.getOffset().y + eddy.getTop() + eddy.getHeight() / 2f);
         super.beforeWorldRender(batch, delta);
         batch.end();
-        mapRenderer.setView(camera);
-        mapRenderer.getBatch().begin();
-        mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(0));
-        mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(1));
-        mapRenderer.getBatch().end();
+        levelManager.renderBackground(camera);
         batch.begin();
     }
 
@@ -77,10 +71,7 @@ public class IngameScreen extends AbstractScreen {
     protected void afterWorldRender(Batch batch, float delta) {
         super.afterWorldRender(batch, delta);
         batch.end();
-        mapRenderer.getBatch().begin();
-        mapRenderer.setView(camera);
-        mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(2));
-        mapRenderer.getBatch().end();
+        levelManager.renderForeground(camera);
         lightingManager.updateAndRender(camera);
         batch.begin();
     }
