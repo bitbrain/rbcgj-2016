@@ -22,7 +22,8 @@ public final class Assets {
      */
     public enum Textures {
 
-        EDDY("textures/nut-eddy.png");
+        EDDY("textures/nut-eddy.png"),
+        SHADOW("textures/shadow.png");
 
         private String path;
 

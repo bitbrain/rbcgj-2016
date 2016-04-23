@@ -124,15 +124,15 @@ public class GameObjectMover {
                     }
                 })
                 .start(tweenManager);
-        Tween.to(object, GameObjectTween.SCALE_Y, GameConfig.MOVEMENT_TIME / 2f)
+        Tween.to(object, GameObjectTween.SCALE_Y, GameConfig.MOVEMENT_TIME)
                 .ease(TweenEquations.easeInOutQuad)
-                .target(0.95f)
+                .target(0.85f)
                 .repeatYoyo(1, 0f)
                 .setCallbackTriggers(TweenCallback.COMPLETE)
                 .setCallback(new TweenCallback() {
                     @Override
                     public void onEvent(int type, BaseTween<?> source) {
-                        Tween.to(object, GameObjectTween.SCALE_Y, GameConfig.MOVEMENT_TIME / 2f)
+                        Tween.to(object, GameObjectTween.SCALE_Y, GameConfig.MOVEMENT_TIME)
                                 .target(1.05f)
                                 .repeatYoyo(1, 0f)
                                 .ease(TweenEquations.easeInOutQuad)
