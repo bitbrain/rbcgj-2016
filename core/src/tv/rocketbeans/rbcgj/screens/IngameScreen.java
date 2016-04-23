@@ -51,11 +51,12 @@ public class IngameScreen extends AbstractScreen {
         world.setCameraTracking(eddy);
         world.registerRenderer(GameObjectType.EDDY, new SpriteRenderer(Assets.Textures.EDDY));
         world.setController(eddy, new WASDMovementController());
-        levelManager = new LevelManager();
-        levelManager.loadMap(Assets.Maps.LEVEL_1);
         lightingManager = new LightingManager();
         lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.37f));
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
+
+        levelManager = new LevelManager(lightingManager);
+        levelManager.loadMap(Assets.Maps.LEVEL_1);
     }
 
     @Override
