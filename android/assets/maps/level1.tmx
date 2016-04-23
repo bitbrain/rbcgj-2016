@@ -10,52 +10,52 @@
   </terraintypes>
   <tile id="0">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="1">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="2">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="3">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="4">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="5">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="6">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="7">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="8">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="9">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="11">
@@ -79,6 +79,16 @@
    </properties>
   </tile>
   <tile id="15">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="21">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
@@ -288,6 +298,11 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
+  <tile id="141">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
   <tile id="148">
    <properties>
     <property name="collision" type="bool" value="false"/>
@@ -448,6 +463,16 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
+  <tile id="213">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="214">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
   <tile id="228">
    <properties>
     <property name="collision" type="bool" value="false"/>
@@ -575,12 +600,12 @@
   </tile>
   <tile id="309">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="310">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="311">
@@ -830,12 +855,12 @@
   </tile>
   <tile id="470">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="471">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="494">
@@ -865,12 +890,12 @@
   </tile>
   <tile id="508">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="509">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="510">
@@ -880,7 +905,7 @@
   </tile>
   <tile id="511">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="512">
@@ -890,12 +915,12 @@
   </tile>
   <tile id="546">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="547">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="647">
@@ -1081,12 +1106,12 @@
  </tileset>
  <layer name="base" width="50" height="51">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="obstacles" width="50" height="51">
   <data encoding="base64" compression="zlib">
-   eJztmbsNwjAQhh0SnmtAA0jsQgO0PFegAWqWoAE2YQhoGIAhePwRKZDlyAlc4nPwJ/0FyIL/kvPlzhFCzcAXYgiN/PfnqxezkDkr+F9DmygOv2TWz7fs4f8AHaM42pbG4cifvmkDRCxNGyDC3Q9e7EwbIMLlFS+Kklcn0waIuJk2kBHtQIgO1P1QLzDtio6zl05cuXvJxZlmKZ1ahmeVZ3g94cGzfGbSxaGa0TnO7bo4VDM6x7ldF4dqRuc4txdqfwj74ygKed6PLOtcnvsjyzpHEYeq37oorn2WdY4iDlXP9WD4rNTBsd9yOH5BruUce9gkyLWcYw+bBLmWc+xhHTREj1YRvmYMj5DKUAWqQjWoDjVy9GPr3pexde/LFGXv/3tebZnF/2te2XL2pcOWsy8dtpx9ORyfjJGjE2gKzaA5tIj5Lm4txW+k+Q/VmhfhHFb5
+   eJztmUtOwzAQhu0kUOg1YBMq9QwcATZttzzX7NhAj9FdN8BNOARsegAOUeCP8CKyHDkhfoyt+aRfSiPLnknGkxlXCDOLUogltCr/fu9kx0DiPMH+Z2it/CiLuPb8lxfY/wq9KT/qRP1gwnMZ2wBHPMY2wBH8PmixjW2AIziuaJFLXL17nv+hVVteqOtzD+t8eZizzSaQHzp1JcQZNGtpXgVYOBAfcpiospf9RZmTYphOI/cqP83zhA0y8Z7J5oepR6fYt9v8MPXoFPt2mx+mHp1i357V/hDp+5ELId+HzzwXcn/4zHMu/DDVW5+GZ+8zz7nww1RzfRP8VtqgWG8xzBj0XE6xhu2Dnssp1rB90HM5xRqWcYP6tIrmb8bmCOkAOoQm0BF0DE0D2pPq3tdJde/r5LL3Oa5oMTauUjn7spHK2ZeNVM6+GKbNFWL0GrqBbqE76L7jXtdYF3MMWcM05hc+rVia
   </data>
  </layer>
  <objectgroup name="objects">
@@ -1201,7 +1226,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="29" name="light" type="light" x="356.833" y="646.667" width="41" height="40">
+  <object id="29" name="light" type="light" x="346.833" y="646.667" width="41" height="40">
    <properties>
     <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="255"/>
