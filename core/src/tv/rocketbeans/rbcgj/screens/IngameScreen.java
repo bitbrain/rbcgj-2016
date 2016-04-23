@@ -4,18 +4,17 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
 import box2dLight.PointLight;
 import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.NutGame;
-import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.core.CollisionDetector;
 import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectType;
 import tv.rocketbeans.rbcgj.core.LevelManager;
+import tv.rocketbeans.rbcgj.core.Levels;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
@@ -51,15 +50,10 @@ public class IngameScreen extends AbstractScreen {
         lightingManager = new LightingManager();
         lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.37f));
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
-
         collisions = new CollisionDetector();
         levelManager = new LevelManager(lightingManager, collisions);
         world.setController(eddy, new WASDMovementController(collisions));
-        levelManager.loadMap(Assets.Maps.DEFAULT, eddy);
-        AssetManager.getMusic(Assets.Musics.LEVEL_1).setLooping(true);
-        AssetManager.getMusic(Assets.Musics.LEVEL_1).play();
-        fx.setFadeColor(Color.BLACK);
-        fx.fadeIn(2f);
+        levelManager.loadLevel(Levels.LEVEL_1, eddy);
         world.setCameraTracking(eddy);
     }
 

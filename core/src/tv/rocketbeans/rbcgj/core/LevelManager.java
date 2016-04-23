@@ -1,5 +1,6 @@
 package tv.rocketbeans.rbcgj.core;
 
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.maps.MapLayer;
@@ -19,6 +20,7 @@ import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.core.tmx.Tmx;
+import tv.rocketbeans.rbcgj.graphics.FX;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
 
 public class LevelManager {
@@ -37,13 +39,15 @@ public class LevelManager {
 
     private Vector2 spawn = new Vector2();
 
+    private Music music;
+
     public LevelManager(LightingManager lightingManager, CollisionDetector collisions) {
         this.lightingManager = lightingManager;
         staticLights = new ArrayList<PointLight>();
         this.collisions = collisions;
     }
 
-    public void loadMap(Assets.Maps maps, GameObject player) {
+    public void loadLevel(Levels levels, GameObject player) {
         for (PointLight light : staticLights) {
             light.remove(true);
         }
@@ -51,12 +55,20 @@ public class LevelManager {
         if (mapRenderer != null) {
             mapRenderer.dispose();
         }
-        TiledMap map = AssetManager.getMap(maps);
+        TiledMap map = AssetManager.getMap(levels.getMaps());
         layers = map.getLayers();
         mapRenderer = new OrthogonalTiledMapRenderer(map);
         updateObjects();
         collisions.updateCollisions(map);
         player.setPosition(spawn.x, spawn.y);
+        if (music != null) {
+            music.stop();
+        }
+        music = AssetManager.getMusic(levels.getMusics());
+        music.setLooping(true);
+        music.play();
+        FX.getInstance().setFadeColor(Color.BLACK);
+        FX.getInstance().fadeIn(2.5f);
     }
 
     public void renderForeground(OrthographicCamera camera) {

@@ -59,12 +59,12 @@ public class CollisionDetector {
                 if (cell != null && cell.getTile() != null) {
                     MapProperties properties = cell.getTile().getProperties();
                     boolean collision = Boolean.valueOf(properties.get(Tmx.COLLISION, "true", String.class));
-                    if (collision) {
-                        return true;
+                    if (!collision) {
+                        return false;
                     }
                 }
             }
         }
-        return false;
+        return true;
     }
 }
