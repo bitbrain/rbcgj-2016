@@ -41,10 +41,13 @@ public class LevelManager {
 
     private Music music;
 
-    public LevelManager(LightingManager lightingManager, CollisionDetector collisions) {
+    private MapActionHandler actionHandler;
+
+    public LevelManager(LightingManager lightingManager, MapActionHandler handler, CollisionDetector collisions) {
         this.lightingManager = lightingManager;
         staticLights = new ArrayList<PointLight>();
         this.collisions = collisions;
+        this.actionHandler = handler;
     }
 
     public void loadLevel(Levels levels, GameObject player) {
@@ -61,6 +64,7 @@ public class LevelManager {
         mapRenderer = new OrthogonalTiledMapRenderer(map);
         updateObjects();
         collisions.updateCollisions(map);
+        actionHandler.load(map);
         player.setPosition(spawn.x, spawn.y);
         if (music != null) {
             music.stop();

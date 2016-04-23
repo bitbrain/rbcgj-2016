@@ -15,6 +15,7 @@ import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectType;
 import tv.rocketbeans.rbcgj.core.LevelManager;
 import tv.rocketbeans.rbcgj.core.Levels;
+import tv.rocketbeans.rbcgj.core.MapActionHandler;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
@@ -33,6 +34,8 @@ public class IngameScreen extends AbstractScreen {
 
     private CollisionDetector collisions;
 
+    private MapActionHandler handler;
+
     private boolean camPositionFix = false;
 
     public IngameScreen(NutGame game) {
@@ -47,12 +50,14 @@ public class IngameScreen extends AbstractScreen {
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
         eddy.setType(GameObjectType.EDDY);
         world.registerRenderer(GameObjectType.EDDY, new DirectionalSpriteRenderer(Assets.Textures.EDDY));
+
+        handler = new MapActionHandler();
         lightingManager = new LightingManager();
         lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.37f));
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
         collisions = new CollisionDetector();
-        levelManager = new LevelManager(lightingManager, collisions);
-        world.setController(eddy, new WASDMovementController(collisions));
+        levelManager = new LevelManager(lightingManager, handler, collisions);
+        world.setController(eddy, new WASDMovementController(collisions, handler));
         levelManager.loadLevel(Levels.LEVEL_1, eddy);
         world.setCameraTracking(eddy);
     }

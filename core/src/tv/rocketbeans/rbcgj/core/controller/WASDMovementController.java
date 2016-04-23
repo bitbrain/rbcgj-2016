@@ -7,6 +7,7 @@ import tv.rocketbeans.rbcgj.core.CollisionDetector;
 import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectController;
 import tv.rocketbeans.rbcgj.core.GameObjectMover;
+import tv.rocketbeans.rbcgj.core.MapActionHandler;
 
 public class WASDMovementController implements GameObjectController {
 
@@ -14,14 +15,17 @@ public class WASDMovementController implements GameObjectController {
 
     private CollisionDetector collisions;
 
-    public WASDMovementController(CollisionDetector collisions) {
+    private MapActionHandler handler;
+
+    public WASDMovementController(CollisionDetector collisions, MapActionHandler handler) {
         this.collisions = collisions;
+        this.handler = handler;
     }
 
     @Override
     public void act(GameObject object, float delta) {
         if (mover == null) {
-            mover = new GameObjectMover(object, collisions);
+            mover = new GameObjectMover(object, collisions, handler);
         }
         mover.update(delta);
         if (Gdx.input.isKeyPressed(Input.Keys.W)) {

@@ -95,6 +95,7 @@ public class AbstractScreen implements Screen {
     }
 
     public void setScreen(final Screen screen) {
+        Gdx.input.setInputProcessor(null);
         fx.fadeOut(2f, TweenEquations.easeInQuad, new TweenCallback() {
             @Override
             public void onEvent(int type, BaseTween<?> source) {
