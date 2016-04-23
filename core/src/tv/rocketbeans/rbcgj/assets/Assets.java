@@ -5,7 +5,8 @@ public final class Assets {
     public enum Fonts {
 
         MEDIUM("fonts/medium.fnt"),
-        SMALL("fonts/small.fnt");
+        SMALL("fonts/small.fnt"),
+        STORY("fonts/story.fnt");
 
         private String path;
 

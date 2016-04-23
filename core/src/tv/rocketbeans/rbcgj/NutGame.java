@@ -17,7 +17,7 @@ public class NutGame extends Game {
         AssetManager.init();
         Styles.init();
         ScreenHandler.setFull();
-        setScreen(new StoryScreen(this));
+        setScreen(new LoadingScreen(this));
     }
 
     @Override

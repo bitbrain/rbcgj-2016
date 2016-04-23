@@ -8,8 +8,14 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.utils.Align;
 
+import javax.swing.GroupLayout;
+
+import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.Tween;
+import aurelienribon.tweenengine.TweenCallback;
+import aurelienribon.tweenengine.TweenEquation;
 import aurelienribon.tweenengine.TweenEquations;
 import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
@@ -48,9 +54,10 @@ public class StoryScreen extends AbstractScreen {
         Table layout = new Table();
         layout.setFillParent(true);
 
-        label = new Label(teller.getNextStoryPoint(), Styles.CREDITS);
+        label = new Label(teller.getNextStoryPoint(), Styles.STORY);
         label.setWrap(true);
-        layout.center().add(label).width(400f).padBottom(200f).row();
+        label.setAlignment(Align.center);
+        layout.center().add(label).width(600f).padBottom(200f).row();
         action = new Label("Press any KEY to continue", Styles.CREDITS);
         action.setColor(Color.WHITE);
         action.getColor().a = 0.5f;
@@ -68,10 +75,26 @@ public class StoryScreen extends AbstractScreen {
         super.beforeWorldRender(batch, delta);
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             AssetManager.getMusic(Assets.Musics.STORY_SCREEN).stop();
-            Gdx.app.exit();
-        } else if (Gdx.input.isTouched() || Gdx.input.isKeyJustPressed(Input.Keys.ANY_KEY)) {
+            setScreen(new IngameScreen(game));
+            AssetManager.getSound(Assets.Sounds.START_GAME).play();
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.ANY_KEY)) {
             if (teller.hasNextStoryPoint()) {
-                label.setText(teller.getNextStoryPoint());
+                tweenManager.killTarget(label);
+                Tween.to(label, ActorTween.ALPHA, 0.5f)
+                        .target(0f)
+                        .ease(TweenEquations.easeOutQuad)
+                        .setCallback(new TweenCallback() {
+                            @Override
+                            public void onEvent(int type, BaseTween<?> source) {
+                                label.setText(teller.getNextStoryPoint());
+                                Tween.to(label, ActorTween.ALPHA, 1f)
+                                        .target(1f)
+                                        .ease(TweenEquations.easeInOutQuad)
+                                        .start(tweenManager);
+                            }
+                        })
+                        .setCallbackTriggers(TweenCallback.COMPLETE)
+                        .start(tweenManager);
             } else {
                 AssetManager.getMusic(Assets.Musics.STORY_SCREEN).stop();
                 setScreen(new IngameScreen(game));
