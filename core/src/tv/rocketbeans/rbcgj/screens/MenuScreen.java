@@ -39,14 +39,14 @@ public class MenuScreen extends AbstractScreen {
         AssetManager.getMusic(Assets.Musics.TITLE_SCREEN).play();
         setBackgroundColor(Colors.BACKGROUND);
         fx.setFadeColor(Color.BLACK);
-        fx.fadeIn(3f);
+        fx.fadeIn(6f);
         Table layout = new Table();
         layout.setFillParent(true);
 
         Image logo = new Image(new Sprite(AssetManager.getTexture(Assets.Textures.LOGO)));
         layout.add(logo).center().padBottom(90f).row();
         logo.getColor().a = 0f;
-        Tween.to(logo, ActorTween.ALPHA, 4f).delay(1f).target(1f).ease(TweenEquations.easeInCubic).start(tweenManager);
+        Tween.to(logo, ActorTween.ALPHA, 6f).delay(1f).target(1f).ease(TweenEquations.easeInCubic).start(tweenManager);
 
         TextButton playButton = new TextButton("Starten", Styles.MENU_BUTTON);
         playButton.addListener(new ClickListener() {
