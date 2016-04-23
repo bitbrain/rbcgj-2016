@@ -7,6 +7,8 @@ import aurelienribon.tweenengine.TweenEquation;
 import aurelienribon.tweenengine.TweenEquations;
 import aurelienribon.tweenengine.TweenManager;
 import tv.rocketbeans.rbcgj.GameConfig;
+import tv.rocketbeans.rbcgj.assets.Assets;
+import tv.rocketbeans.rbcgj.audio.SoundPoolLooper;
 import tv.rocketbeans.rbcgj.tweens.GameObjectTween;
 import tv.rocketbeans.rbcgj.tweens.SharedTweenManager;
 import tv.rocketbeans.rbcgj.util.DeltaTimer;
@@ -27,18 +29,25 @@ public class GameObjectMover {
 
     private MapActionHandler handler;
 
+    private SoundPoolLooper movementSoundLooper;
+
     public GameObjectMover(GameObject object, CollisionDetector collisions, MapActionHandler handler) {
         this.object = object;
         this.collisions = collisions;
         this.handler = handler;
         timer.update(GameConfig.MOVEMENT_TIME);
+        movementSoundLooper = new SoundPoolLooper(Assets.Sounds.STEP_1, Assets.Sounds.STEP_2, Assets.Sounds.STEP_3);
     }
 
     public void update(float delta) {
+        movementSoundLooper.update(delta);
         timer.update(delta);
     }
 
     public void moveLeft() {
+        if (canMoveLeft()) {
+            movementSoundLooper.play();
+        }
         if (isReadyToMove() && canMoveLeft()) {
             timer.reset();
             object.move(-GameConfig.CELL_SCALE, 0f);
@@ -60,6 +69,9 @@ public class GameObjectMover {
     }
 
     public void moveRight() {
+        if (canMoveRight()) {
+            movementSoundLooper.play();
+        }
         if (isReadyToMove() && canMoveRight()) {
             timer.reset();
             object.move(GameConfig.CELL_SCALE, 0f);
@@ -81,6 +93,9 @@ public class GameObjectMover {
     }
 
     public void moveUp() {
+        if (canMoveUp()) {
+            movementSoundLooper.play();
+        }
         if (isReadyToMove() && canMoveUp()) {
             timer.reset();
             object.move(0f, GameConfig.CELL_SCALE);
@@ -102,6 +117,9 @@ public class GameObjectMover {
     }
 
     public void moveDown() {
+        if (canMoveDown()) {
+            movementSoundLooper.play();
+        }
         if (isReadyToMove() && canMoveDown()) {
             timer.reset();
             object.move(0f, -GameConfig.CELL_SCALE);

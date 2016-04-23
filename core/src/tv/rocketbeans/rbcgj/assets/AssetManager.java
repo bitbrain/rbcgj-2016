@@ -72,7 +72,7 @@ public class AssetManager {
             assetManager.load(music.getPath(), Music.class);
         }
         for (Assets.Sounds sound : Assets.Sounds.values()) {
-            //assetManager.load(sound.getPath(), Sound.class);
+            assetManager.load(sound.getPath(), Sound.class);
         }
         assetManager.finishLoading();
     }
