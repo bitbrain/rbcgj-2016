@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 
 import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.screens.IngameScreen;
+import tv.rocketbeans.rbcgj.screens.LoadingScreen;
 import tv.rocketbeans.rbcgj.screens.ScreenHandler;
 
 public class NutGame extends Game {
@@ -12,7 +13,7 @@ public class NutGame extends Game {
     public void create() {
         AssetManager.init();
         ScreenHandler.setFull();
-        setScreen(new IngameScreen(this));
+        setScreen(new LoadingScreen(this));
     }
 
     @Override

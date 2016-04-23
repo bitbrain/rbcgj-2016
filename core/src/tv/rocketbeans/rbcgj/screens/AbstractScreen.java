@@ -12,6 +12,11 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+import aurelienribon.tweenengine.BaseTween;
+import aurelienribon.tweenengine.Tween;
+import aurelienribon.tweenengine.TweenCallback;
+import aurelienribon.tweenengine.TweenEquation;
+import aurelienribon.tweenengine.TweenEquations;
 import aurelienribon.tweenengine.TweenManager;
 import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.core.GameWorld;
@@ -76,6 +81,16 @@ public class AbstractScreen implements Screen {
         batch.end();
         stage.draw();
         fx.end();
+    }
+
+    public void setScreen(final Screen screen) {
+        dispose();
+        fx.fadeOut(2f, TweenEquations.easeInQuad, new TweenCallback() {
+            @Override
+            public void onEvent(int type, BaseTween<?> source) {
+                game.setScreen(screen);
+            }
+        });
     }
 
     @Override
