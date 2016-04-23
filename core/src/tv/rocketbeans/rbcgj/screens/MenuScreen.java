@@ -58,8 +58,7 @@ public class MenuScreen extends AbstractScreen {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 AssetManager.getMusic(Assets.Musics.TITLE_SCREEN).stop();
-                AssetManager.getSound(Assets.Sounds.START_GAME).play(1f, 1f, 0f);
-                setScreen(new IngameScreen(game));
+                setScreen(new StoryScreen(game));
             }
 
             @Override
@@ -90,7 +89,6 @@ public class MenuScreen extends AbstractScreen {
         layout.center().add(closeButton).height(70).width(270).row();
 
         Label credits = new Label("game by Miguel Gonzalez and Simon Janssen", Styles.CREDITS);
-        credits.setFontScale(0.3f);
         layout.center().add(credits).padTop(90f).row();
 
         stage.addActor(layout);

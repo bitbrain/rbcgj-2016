@@ -16,6 +16,7 @@ public class Styles {
     public static final TextButton.TextButtonStyle MENU_BUTTON = new TextButton.TextButtonStyle();
 
     public static final Label.LabelStyle CREDITS = new Label.LabelStyle();
+    public static final Label.LabelStyle STORY = new Label.LabelStyle();
 
     public static void init() {
         MENU_BUTTON.font = AssetManager.getFont(Assets.Fonts.MEDIUM);
@@ -26,9 +27,11 @@ public class Styles {
         MENU_BUTTON.checked = GraphicsFactory.createDrawable(Assets.Textures.BUTTON_9, Colors.UI_HIGHLIGHTED);
         MENU_BUTTON.over = GraphicsFactory.createDrawable(Assets.Textures.BUTTON_9, Colors.UI_HIGHLIGHTED);
 
-        CREDITS.font = AssetManager.getFont(Assets.Fonts.MEDIUM);
+        CREDITS.font = AssetManager.getFont(Assets.Fonts.SMALL);
         CREDITS.fontColor = Colors.UI_HIGHLIGHTED.cpy();
-        CREDITS.fontColor.a *= 0.5f;
+
+        STORY.font = AssetManager.getFont(Assets.Fonts.STORY);
+        STORY.fontColor = Colors.UI_HIGHLIGHTED.cpy();
 
     }
 }

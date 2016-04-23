@@ -4,7 +4,9 @@ public final class Assets {
 
     public enum Fonts {
 
-        MEDIUM("fonts/medium.fnt");
+        MEDIUM("fonts/medium.fnt"),
+        SMALL("fonts/small.fnt"),
+        STORY("fonts/story.fnt");
 
         private String path;
 
@@ -69,7 +71,8 @@ public final class Assets {
         LEVEL_3("music/Level_3.ogg"),
         LEVEL_4("music/Level_4.ogg"),
         TITLE_SCREEN("music/Title_Screen.ogg"),
-        PAUSE_SCREEN("music/Pause_Screen.ogg");
+        PAUSE_SCREEN("music/Pause_Screen.ogg"),
+        STORY_SCREEN("music/story_screen.ogg");
 
         private String path;
 
