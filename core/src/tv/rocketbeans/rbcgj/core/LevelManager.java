@@ -107,6 +107,9 @@ public class LevelManager {
         for (MapLayer layer : map.getLayers()) {
             for (MapObject object : layer.getObjects()) {
                 MapProperties properties = object.getProperties();
+                if (properties.get(Tmx.TYPE) == null) {
+                    continue;
+                }
                 if (properties.get(Tmx.TYPE).equals(Tmx.LIGHT)) {
                     Float r = Float.valueOf((String)properties.get(Tmx.RED));
                     Float g = Float.valueOf((String)properties.get(Tmx.GREEN));

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="32">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="37">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1255,6 +1255,12 @@
     <property name="radius" type="float" value="50"/>
    </properties>
    <ellipse/>
+  </object>
+  <object id="32" name="teleport" type="p" x="900" y="1280" width="30" height="32">
+   <properties>
+    <property name="portal" value="@level/level_2"/>
+    <property name="portal-id" value="level2-portal"/>
+   </properties>
   </object>
  </objectgroup>
 </map>
