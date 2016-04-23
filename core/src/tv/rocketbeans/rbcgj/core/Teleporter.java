@@ -4,6 +4,8 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapProperties;
 
 import tv.rocketbeans.rbcgj.GameConfig;
+import tv.rocketbeans.rbcgj.assets.AssetManager;
+import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.graphics.FX;
 
 public class Teleporter implements MapActionHandler.MapActionListener {
@@ -27,14 +29,19 @@ public class Teleporter implements MapActionHandler.MapActionListener {
                 y = (float) (Math.floor(y / GameConfig.CELL_SCALE) * GameConfig.CELL_SCALE);
                 object.setPosition(x , y);
                 FX.getInstance().fadeIn(0.5f);
+                AssetManager.getSound(Assets.Sounds.PORTAL).play();
             } else if (portalId.contains("@level/")) {
                 try {
                     portalId = portalId.replace("@level/", "");
                     Levels levels = Levels.valueOf(portalId.toUpperCase());
+                    AssetManager.getSound(Assets.Sounds.PORTAL).play();
                     levelManager.loadLevel(levels, object);
                 } catch (IllegalArgumentException e) {
                     // noOp
+                    System.out.println("No level with id " + portalId);
                 }
+            } else {
+                System.out.println("No portal with id " + portalId);
             }
         }
     }
