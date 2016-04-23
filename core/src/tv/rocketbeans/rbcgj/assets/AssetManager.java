@@ -60,7 +60,7 @@ public class AssetManager {
         assetManager.setLoader(TiledMap.class, new TmxMapLoader());
 
         for (Assets.Fonts font : Assets.Fonts.values()) {
-            //assetManager.load(font.getPath(), BitmapFont.class);
+            assetManager.load(font.getPath(), BitmapFont.class);
         }
         for (Assets.Textures texture : Assets.Textures.values()) {
             assetManager.load(texture.getPath(), Texture.class);

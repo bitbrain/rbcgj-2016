@@ -4,7 +4,7 @@ public final class Assets {
 
     public enum Fonts {
 
-        TEST("");
+        MEDIUM("fonts/medium.fnt");
 
         private String path;
 
