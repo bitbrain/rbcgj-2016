@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32" nextobjectid="45">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32" nextobjectid="51">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1621,6 +1621,26 @@
     <property name="radius" type="float" value="150"/>
    </properties>
    <ellipse/>
+  </object>
+  <object id="45" name="Shout" x="778" y="402.667" width="83.3333" height="90">
+   <properties>
+    <property name="text" value="Oh Gott, geht mir das alles auf die Nuesse"/>
+   </properties>
+  </object>
+  <object id="47" name="Shout" x="2145.33" y="596" width="125.333" height="45">
+   <properties>
+    <property name="text" value="Wer wohnt wohl hier..."/>
+   </properties>
+  </object>
+  <object id="48" x="1130" y="1217" width="81" height="88">
+   <properties>
+    <property name="text" value="Ziemlich dunkel hier"/>
+   </properties>
+  </object>
+  <object id="50" x="1598" y="1118" width="106" height="104">
+   <properties>
+    <property name="text" value="Noch ein Level? Das ist alles so laecherlich"/>
+   </properties>
   </object>
  </objectgroup>
 </map>
