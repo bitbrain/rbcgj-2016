@@ -45,7 +45,9 @@ public class GameObjectMover {
     }
 
     public void moveLeft() {
-        movementSoundLooper.play();
+        if (canMoveLeft()) {
+            movementSoundLooper.play();
+        }
         if (isReadyToMove() && canMoveLeft()) {
             timer.reset();
             object.move(-GameConfig.CELL_SCALE, 0f);
@@ -67,7 +69,9 @@ public class GameObjectMover {
     }
 
     public void moveRight() {
-        movementSoundLooper.play();
+        if (canMoveRight()) {
+            movementSoundLooper.play();
+        }
         if (isReadyToMove() && canMoveRight()) {
             timer.reset();
             object.move(GameConfig.CELL_SCALE, 0f);
@@ -89,7 +93,9 @@ public class GameObjectMover {
     }
 
     public void moveUp() {
-        movementSoundLooper.play();
+        if (canMoveUp()) {
+            movementSoundLooper.play();
+        }
         if (isReadyToMove() && canMoveUp()) {
             timer.reset();
             object.move(0f, GameConfig.CELL_SCALE);
@@ -111,7 +117,9 @@ public class GameObjectMover {
     }
 
     public void moveDown() {
-        movementSoundLooper.play();
+        if (canMoveDown()) {
+            movementSoundLooper.play();
+        }
         if (isReadyToMove() && canMoveDown()) {
             timer.reset();
             object.move(0f, -GameConfig.CELL_SCALE);

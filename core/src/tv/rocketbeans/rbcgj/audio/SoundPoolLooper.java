@@ -44,6 +44,6 @@ public class SoundPoolLooper {
     private void playRandomSound() {
         int randomIndex = random.nextInt(sounds.length);
         Sound sound = AssetManager.getSound(sounds[randomIndex]);
-        sound.play(1f, 1f, 0f);
+        sound.play(0.7f - random.nextFloat() * 0.2f, 1f - random.nextFloat() * 0.2f, 0f);
     }
 }
