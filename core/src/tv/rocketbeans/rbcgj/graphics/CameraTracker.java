@@ -13,7 +13,7 @@ public class CameraTracker {
 
     private GameObject target;
 
-    private float speed = 2.2f;
+    private float speed = 1.2f;
 
     private float zoomScale = 0.0025f;
 
@@ -40,7 +40,7 @@ public class CameraTracker {
         // Round it up to prevent camera shaking
         camera.position.x = (float) (camera.position.x + (velocity.x * overAllSpeed * delta));
         camera.position.y = (float) (camera.position.y + (velocity.y * overAllSpeed * delta));
-        camera.zoom = 0.7f;
+        camera.zoom = 0.5f;
     }
 
     public void setSpeed(float speed) {

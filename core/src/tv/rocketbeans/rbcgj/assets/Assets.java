@@ -40,7 +40,8 @@ public final class Assets {
      * Contains map definitions
      */
     public enum Maps {
-        LEVEL_1("maps/level_1.tmx");
+        LEVEL_1("maps/level_1.tmx"),
+        LEVEL_2("maps/level_2.tmx");
 
         private String path;
 
