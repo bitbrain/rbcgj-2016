@@ -10,42 +10,42 @@
   </terraintypes>
   <tile id="0">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="1">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="2">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="3">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="4">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="5">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="6">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="7">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="8">
@@ -55,7 +55,7 @@
   </tile>
   <tile id="9">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="11">
@@ -388,6 +388,11 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
+  <tile id="183">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
   <tile id="190">
    <properties>
     <property name="collision" type="bool" value="false"/>
@@ -469,6 +474,11 @@
    </properties>
   </tile>
   <tile id="214">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="219">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
@@ -585,7 +595,7 @@
   </tile>
   <tile id="306">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="307">
@@ -595,7 +605,7 @@
   </tile>
   <tile id="308">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="309">
@@ -610,12 +620,12 @@
   </tile>
   <tile id="311">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="312">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="313">
@@ -855,7 +865,7 @@
   </tile>
   <tile id="470">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="471">
@@ -915,12 +925,12 @@
   </tile>
   <tile id="546">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="547">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="647">
@@ -1105,16 +1115,19 @@
   </tile>
  </tileset>
  <layer name="base" width="50" height="51">
+  <properties>
+   <property name="collision" type="bool" value="false"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="obstacles" width="50" height="51">
   <data encoding="base64" compression="zlib">
-   eJztmUtOwzAQhp2mQOEYwKYgcYauWPO6AM91d7Q9RhfsWnqM7nuHwoYDcAdef0QWkTWpExjHM5E/6Zea1LJnYnsy4xhDc5Eacwldpb/Xb0lJQ+GMYP8YmuR+pJ2w9vyVOex/hha5H32lfkSa5zy0AUw8hjaAiTgfspiFNoCJuK5k0ZZ1tfLc/7CQW57lvweF/6dM47wz9VPGk8OPU0/j9rvGHEHHBZ10PQ0WgJeknqTymVSXZA469XQYuFb5zp4nbEiU10wuP6gaXWLd7vKDqtEl1u0uP6gaXWLd3qr9YfT70RaanA+fca7J/eEzznH4QeVbr8Sz9xnnOPygcq4vge9KFxz51npDLk3NrVQ+NuTTmuZ2X3Au7WLJ0IcdyyXmsFWwY7nEHLYKdiyXmMNGeMhfrSb7zJgdIW1B29AO1IN2ob0G7dG692207n2btuz9uK5k8d91peXsy4WWsy8XWs6+IpEi11ijN9AtdAfdQw8l98racvRRZwyqzQ/hu2ne
+   eJztmDkSwjAMRbNwEqDJLaio2S7AWtOxHIOCjuUY9NwBaDgAd2DTDC4yHiVOQI7l4DejGRaPLMW28mXPw+mEntcF64Wf71c/YSBz5hD/Amwp8ggDs/F8yxbi34HtRR6RpXk4iqdtOgAiZqYDIMKtBy82pgMgwu0rXpRlXx01+5/GtGVLfG7E/l8RzXMj8pPEWpFHU9O8UUWTYyac/XzGlYef3ThTC/JZ3XCv8hLP07e8Z1LlgfXoHPt2VR5Yj86xb1flgfXoHPv2fzkfjmIpcj101rki89BZ5yjywPTWBXn2OuscRR6Y5noyfFeqoNBbpxQtja0tV+4petqmta0y1tIqDgQ+5FrOUcNmQa7lHDVsFuRazlHDOsqJrWdfxtazL1OWs+/2FS9+3Ve23H2psOXuS4Utd18OR5w+7NEB2BBsBDYGmyT8ljSWwkeeObAxb4LkaKo=
   </data>
  </layer>
- <objectgroup name="objects">
+ <objectgroup name="objects" visible="0">
   <object id="1" name="spawn" type="spawn" x="913" y="1542" width="34" height="37"/>
   <object id="2" name="light" type="light" x="907.061" y="1506.67" width="43.6061" height="134.939">
    <properties>
