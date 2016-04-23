@@ -21,6 +21,7 @@ import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectType;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
+import tv.rocketbeans.rbcgj.graphics.LightingManager;
 import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
 import tv.rocketbeans.rbcgj.util.Colors;
 
@@ -30,8 +31,7 @@ public class IngameScreen extends AbstractScreen {
     private MapLayers layers;
 
     // Lighting
-    private World boxWorld;
-    private RayHandler rayHandler;
+    private LightingManager lightingManager;
 
     public IngameScreen(NutGame game) {
         super(game);
@@ -39,12 +39,6 @@ public class IngameScreen extends AbstractScreen {
 
     @Override
     protected void onCreateStage(Stage stage, int width, int height) {
-        boxWorld = new World(new Vector2(), false);
-        RayHandler.useDiffuseLight(true);
-        boxWorld.createBody(new BodyDef());
-        rayHandler = new RayHandler(boxWorld);
-        rayHandler.setAmbientLight(0.1f, 0.1f, 0.4f, 1.0f);
-        new PointLight(rayHandler, 50, new Color(1,1,1,1), 250, 250f, 250f);
         setBackgroundColor(Colors.BG_LEVEL_1);
         GameObject eddy = world.addObject();
         eddy.setPosition(0f, 0f);
@@ -57,6 +51,8 @@ public class IngameScreen extends AbstractScreen {
         TiledMap map = new TmxMapLoader().load("maps/level_1.tmx");
         layers = map.getLayers();
         mapRenderer = new OrthogonalTiledMapRenderer(map);
+
+        lightingManager = new LightingManager();
     }
 
     @Override
@@ -79,8 +75,7 @@ public class IngameScreen extends AbstractScreen {
         mapRenderer.setView(camera);
         mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(2));
         mapRenderer.getBatch().end();
-        rayHandler.setCombinedMatrix(camera);
-        rayHandler.updateAndRender();
+        lightingManager.updateAndRender(camera);
         batch.begin();
     }
 }
