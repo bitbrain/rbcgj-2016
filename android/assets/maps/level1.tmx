@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="38">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="50">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -10,12 +10,12 @@
   </terraintypes>
   <tile id="0">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="1">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="2">
@@ -25,7 +25,7 @@
   </tile>
   <tile id="3">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="4">
@@ -40,12 +40,12 @@
   </tile>
   <tile id="6">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="7">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="8">
@@ -55,7 +55,7 @@
   </tile>
   <tile id="9">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="11">
@@ -93,9 +93,14 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
-  <tile id="38">
+  <tile id="22">
    <properties>
     <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="39">
@@ -140,7 +145,7 @@
   </tile>
   <tile id="47">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="49">
@@ -168,9 +173,29 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
-  <tile id="76">
+  <tile id="59">
    <properties>
     <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="60">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="64">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="68">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="76">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="77">
@@ -215,7 +240,7 @@
   </tile>
   <tile id="85">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="87">
@@ -228,9 +253,19 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
-  <tile id="110">
+  <tile id="102">
    <properties>
     <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="106">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="110">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="111">
@@ -240,7 +275,7 @@
   </tile>
   <tile id="114">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="115">
@@ -285,7 +320,7 @@
   </tile>
   <tile id="123">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="125">
@@ -298,7 +333,22 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
+  <tile id="140">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
   <tile id="141">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="142">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="144">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
@@ -315,7 +365,7 @@
   </tile>
   <tile id="152">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="153">
@@ -360,7 +410,7 @@
   </tile>
   <tile id="161">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="163">
@@ -388,14 +438,24 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
-  <tile id="183">
+  <tile id="178">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
-  <tile id="190">
+  <tile id="182">
    <properties>
     <property name="collision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="183">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="190">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="191">
@@ -480,12 +540,12 @@
   </tile>
   <tile id="219">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="228">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="229">
@@ -535,7 +595,7 @@
   </tile>
   <tile id="266">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="267">
@@ -585,7 +645,7 @@
   </tile>
   <tile id="304">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="305">
@@ -650,12 +710,12 @@
   </tile>
   <tile id="342">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="343">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="344">
@@ -675,12 +735,12 @@
   </tile>
   <tile id="347">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="348">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="349">
@@ -694,6 +754,11 @@
    </properties>
   </tile>
   <tile id="351">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="352">
    <properties>
     <property name="collision" type="bool" value="false"/>
    </properties>
@@ -1119,19 +1184,19 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="obstacles" width="50" height="51">
   <data encoding="base64" compression="zlib">
-   eJztmDkSwjAMRbNwEqDJLaio2S7AWtOxHIOCjuUY9NwBaDgAd2DTDC4yHiVOQI7l4DejGRaPLMW28mXPw+mEntcF64Wf71c/YSBz5hD/Amwp8ggDs/F8yxbi34HtRR6RpXk4iqdtOgAiZqYDIMKtBy82pgMgwu0rXpRlXx01+5/GtGVLfG7E/l8RzXMj8pPEWpFHU9O8UUWTYyac/XzGlYef3ThTC/JZ3XCv8hLP07e8Z1LlgfXoHPt2VR5Yj86xb1flgfXoHPv2fzkfjmIpcj101rki89BZ5yjywPTWBXn2OuscRR6Y5noyfFeqoNBbpxQtja0tV+4petqmta0y1tIqDgQ+5FrOUcNmQa7lHDVsFuRazlHDOsqJrWdfxtazL1OWs+/2FS9+3Ve23H2psOXuS4Utd18OR5w+7NEB2BBsBDYGmyT8ljSWwkeeObAxb4LkaKo=
+   eJztmL1Ow0AMgPPDgyDBkrfI1LmFvgA/zdyNto/BwMbPY3RnhxEWHoAdxgoscRKnk9PzETvxhfskK2ni+uzcnWVfluGclFl2CjIvf36/5S2KCFRdbj2MFfi/BtmYOMqC/l+qLrcexh34fw/yYOKoAmxRdbn1EjqYDe0AE1dDO8BEmg9d3A7tABNpXeliLOvqUdj+0qrvpua+tt5fM43zzmSnjRtPHBOhcasDIcNKeMnDRCu7nC6aOSrC5HjgfuHLfM888r7FFwfWJ7vPDlk9+htYHLX1HuuT3WdSuTQE33xgfbLG3lnj/mise+pca4zjP9PnfHQ5I/TRZxxdzgh9cMSB1VuvyLeXzHNpn//CUW/tq6WxuaXyDH48FbSrZj7Bv4+CduVAcy3tY8tgw83lkrldEjeXS+Z2SdxcrrGGTYyTWPe+S6x732Usez+tK110XVeUs68YoJx9xUAsZ1+JhM0ZrNFzkAuQS5AFSNPyrE2Xw0bIGJjON3uMctE=
   </data>
  </layer>
- <objectgroup name="objects" visible="0">
+ <objectgroup name="objects">
   <object id="1" name="spawn" type="spawn" x="913" y="1542" width="34" height="37"/>
   <object id="2" name="light" type="light" x="907.061" y="1506.67" width="43.6061" height="134.939">
    <properties>
-    <property name="a" type="float" value="0"/>
+    <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="0"/>
     <property name="g" type="float" value="0"/>
     <property name="r" type="float" value="0"/>
@@ -1169,116 +1234,141 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="18" name="light" type="light" x="983" y="1423" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="23" name="light" type="light" x="826.167" y="1419.33" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="24" name="light" type="light" x="312.833" y="1352" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="25" name="light" type="light" x="313.5" y="1260.67" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="26" name="light" type="light" x="25.5" y="1097.33" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="27" name="light" type="light" x="152.833" y="1100" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="28" name="light" type="light" x="503.5" y="649.333" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="29" name="light" type="light" x="346.833" y="646.667" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="30" name="light" type="light" x="954.833" y="842" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
   <object id="31" name="light" type="light" x="314.5" y="12" width="41" height="40">
    <properties>
     <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="255"/>
     <property name="g" type="float" value="0"/>
     <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
+    <property name="radius" type="float" value="150"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="32" name="teleport" type="p" x="900" y="1280" width="30" height="32">
+  <object id="32" name="teleport" type="p" x="225.667" y="40" width="30" height="32">
    <properties>
     <property name="portal" value="@level/level_2"/>
     <property name="portal-id" value="level2-portal"/>
    </properties>
   </object>
-  <object id="37" name="Next Level" x="222.667" y="33.3333" width="33.3333" height="32">
+  <object id="38" name="light" type="light" x="664.833" y="14.6667" width="41" height="40">
    <properties>
-    <property name="portal-id" value="102"/>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
    </properties>
+   <ellipse/>
+  </object>
+  <object id="39" name="light" type="light" x="987.5" y="13.3333" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="40" name="light" type="light" x="1307.5" y="12" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="41" name="light" type="light" x="955.5" y="844" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="42" name="light" type="light" x="504.833" y="653.333" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="43" name="light" type="light" x="348.833" y="653.333" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="44" name="light" type="light" x="26.1667" y="1100" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="45" name="light" type="light" x="151.5" y="1104" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="46" name="light" type="light" x="316.833" y="1258.67" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="47" name="light" type="light" x="312.833" y="1357.33" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="48" name="light" type="light" x="824.833" y="1421.33" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="49" name="light" type="light" x="984.833" y="1420" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
   </object>
  </objectgroup>
 </map>

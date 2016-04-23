@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="19">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32" nextobjectid="45">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -617,7 +617,7 @@
   </tile>
   <tile id="234">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="235">
@@ -787,7 +787,7 @@
   </tile>
   <tile id="349">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="350">
@@ -972,12 +972,12 @@
   </tile>
   <tile id="470">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="471">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="472">
@@ -1037,7 +1037,7 @@
   </tile>
   <tile id="510">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="511">
@@ -1047,7 +1047,7 @@
   </tile>
   <tile id="512">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="545">
@@ -1057,7 +1057,7 @@
   </tile>
   <tile id="546">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="547">
@@ -1261,131 +1261,364 @@
    </properties>
   </tile>
  </tileset>
- <layer name="base" width="100" height="100">
+ <layer name="base" width="80" height="80">
+  <properties>
+   <property name="collision" type="bool" value="false"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
- <layer name="obstacles" width="100" height="100">
+ <layer name="obstacles" width="80" height="80">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <objectgroup name="objects">
-  <object id="1" name="spawn" type="spawn" x="1629.67" y="1491.33" width="34" height="37"/>
-  <object id="2" name="light" type="light" x="2009.67" y="650.333" width="41" height="40">
+  <object id="1" name="spawn" type="spawn" x="1630.17" y="1148.83" width="34" height="37"/>
+  <object id="2" name="light" type="light" x="2009.67" y="330.333" width="41" height="40">
    <properties>
     <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="255"/>
     <property name="g" type="float" value="0"/>
     <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
+    <property name="radius" type="float" value="150"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="3" name="light" type="light" x="2104.5" y="617" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="4" name="light" type="light" x="2265.5" y="615" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="5" name="light" type="light" x="2363.5" y="652" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="255"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="6" x="1051.83" y="1886.67" width="41.5" height="45">
+  <object id="6" x="1051.83" y="1553" width="41.5" height="59">
    <properties>
     <property name="portal" value="204"/>
     <property name="portal-id" value="201"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="8" x="1725.5" y="1595.5" width="37.3333" height="42.6667">
+  <object id="8" x="1725.5" y="1259.75" width="37.3333" height="67">
    <properties>
     <property name="portal" value="203"/>
     <property name="portal-id" value="202"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="9" x="1627.33" y="1264" width="36.6667" height="56.3333">
+  <object id="9" x="1627.33" y="944" width="36.6667" height="56.3333">
    <properties>
     <property name="portal" value="202"/>
     <property name="portal-id" value="203"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="10" x="1149.67" y="1244" width="34.6667" height="50.6667">
+  <object id="10" x="1151.67" y="913.818" width="34.6667" height="58.3636">
    <properties>
     <property name="portal" value="201"/>
     <property name="portal-id" value="204"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="11" x="766.667" y="669.333" width="34.6667" height="50.6667">
+  <object id="11" x="766.334" y="340" width="34.6667" height="57.667">
    <properties>
     <property name="portal" value="210"/>
     <property name="portal-id" value="205"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="13" x="637.333" y="669.333" width="34.6667" height="50.6667">
+  <object id="13" x="638.333" y="338" width="34.6667" height="59.0003">
    <properties>
     <property name="portal" value="208"/>
     <property name="portal-id" value="206"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="14" x="513.333" y="669.333" width="34.6667" height="50.6667">
+  <object id="14" x="510.666" y="338" width="34.6667" height="58.0003">
    <properties>
     <property name="portal" value="209"/>
     <property name="portal-id" value="207"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="15" x="384" y="672" width="34.6667" height="50.6667">
+  <object id="15" x="382.333" y="338" width="34.6667" height="59.6667">
    <properties>
     <property name="portal" value="206"/>
     <property name="portal-id" value="208"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="16" x="158.667" y="1182.67" width="34.6667" height="50.6667">
+  <object id="16" x="158.667" y="850.67" width="34.6667" height="50.6667">
    <properties>
     <property name="portal" value="207"/>
     <property name="portal-id" value="209"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="17" x="2046.67" y="1690.67" width="34.6667" height="50.6667">
+  <object id="17" x="2046" y="1365" width="34.6667" height="60.9967">
    <properties>
     <property name="portal" value="205"/>
     <property name="portal-id" value="210"/>
    </properties>
    <ellipse/>
   </object>
-  <object id="18" x="2204" y="601.333" width="34.6667" height="50.6667">
+  <object id="18" x="2206.18" y="274.424" width="34.6667" height="50.6667">
    <properties>
     <property name="portal-id" value="211"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="19" name="light" type="light" x="2106.5" y="301" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="20" name="light" type="light" x="2267.5" y="299" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="21" name="light" type="light" x="2361.5" y="338" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="22" name="light" type="light" x="1914.5" y="1099" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="23" name="light" type="light" x="2105.5" y="1616" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="24" name="light" type="light" x="2106.5" y="1868" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="25" name="light" type="light" x="1464.5" y="1962" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="26" name="light" type="light" x="1466.5" y="2092" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="27" name="light" type="light" x="1338.5" y="2095" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="28" name="light" type="light" x="920.5" y="2089" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="29" name="light" type="light" x="1017.5" y="1574" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="30" name="light" type="light" x="1081.5" y="1579" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="31" name="light" type="light" x="1462.5" y="1258" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="32" name="light" type="light" x="1692.5" y="936" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="33" name="light" type="light" x="1689.5" y="648" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="34" name="light" type="light" x="1337.5" y="649" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="35" name="light" type="light" x="1145.5" y="424" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="36" name="light" type="light" x="890.5" y="776" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="37" name="light" type="light" x="891.5" y="550" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="38" name="light" type="light" x="1084.5" y="167" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="39" name="light" type="light" x="924.5" y="166" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="40" name="light" type="light" x="1399.5" y="196" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="41" name="light" type="light" x="1657.5" y="198" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="42" name="light" type="light" x="344.5" y="360" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="43" name="light" type="light" x="539.5" y="358" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="44" name="light" type="light" x="536.5" y="617" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="255"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="150"/>
    </properties>
    <ellipse/>
   </object>
