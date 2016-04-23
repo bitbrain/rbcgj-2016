@@ -25,9 +25,12 @@ public class GameObjectMover {
 
     private DeltaTimer timer = new DeltaTimer();
 
-    public GameObjectMover(GameObject object, CollisionDetector collisions) {
+    private MapActionHandler handler;
+
+    public GameObjectMover(GameObject object, CollisionDetector collisions, MapActionHandler handler) {
         this.object = object;
         this.collisions = collisions;
+        this.handler = handler;
         timer.update(GameConfig.MOVEMENT_TIME);
     }
 
@@ -42,6 +45,12 @@ public class GameObjectMover {
             object.setOffset(GameConfig.CELL_SCALE, 0f);
             object.setDirection(Direction.LEFT);
             Tween.to(object, GameObjectTween.OFFSET_X, GameConfig.MOVEMENT_TIME)
+                    .setCallback(new TweenCallback() {
+                        @Override
+                        public void onEvent(int type, BaseTween<?> source) {
+                            handler.enter(object, object.getLeft(), object.getTop());
+                        }
+                    }).setCallbackTriggers(TweenCallback.COMPLETE)
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
             animateMovement(object);
@@ -58,6 +67,12 @@ public class GameObjectMover {
             object.setDirection(Direction.RIGHT);
             Tween.to(object, GameObjectTween.OFFSET_X, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
+                    .setCallback(new TweenCallback() {
+                        @Override
+                        public void onEvent(int type, BaseTween<?> source) {
+                            handler.enter(object, object.getLeft(), object.getTop());
+                        }
+                    }).setCallbackTriggers(TweenCallback.COMPLETE)
                     .target(0f).start(tweenManager);
             animateMovement(object);
         } else if (isReadyToMove()) {
@@ -73,6 +88,12 @@ public class GameObjectMover {
             object.setDirection(Direction.UP);
             Tween.to(object, GameObjectTween.OFFSET_Y, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
+                    .setCallback(new TweenCallback() {
+                        @Override
+                        public void onEvent(int type, BaseTween<?> source) {
+                            handler.enter(object, object.getLeft(), object.getTop());
+                        }
+                    }).setCallbackTriggers(TweenCallback.COMPLETE)
                     .target(0f).start(tweenManager);
             animateMovement(object);
         } else if (isReadyToMove()) {
@@ -88,6 +109,12 @@ public class GameObjectMover {
             object.setDirection(Direction.DOWN);
             Tween.to(object, GameObjectTween.OFFSET_Y, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
+                    .setCallback(new TweenCallback() {
+                        @Override
+                        public void onEvent(int type, BaseTween<?> source) {
+                            handler.enter(object, object.getLeft(), object.getTop());
+                        }
+                    }).setCallbackTriggers(TweenCallback.COMPLETE)
                     .target(0f).start(tweenManager);
             animateMovement(object);
         } else if (isReadyToMove()) {

@@ -41,13 +41,19 @@ public class LevelManager {
 
     private Music music;
 
-    public LevelManager(LightingManager lightingManager, CollisionDetector collisions) {
+    private MapActionHandler actionHandler;
+
+    private boolean initialized;
+
+    public LevelManager(LightingManager lightingManager, MapActionHandler handler, CollisionDetector collisions) {
         this.lightingManager = lightingManager;
         staticLights = new ArrayList<PointLight>();
         this.collisions = collisions;
+        this.actionHandler = handler;
     }
 
     public void loadLevel(Levels levels, GameObject player) {
+        initialized = true;
         for (PointLight light : staticLights) {
             light.remove(true);
         }
@@ -61,6 +67,7 @@ public class LevelManager {
         mapRenderer = new OrthogonalTiledMapRenderer(map);
         updateObjects();
         collisions.updateCollisions(map);
+        actionHandler.load(map);
         player.setPosition(spawn.x, spawn.y);
         if (music != null) {
             music.stop();
@@ -72,6 +79,10 @@ public class LevelManager {
         FX.getInstance().fadeIn(2.5f);
     }
 
+    public boolean isNowInitialized() {
+        return initialized;
+    }
+
     public void renderForeground(OrthographicCamera camera) {
         if (mapRenderer != null) {
             mapRenderer.getBatch().begin();
@@ -79,6 +90,7 @@ public class LevelManager {
             mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(1));
             mapRenderer.getBatch().end();
         }
+        initialized = false;
     }
 
     public void renderBackground(OrthographicCamera camera) {

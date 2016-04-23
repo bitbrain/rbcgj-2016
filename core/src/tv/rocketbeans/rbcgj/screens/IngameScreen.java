@@ -15,6 +15,8 @@ import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectType;
 import tv.rocketbeans.rbcgj.core.LevelManager;
 import tv.rocketbeans.rbcgj.core.Levels;
+import tv.rocketbeans.rbcgj.core.MapActionHandler;
+import tv.rocketbeans.rbcgj.core.Teleporter;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
@@ -33,7 +35,9 @@ public class IngameScreen extends AbstractScreen {
 
     private CollisionDetector collisions;
 
-    private boolean camPositionFix = false;
+    private MapActionHandler handler;
+
+    private Teleporter teleporter;
 
     public IngameScreen(NutGame game) {
         super(game);
@@ -47,22 +51,26 @@ public class IngameScreen extends AbstractScreen {
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
         eddy.setType(GameObjectType.EDDY);
         world.registerRenderer(GameObjectType.EDDY, new DirectionalSpriteRenderer(Assets.Textures.EDDY));
+
+        handler = new MapActionHandler();
         lightingManager = new LightingManager();
         lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.37f));
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
         collisions = new CollisionDetector();
-        levelManager = new LevelManager(lightingManager, collisions);
-        world.setController(eddy, new WASDMovementController(collisions));
-        levelManager.loadLevel(Levels.LEVEL_1, eddy);
+        levelManager = new LevelManager(lightingManager, handler, collisions);
+        world.setController(eddy, new WASDMovementController(collisions, handler));
+        levelManager.loadLevel(Levels.DEMO, eddy);
         world.setCameraTracking(eddy);
+
+        teleporter = new Teleporter(levelManager);
+        handler.addListener(teleporter);
     }
 
     @Override
     protected void beforeWorldRender(Batch batch, float delta) {
-        if (!camPositionFix) {
+        if (levelManager.isNowInitialized()) {
             camera.position.x = eddy.getLeft() + eddy.getWidth() / 2f;
             camera.position.y = eddy.getTop() + eddy.getHeight() / 2f;
-            camPositionFix = true;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();
