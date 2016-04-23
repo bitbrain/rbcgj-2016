@@ -16,6 +16,7 @@ import tv.rocketbeans.rbcgj.core.GameObjectType;
 import tv.rocketbeans.rbcgj.core.LevelManager;
 import tv.rocketbeans.rbcgj.core.Levels;
 import tv.rocketbeans.rbcgj.core.MapActionHandler;
+import tv.rocketbeans.rbcgj.core.Teleporter;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
@@ -35,6 +36,8 @@ public class IngameScreen extends AbstractScreen {
     private CollisionDetector collisions;
 
     private MapActionHandler handler;
+
+    private Teleporter teleporter;
 
     private boolean camPositionFix = false;
 
@@ -60,6 +63,9 @@ public class IngameScreen extends AbstractScreen {
         world.setController(eddy, new WASDMovementController(collisions, handler));
         levelManager.loadLevel(Levels.LEVEL_1, eddy);
         world.setCameraTracking(eddy);
+
+        teleporter = new Teleporter(levelManager);
+        handler.addListener(teleporter);
     }
 
     @Override

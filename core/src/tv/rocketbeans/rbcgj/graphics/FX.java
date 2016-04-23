@@ -91,6 +91,14 @@ public final class FX {
         tween.start(tweenManager);
     }
 
+    public void fadeOutIn(float duration) {
+        flash.setAlpha(0f);
+        tweenManager.killTarget(flash);
+
+        Tween tween = Tween.to(flash, SpriteTween.ALPHA, duration).target(1f).repeatYoyo(1, 0f).ease(TweenEquations.easeInOutQuad);
+        tween.start(tweenManager);
+    }
+
     public void fadeIn(float duration) {
         fadeIn(duration, TweenEquations.easeInQuad);
     }
