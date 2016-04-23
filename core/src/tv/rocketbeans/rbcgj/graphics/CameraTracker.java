@@ -13,7 +13,7 @@ public class CameraTracker {
 
     private GameObject target;
 
-    private float speed = 5.2f;
+    private float speed = 2.2f;
 
     private float zoomScale = 0.0025f;
 

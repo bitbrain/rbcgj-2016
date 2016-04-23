@@ -1144,37 +1144,37 @@
   </tile>
   <tile id="244">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="245">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="246">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="247">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="248">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="249">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="250">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="251">
@@ -1210,7 +1210,7 @@
  </layer>
  <layer name="obstacle-base" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFgwn8AuLfA+2IQQx+APHPgXbEKBiU4CsQfwPi70SoHc1nAwdIiadRgAlGy8ChAwCpZw2R
+   eJxjYBgFgwn8AuLfA+2IQQxGw2cU4AJfgfgbEH8nQu0PIP5JW+eMAhyAlHgaBZhgNO0OHQAAsocNkQ==
   </data>
  </layer>
  <layer name="obstacle" width="30" height="20">

@@ -18,12 +18,15 @@ public class GameObject implements Pool.Poolable {
 
     private float zIndex;
 
+    private int direction;
+
     public GameObject() {
         position = new Vector2();
         dimensions = new Vector2();
         lastPosition = new Vector2();
         offset = new Vector2();
         scale = new Vector2(1f, 1f);
+        direction = Direction.DOWN;
     }
 
     public void setType(int typeId) {
@@ -111,6 +114,14 @@ public class GameObject implements Pool.Poolable {
         offset.y = y;
     }
 
+    public void setDirection(int direction) {
+        this.direction = direction;
+    }
+
+    public int getDirection() {
+        return direction;
+    }
+
     public void setZIndex(float zIndex) {
         this.zIndex = zIndex;
     }
@@ -133,5 +144,6 @@ public class GameObject implements Pool.Poolable {
         id = "";
         scale.set(1f, 1f);
         color = Color.WHITE.cpy();
+        direction = Direction.DOWN;
     }
 }

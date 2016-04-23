@@ -37,6 +37,7 @@ public class GameObjectMover {
             timer.reset();
             object.move(-GameConfig.CELL_SCALE, 0f);
             object.setOffset(GameConfig.CELL_SCALE, 0f);
+            object.setDirection(Direction.LEFT);
             Tween.to(object, GameObjectTween.OFFSET_X, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
@@ -48,6 +49,7 @@ public class GameObjectMover {
             timer.reset();
             object.move(GameConfig.CELL_SCALE, 0f);
             object.setOffset(-GameConfig.CELL_SCALE, 0f);
+            object.setDirection(Direction.RIGHT);
             Tween.to(object, GameObjectTween.OFFSET_X, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
@@ -59,6 +61,7 @@ public class GameObjectMover {
             timer.reset();
             object.move(0f, GameConfig.CELL_SCALE);
             object.setOffset(0f, -GameConfig.CELL_SCALE);
+            object.setDirection(Direction.UP);
             Tween.to(object, GameObjectTween.OFFSET_Y, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
@@ -70,6 +73,7 @@ public class GameObjectMover {
             timer.reset();
             object.move(0f, -GameConfig.CELL_SCALE);
             object.setOffset(0f, GameConfig.CELL_SCALE);
+            object.setDirection(Direction.DOWN);
             Tween.to(object, GameObjectTween.OFFSET_Y, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
