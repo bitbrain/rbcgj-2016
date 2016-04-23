@@ -45,7 +45,8 @@ public final class Assets {
      */
     public enum Maps {
         DEFAULT("maps/default.tmx"),
-        LEVEL1("maps/level1.tmx");
+        LEVEL1("maps/level1.tmx"),
+        LEVEL2("maps/level2.tmx");
 
         private String path;
 
