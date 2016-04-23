@@ -20,6 +20,7 @@ import tv.rocketbeans.rbcgj.core.Teleporter;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
+import tv.rocketbeans.rbcgj.ui.Styles;
 import tv.rocketbeans.rbcgj.util.Colors;
 
 public class IngameScreen extends AbstractScreen {
@@ -71,6 +72,9 @@ public class IngameScreen extends AbstractScreen {
         if (levelManager.isNowInitialized()) {
             camera.position.x = eddy.getLeft() + eddy.getWidth() / 2f;
             camera.position.y = eddy.getTop() + eddy.getHeight() / 2f;
+        }
+        if (Gdx.input.isKeyJustPressed(Input.Keys.F)) {
+            tooltip.create(eddy.getLeft(), eddy.getTop() + eddy.getHeight() * 3f, Styles.STORY, "Das sieht wirklich sehr interessant aus!");
         }
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();

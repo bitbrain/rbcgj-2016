@@ -37,7 +37,7 @@ public class Tooltip {
 
     private Tooltip() {
         setTweenEquation(TweenEquations.easeOutCubic);
-        duration = 0.9f;
+        duration = 4.5f;
         scale = 1.0f;
     }
 
