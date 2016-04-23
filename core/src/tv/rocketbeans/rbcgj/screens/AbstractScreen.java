@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -19,6 +20,8 @@ import aurelienribon.tweenengine.TweenEquation;
 import aurelienribon.tweenengine.TweenEquations;
 import aurelienribon.tweenengine.TweenManager;
 import tv.rocketbeans.rbcgj.NutGame;
+import tv.rocketbeans.rbcgj.assets.AssetManager;
+import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.core.GameWorld;
 import tv.rocketbeans.rbcgj.graphics.FX;
 import tv.rocketbeans.rbcgj.tweens.SharedTweenManager;
@@ -54,6 +57,8 @@ public class AbstractScreen implements Screen {
 
     protected InputMultiplexer input;
 
+    private Sprite background;
+
     @Override
     public final void show() {
         camera = new OrthographicCamera();
@@ -61,6 +66,7 @@ public class AbstractScreen implements Screen {
         batch = new SpriteBatch();
         input = new InputMultiplexer();
         fx.init(tweenManager, camera);
+        background = new Sprite(AssetManager.getTexture(Assets.Textures.BACKGROUND));
     }
 
     @Override
@@ -74,6 +80,9 @@ public class AbstractScreen implements Screen {
         stage.act(delta);
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
+        background.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        background.setPosition(-camera.position.x + Gdx.graphics.getWidth() / 2f, -camera.position.y + Gdx.graphics.getHeight() / 2f);
+        background.draw(batch);
         beforeWorldRender(batch, delta);
         world.updateAndRender(batch, delta);
         afterWorldRender(batch, delta);

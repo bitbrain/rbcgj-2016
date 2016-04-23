@@ -26,7 +26,8 @@ public final class Assets {
         SHADOW("textures/shadow.png"),
         RBCGJ("textures/rbcgj.png"),
         LOGO("textures/logo.png"),
-        BUTTON_9("textures/button.9.png");
+        BUTTON_9("textures/button.9.png"),
+        BACKGROUND("textures/background.png");
 
         private String path;
 
