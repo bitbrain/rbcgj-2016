@@ -7,6 +7,7 @@ import tv.rocketbeans.rbcgj.screens.IngameScreen;
 import tv.rocketbeans.rbcgj.screens.LoadingScreen;
 import tv.rocketbeans.rbcgj.screens.MenuScreen;
 import tv.rocketbeans.rbcgj.screens.ScreenHandler;
+import tv.rocketbeans.rbcgj.screens.StoryScreen;
 import tv.rocketbeans.rbcgj.ui.Styles;
 
 public class NutGame extends Game {
@@ -16,7 +17,7 @@ public class NutGame extends Game {
         AssetManager.init();
         Styles.init();
         ScreenHandler.setFull();
-        setScreen(new LoadingScreen(this));
+        setScreen(new StoryScreen(this));
     }
 
     @Override

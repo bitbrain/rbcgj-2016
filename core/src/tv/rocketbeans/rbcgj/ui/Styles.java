@@ -26,9 +26,8 @@ public class Styles {
         MENU_BUTTON.checked = GraphicsFactory.createDrawable(Assets.Textures.BUTTON_9, Colors.UI_HIGHLIGHTED);
         MENU_BUTTON.over = GraphicsFactory.createDrawable(Assets.Textures.BUTTON_9, Colors.UI_HIGHLIGHTED);
 
-        CREDITS.font = AssetManager.getFont(Assets.Fonts.MEDIUM);
+        CREDITS.font = AssetManager.getFont(Assets.Fonts.SMALL);
         CREDITS.fontColor = Colors.UI_HIGHLIGHTED.cpy();
-        CREDITS.fontColor.a *= 0.5f;
 
     }
 }

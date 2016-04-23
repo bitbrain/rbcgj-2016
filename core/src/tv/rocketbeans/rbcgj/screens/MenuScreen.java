@@ -90,7 +90,6 @@ public class MenuScreen extends AbstractScreen {
         layout.center().add(closeButton).height(70).width(270).row();
 
         Label credits = new Label("game by Miguel Gonzalez and Simon Janssen", Styles.CREDITS);
-        credits.setFontScale(0.3f);
         layout.center().add(credits).padTop(90f).row();
 
         stage.addActor(layout);
