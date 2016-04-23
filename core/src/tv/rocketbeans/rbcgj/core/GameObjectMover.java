@@ -1,6 +1,9 @@
 package tv.rocketbeans.rbcgj.core;
 
+import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.Tween;
+import aurelienribon.tweenengine.TweenCallback;
+import aurelienribon.tweenengine.TweenEquation;
 import aurelienribon.tweenengine.TweenEquations;
 import aurelienribon.tweenengine.TweenManager;
 import tv.rocketbeans.rbcgj.GameConfig;
@@ -41,6 +44,7 @@ public class GameObjectMover {
             Tween.to(object, GameObjectTween.OFFSET_X, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
+            animateMovement(object);
         }
     }
 
@@ -53,6 +57,7 @@ public class GameObjectMover {
             Tween.to(object, GameObjectTween.OFFSET_X, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
+            animateMovement(object);
         }
     }
 
@@ -65,6 +70,7 @@ public class GameObjectMover {
             Tween.to(object, GameObjectTween.OFFSET_Y, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
+            animateMovement(object);
         }
     }
 
@@ -77,6 +83,7 @@ public class GameObjectMover {
             Tween.to(object, GameObjectTween.OFFSET_Y, GameConfig.MOVEMENT_TIME)
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
+            animateMovement(object);
         }
     }
 
@@ -98,6 +105,41 @@ public class GameObjectMover {
 
     private boolean canMoveUp() {
         return !collisions.isCollision(object.getLeft(), object.getTop() + GameConfig.CELL_SCALE);
+    }
+
+    private void animateMovement(final GameObject object) {
+        Tween.to(object, GameObjectTween.SCALE_X, GameConfig.MOVEMENT_TIME / 2f)
+                .ease(TweenEquations.easeInOutQuad)
+                .target(0.9f)
+                .repeatYoyo(1, 0f)
+                .setCallbackTriggers(TweenCallback.COMPLETE)
+                .setCallback(new TweenCallback() {
+                    @Override
+                    public void onEvent(int type, BaseTween<?> source) {
+                        Tween.to(object, GameObjectTween.SCALE_X, GameConfig.MOVEMENT_TIME / 2f)
+                            .target(1.15f)
+                            .repeatYoyo(1, 0f)
+                            .ease(TweenEquations.easeInOutQuad)
+                            .start(tweenManager);
+                    }
+                })
+                .start(tweenManager);
+        Tween.to(object, GameObjectTween.SCALE_Y, GameConfig.MOVEMENT_TIME / 2f)
+                .ease(TweenEquations.easeInOutQuad)
+                .target(0.95f)
+                .repeatYoyo(1, 0f)
+                .setCallbackTriggers(TweenCallback.COMPLETE)
+                .setCallback(new TweenCallback() {
+                    @Override
+                    public void onEvent(int type, BaseTween<?> source) {
+                        Tween.to(object, GameObjectTween.SCALE_Y, GameConfig.MOVEMENT_TIME / 2f)
+                                .target(1.05f)
+                                .repeatYoyo(1, 0f)
+                                .ease(TweenEquations.easeInOutQuad)
+                                .start(tweenManager);
+                    }
+                })
+                .start(tweenManager);
     }
 }
 
