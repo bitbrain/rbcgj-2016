@@ -79,6 +79,7 @@ public class StoryScreen extends AbstractScreen {
             AssetManager.getSound(Assets.Sounds.START_GAME).play();
         } else if (Gdx.input.isKeyJustPressed(Input.Keys.ANY_KEY)) {
             if (teller.hasNextStoryPoint()) {
+                AssetManager.getSound(Assets.Sounds.MENU_CHOOSE).play();
                 tweenManager.killTarget(label);
                 Tween.to(label, ActorTween.ALPHA, 0.5f)
                         .target(0f)
