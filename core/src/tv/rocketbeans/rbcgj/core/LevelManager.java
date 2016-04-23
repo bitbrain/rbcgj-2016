@@ -43,6 +43,8 @@ public class LevelManager {
 
     private MapActionHandler actionHandler;
 
+    private boolean initialized;
+
     public LevelManager(LightingManager lightingManager, MapActionHandler handler, CollisionDetector collisions) {
         this.lightingManager = lightingManager;
         staticLights = new ArrayList<PointLight>();
@@ -51,6 +53,7 @@ public class LevelManager {
     }
 
     public void loadLevel(Levels levels, GameObject player) {
+        initialized = true;
         for (PointLight light : staticLights) {
             light.remove(true);
         }
@@ -76,6 +79,10 @@ public class LevelManager {
         FX.getInstance().fadeIn(2.5f);
     }
 
+    public boolean isNowInitialized() {
+        return initialized;
+    }
+
     public void renderForeground(OrthographicCamera camera) {
         if (mapRenderer != null) {
             mapRenderer.getBatch().begin();
@@ -83,6 +90,7 @@ public class LevelManager {
             mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(1));
             mapRenderer.getBatch().end();
         }
+        initialized = false;
     }
 
     public void renderBackground(OrthographicCamera camera) {

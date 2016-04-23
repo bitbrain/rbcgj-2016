@@ -39,8 +39,6 @@ public class IngameScreen extends AbstractScreen {
 
     private Teleporter teleporter;
 
-    private boolean camPositionFix = false;
-
     public IngameScreen(NutGame game) {
         super(game);
     }
@@ -61,7 +59,7 @@ public class IngameScreen extends AbstractScreen {
         collisions = new CollisionDetector();
         levelManager = new LevelManager(lightingManager, handler, collisions);
         world.setController(eddy, new WASDMovementController(collisions, handler));
-        levelManager.loadLevel(Levels.LEVEL_1, eddy);
+        levelManager.loadLevel(Levels.DEMO, eddy);
         world.setCameraTracking(eddy);
 
         teleporter = new Teleporter(levelManager);
@@ -70,10 +68,9 @@ public class IngameScreen extends AbstractScreen {
 
     @Override
     protected void beforeWorldRender(Batch batch, float delta) {
-        if (!camPositionFix) {
+        if (levelManager.isNowInitialized()) {
             camera.position.x = eddy.getLeft() + eddy.getWidth() / 2f;
             camera.position.y = eddy.getTop() + eddy.getHeight() / 2f;
-            camPositionFix = true;
         }
         if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();
