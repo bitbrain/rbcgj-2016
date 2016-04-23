@@ -8,7 +8,6 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
-import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ import box2dLight.PointLight;
 import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.assets.Assets;
-import tv.rocketbeans.rbcgj.core.tmx.TmxObjectType;
+import tv.rocketbeans.rbcgj.core.tmx.Tmx;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
 
 public class LevelManager {
@@ -74,14 +73,14 @@ public class LevelManager {
         for (MapLayer layer : map.getLayers()) {
             for (MapObject object : layer.getObjects()) {
                 MapProperties properties = object.getProperties();
-                if (properties.get("type").equals(TmxObjectType.LIGHT)) {
-                    Float r = Float.valueOf((String)properties.get("r"));
-                    Float g = Float.valueOf((String)properties.get("g"));
-                    Float b = Float.valueOf((String)properties.get("b"));
-                    Float a = Float.valueOf((String)properties.get("a"));
-                    Float radius = Float.valueOf((String)properties.get("radius"));
-                    Float x = (Float)properties.get("x") + GameConfig.CELL_SCALE / 2f;
-                    Float y = (Float)properties.get("y") + GameConfig.CELL_SCALE / 2f;
+                if (properties.get(Tmx.TYPE).equals(Tmx.LIGHT)) {
+                    Float r = Float.valueOf((String)properties.get(Tmx.RED));
+                    Float g = Float.valueOf((String)properties.get(Tmx.GREEN));
+                    Float b = Float.valueOf((String)properties.get(Tmx.BLUE));
+                    Float a = Float.valueOf((String)properties.get(Tmx.ALPHA));
+                    Float radius = Float.valueOf((String)properties.get(Tmx.RADIUS));
+                    Float x = (Float)properties.get(Tmx.X) + GameConfig.CELL_SCALE / 2f;
+                    Float y = (Float)properties.get(Tmx.Y) + GameConfig.CELL_SCALE / 2f;
                     PointLight light = lightingManager.addPointLight(radius, new Color(r, g, b, a), x, y);
                     staticLights.add(light);
                 }
