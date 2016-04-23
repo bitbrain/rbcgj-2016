@@ -52,6 +52,7 @@ public class LevelManager {
             light.remove(true);
         }
         staticLights.clear();
+        lightingManager.setAmbientLight(levels.getAmbientColor());
         if (mapRenderer != null) {
             mapRenderer.dispose();
         }
