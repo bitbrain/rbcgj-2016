@@ -29,6 +29,7 @@ public class LoadingScreen extends AbstractScreen {
     protected void onCreateStage(Stage stage, int width, int height) {
         super.onCreateStage(stage, width, height);
 
+        AssetManager.getMusic(Assets.Musics.TITLE_SCREEN).setVolume(0.6f);
         AssetManager.getMusic(Assets.Musics.TITLE_SCREEN).play();
         setBackgroundColor(Colors.BACKGROUND);
         logo = new Sprite(AssetManager.getTexture(Assets.Textures.RBCGJ));

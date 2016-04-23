@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -51,7 +52,17 @@ public class MenuScreen extends AbstractScreen {
         playButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                AssetManager.getMusic(Assets.Musics.TITLE_SCREEN).stop();
+                AssetManager.getSound(Assets.Sounds.START_GAME).play(1f, 1f, 0f);
                 setScreen(new IngameScreen(game));
+            }
+
+            @Override
+            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
+                super.enter(event, x, y, pointer, fromActor);
+                if (fromActor == null) {
+                    AssetManager.getSound(Assets.Sounds.MENU_CHOOSE).play(1f, 1f, 0f);
+                }
             }
         });
         layout.center().add(playButton).height(70).width(270f).padBottom(20f).row();
@@ -59,7 +70,16 @@ public class MenuScreen extends AbstractScreen {
         closeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
+                AssetManager.getMusic(Assets.Musics.TITLE_SCREEN).stop();
                 Gdx.app.exit();
+            }
+
+            @Override
+            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
+                super.enter(event, x, y, pointer, fromActor);
+                if (fromActor == null) {
+                    AssetManager.getSound(Assets.Sounds.MENU_CHOOSE).play(1f, 1f, 0f);
+                }
             }
         });
         layout.center().add(closeButton).height(70).width(270).row();

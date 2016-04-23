@@ -88,7 +88,9 @@ public final class Assets {
 
         STEP_1("sound/steps_1.ogg"),
         STEP_2("sound/steps_2.ogg"),
-        STEP_3("sound/steps_3.ogg");
+        STEP_3("sound/steps_3.ogg"),
+        MENU_CHOOSE("sound/menu_choose.ogg"),
+        START_GAME("sound/start_new_game.ogg");
 
         private String path;
 

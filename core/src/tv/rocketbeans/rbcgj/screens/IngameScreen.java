@@ -59,7 +59,7 @@ public class IngameScreen extends AbstractScreen {
         collisions = new CollisionDetector();
         levelManager = new LevelManager(lightingManager, handler, collisions);
         world.setController(eddy, new WASDMovementController(collisions, handler));
-        levelManager.loadLevel(Levels.DEMO, eddy);
+        levelManager.loadLevel(Levels.LEVEL_1, eddy);
         world.setCameraTracking(eddy);
 
         teleporter = new Teleporter(levelManager);

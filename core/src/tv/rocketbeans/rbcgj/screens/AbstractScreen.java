@@ -81,7 +81,7 @@ public class AbstractScreen implements Screen {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         background.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-        background.setPosition(-camera.position.x + Gdx.graphics.getWidth() / 2f, -camera.position.y + Gdx.graphics.getHeight() / 2f);
+        background.setPosition(camera.position.x - Gdx.graphics.getWidth() / 2f, camera.position.y - Gdx.graphics.getHeight() / 2f);
         background.draw(batch);
         beforeWorldRender(batch, delta);
         world.updateAndRender(batch, delta);
