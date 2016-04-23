@@ -45,6 +45,8 @@ public class GameObjectMover {
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
             animateMovement(object);
+        } else if (isReadyToMove()) {
+            object.setDirection(Direction.LEFT);
         }
     }
 
@@ -58,6 +60,8 @@ public class GameObjectMover {
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
             animateMovement(object);
+        } else if (isReadyToMove()) {
+            object.setDirection(Direction.RIGHT);
         }
     }
 
@@ -71,6 +75,8 @@ public class GameObjectMover {
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
             animateMovement(object);
+        } else if (isReadyToMove()) {
+            object.setDirection(Direction.UP);
         }
     }
 
@@ -84,6 +90,8 @@ public class GameObjectMover {
                     .ease(TweenEquations.easeNone)
                     .target(0f).start(tweenManager);
             animateMovement(object);
+        } else if (isReadyToMove()) {
+            object.setDirection(Direction.DOWN);
         }
     }
 

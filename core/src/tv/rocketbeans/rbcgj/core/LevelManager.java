@@ -63,7 +63,7 @@ public class LevelManager {
         if (mapRenderer != null) {
             mapRenderer.getBatch().begin();
             mapRenderer.setView(camera);
-            mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(2));
+            mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(1));
             mapRenderer.getBatch().end();
         }
     }
@@ -73,7 +73,6 @@ public class LevelManager {
             mapRenderer.setView(camera);
             mapRenderer.getBatch().begin();
             mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(0));
-            mapRenderer.renderTileLayer((TiledMapTileLayer) layers.get(1));
             mapRenderer.getBatch().end();
         }
     }

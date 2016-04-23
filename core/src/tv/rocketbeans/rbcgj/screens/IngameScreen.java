@@ -15,7 +15,6 @@ import tv.rocketbeans.rbcgj.core.LevelManager;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
-import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
 import tv.rocketbeans.rbcgj.util.Colors;
 
 public class IngameScreen extends AbstractScreen {
@@ -51,7 +50,7 @@ public class IngameScreen extends AbstractScreen {
         collisions = new CollisionDetector();
         levelManager = new LevelManager(lightingManager, collisions);
         world.setController(eddy, new WASDMovementController(collisions));
-        levelManager.loadMap(Assets.Maps.LEVEL_1, eddy);
+        levelManager.loadMap(Assets.Maps.DEFAULT, eddy);
     }
 
     @Override
