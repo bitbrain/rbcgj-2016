@@ -86,7 +86,9 @@ public final class Assets {
      */
     public enum Sounds {
 
-        TEST("");
+        STEP_1("sound/steps_1.ogg"),
+        STEP_2("sound/steps_2.ogg"),
+        STEP_3("sound/steps_3.ogg");
 
         private String path;
 
