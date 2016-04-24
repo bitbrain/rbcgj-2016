@@ -60,7 +60,7 @@ public class IngameScreen extends AbstractScreen {
         lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.37f));
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
         collisions = new CollisionDetector();
-        levelManager = new LevelManager(lightingManager, handler, collisions);
+        levelManager = new LevelManager(lightingManager, world, handler, collisions);
         world.setController(eddy, new WASDMovementController(collisions, handler));
         levelManager.loadLevel(Levels.LEVEL_1, eddy);
         world.setCameraTracking(eddy);

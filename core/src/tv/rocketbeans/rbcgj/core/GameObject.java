@@ -51,6 +51,7 @@ public class GameObject implements Pool.Poolable {
         this.lastPosition.y = this.position.y;
         this.position.x = x;
         this.position.y = y;
+        zIndex = y;
     }
 
     public float getLeft() {

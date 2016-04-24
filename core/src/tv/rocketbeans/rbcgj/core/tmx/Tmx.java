@@ -15,4 +15,11 @@ public interface Tmx {
     String HEIGHT = "height";
     String COLLISION = "collision";
     String SPAWN = "spawn";
+    String NPC = "npc";
+    String NUT = "nut";
+    String RAISIN = "raisin";
+    String BRAZIL = "brazilnut";
+    String CASHEW = "cashew";
+    String ALMOND = "almond";
+
 }
