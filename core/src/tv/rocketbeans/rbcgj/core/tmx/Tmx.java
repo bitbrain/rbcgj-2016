@@ -21,5 +21,6 @@ public interface Tmx {
     String BRAZIL = "brazilnut";
     String CASHEW = "cashew";
     String ALMOND = "almond";
-
+    String INFO = "info";
+    String ANSWER = "answer";
 }

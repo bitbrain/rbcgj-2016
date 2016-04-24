@@ -24,6 +24,7 @@ public class MapActionHandler {
 
     public interface MapAPI {
         MapObject getPortalById(String id);
+        MapObject getObjectAt(int indexX, int indexY);
     }
 
     private MapObject[][] objects;
@@ -36,6 +37,15 @@ public class MapActionHandler {
         @Override
         public MapObject getPortalById(String id) {
             return portals.get(id);
+        }
+
+        @Override
+        public MapObject getObjectAt(int indexX, int indexY) {
+            if (indexX >= 0 && indexX < width && indexY >= 0 && indexY < height) {
+                return objects[indexX][indexY];
+            } else {
+                return null;
+            }
         }
     };
 
