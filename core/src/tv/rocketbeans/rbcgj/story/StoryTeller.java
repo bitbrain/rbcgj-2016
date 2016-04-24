@@ -21,7 +21,7 @@ public class StoryTeller {
     }
 
     private void initTexts() {
-        texts.add("Das Leben war gut fuer Eddy die Erdnuss und seine vier Freunde Rosina die Rosine, Bernhardt die Mandoline spielende Mandel, Lord William Chashew II. und Jeremy die teilweise paralysierte Paranuss.")  
+        texts.add("Das Leben war gut fuer Eddy die Erdnuss und seine vier Freunde Rosina die Rosine, Bernhardt die Mandoline spielende Mandel, Lord William Chashew II. und Jeremy die teilweise paralysierte Paranuss.");
         texts.add("In ihrer eigenen Studentenfutter-Packungs-WG, ganz in der Naehe des Stadtkerns, lachten, liebten und feierten sie ohne Unterlass.");
         texts.add("Bis eines Tages ein fauler Student die Packung der fuenf Freunde mitnahm und - faul wie er nun mal war - mitten in einem dunklen Wald wegwarf.");
         texts.add("Die Nuss-Gang hoerte seltsame Geraeusche von draussen, als ploetzlich gigantische Krallen in die Tuete langten und Eddies Freunde verschleppten.");
