@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="16" height="8" tilewidth="32" tileheight="32" nextobjectid="5">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="16" height="8" tilewidth="32" tileheight="32" nextobjectid="7">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1059,10 +1059,11 @@
     <property name="portal-id" value="door1"/>
    </properties>
   </object>
-  <object id="4" name="door2" type="door" x="256" y="96.5" width="34" height="27.5">
+  <object id="5" name="Sir William" type="npc" x="194" y="130" width="29" height="28">
    <properties>
-    <property name="portal" value="@level/level_1"/>
-    <property name="portal-id" value="door2"/>
+    <property name="answer" value="Ich..  ich.. ahh.."/>
+    <property name="info" value="Das ist mein Freund William aus England.. oh Nussgott, was ist geschehen"/>
+    <property name="nut" value="cashew"/>
    </properties>
   </object>
  </objectgroup>
