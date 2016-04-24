@@ -154,16 +154,16 @@ public class LevelManager {
                     PointLight light = lightingManager.addPointLight(radius, new Color(r, g, b, a), x, y);
                     staticLights.add(light);
                 } else if (properties.get(Tmx.TYPE).equals(Tmx.SPAWN)) {
-                    float x = (Float)properties.get(Tmx.X) + GameConfig.CELL_SCALE / 2f;
-                    float y = (Float)properties.get(Tmx.Y) + GameConfig.CELL_SCALE / 2f;
+                    float x = (Float)properties.get(Tmx.X);
+                    float y = (Float)properties.get(Tmx.Y);
                     // Normalize spawn position
                     int xIndex = (int)Math.floor(x / GameConfig.CELL_SCALE);
                     int yIndex = (int)Math.floor(y / GameConfig.CELL_SCALE);
                     spawn.x = xIndex * GameConfig.CELL_SCALE;
                     spawn.y = yIndex * GameConfig.CELL_SCALE;
                 } else if (properties.get(Tmx.TYPE).equals(Tmx.NPC)) {
-                    float x = (Float)properties.get(Tmx.X) + GameConfig.CELL_SCALE / 2f;
-                    float y = (Float)properties.get(Tmx.Y) + GameConfig.CELL_SCALE / 2f;
+                    float x = (Float)properties.get(Tmx.X);
+                    float y = (Float)properties.get(Tmx.Y);
                     String type = (String)properties.get(Tmx.NUT);
                     // Normalize spawn position
                     x = (int)Math.floor(x / GameConfig.CELL_SCALE) * GameConfig.CELL_SCALE;
@@ -175,8 +175,8 @@ public class LevelManager {
                     gameObjects.add(npc);
                     mapping.put(object, npc);
                 } else if (properties.get(Tmx.TYPE).equals(Tmx.CRUMB)) {
-                    float x = (Float)properties.get(Tmx.X) + GameConfig.CELL_SCALE / 2f;
-                    float y = (Float)properties.get(Tmx.Y) + GameConfig.CELL_SCALE / 2f;
+                    float x = (Float)properties.get(Tmx.X);
+                    float y = (Float)properties.get(Tmx.Y);
                     // Normalize spawn position
                     x = (int)Math.floor(x / GameConfig.CELL_SCALE) * GameConfig.CELL_SCALE;
                     y = (int)Math.floor(y / GameConfig.CELL_SCALE) * GameConfig.CELL_SCALE;

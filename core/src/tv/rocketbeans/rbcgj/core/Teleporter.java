@@ -4,16 +4,25 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapProperties;
 
 import tv.rocketbeans.rbcgj.GameConfig;
+import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.graphics.FX;
+import tv.rocketbeans.rbcgj.screens.AbstractScreen;
+import tv.rocketbeans.rbcgj.screens.GameOverScreen;
 
 public class Teleporter implements MapActionHandler.MapActionListener {
 
     private LevelManager levelManager;
 
-    public Teleporter(LevelManager levelManager) {
+    private AbstractScreen screen;
+
+    private NutGame game;
+
+    public Teleporter(LevelManager levelManager, AbstractScreen screen, NutGame game) {
         this.levelManager = levelManager;
+        this.screen = screen;
+        this.game = game;
     }
 
     @Override
@@ -40,6 +49,8 @@ public class Teleporter implements MapActionHandler.MapActionListener {
                     // noOp
                     System.out.println("No level with id " + portalId);
                 }
+            } else if (portalId.contains("@gameover")) {
+                screen.setScreen(new GameOverScreen(game));
             } else {
                 System.out.println("No portal with id " + portalId);
             }

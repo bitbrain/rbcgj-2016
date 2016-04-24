@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="57">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="61">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1366,7 +1366,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJy91D9OQkEQx/FdRFBpvYMtFDbewViYSFBR7kALEUHBjsROQoPGP/jvCtjpRWw5g9+XhTjKvN0XEiD5JC87836wmQnGLOZjsYI0VpFBFmtYR8pT31DyttCfU17J253UuoF3t+3v87T3QMmrmtm+qZ6SK3tqSt6Np9+XFbn13Fe7T+h7vgL37cW8L5/3xfM4wX2lDq489U07mzfy9L/hPaYW3SVuX0JzjJtRaF+SzONTnC1jX0YJs7QebV++A1lyL/9navuSU/qT0valIPK0OfvsKHlFzko4xBGOUcY1f3x7xumm/tZOcIqKklfn7AwNnKOJlnVzj37vwLg5ytoFLtFW8u44u8cDHvGEoXVz/zBu36I5ytozXvAq8n4Aw2+liQ==
+   eJy9lDtKBEEURavaL5q6B1MNTNyDOCAo/t2DqeL/kw2YOUyiMo7/LYyZbsTULehpaoRne6u6IhtO07x361KPd2nn6p8vz6twzhcZ4v5THhmAQRiCYRiBUehCAzqR/pjwm4R2hUaEqm5K+M31e02hbxsf6/ejXRR+20Kn7qk0O8LvsuIRu6fqXSfmnfFpT1V7r5m3FTlvvxfM92fGvJYzOE/0J/xfv15C/wwvkV45SywvLaGPzWupy0vOPt5M7T/y0sv0UhqVl48aL5vLqqfKy7jQ56LyMm381J5TzAq/JWrLsAKrsAbrcME/dN4FmsXv3gZswpbw26W2B/twAIdw5MPey/teubBH2zuGEzgVfjfUOnALXbiDex/2/upC3so92t4DPMKT8fsG8B+lQA==
   </data>
  </layer>
  <layer name="obstacles" width="20" height="20">
@@ -1421,6 +1421,16 @@
     <property name="answer" value="Ich.. ich habe dich immer geliebt.. urgh..."/>
     <property name="info" value="Oh Rosina.. alle unsere Freunde sind tot."/>
     <property name="nut" value="raisin"/>
+   </properties>
+  </object>
+  <object id="57" x="326" y="40" width="22" height="18">
+   <properties>
+    <property name="text" value="The squirrel is a lie!"/>
+   </properties>
+  </object>
+  <object id="58" name="portal" type="portal" x="331" y="8" width="22" height="21">
+   <properties>
+    <property name="portal" value="@gameover"/>
    </properties>
   </object>
  </objectgroup>
