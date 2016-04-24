@@ -37,7 +37,7 @@ public class Tooltip {
 
     private Tooltip() {
         setTweenEquation(TweenEquations.easeOutCubic);
-        duration = 3.5f;
+        duration = 2.5f;
         scale = 1.0f;
     }
 
@@ -77,7 +77,7 @@ public class Tooltip {
         tooltip.setPosition(x, y);
         stage.addActor(tooltip);
         tooltips.add(tooltip);
-        Tween.to(tooltip, ActorTween.ALPHA, this.duration).delay(1.5f).target(0f).setCallbackTriggers(TweenCallback.COMPLETE)
+        Tween.to(tooltip, ActorTween.ALPHA, this.duration).delay(2.8f).target(0f).setCallbackTriggers(TweenCallback.COMPLETE)
                 .setCallback(new TweenCallback() {
                     @Override
                     public void onEvent(int type, BaseTween<?> source) {

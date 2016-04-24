@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="72">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="73">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -593,6 +593,11 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
+  <tile id="245">
+   <properties>
+    <property name="collision" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="266">
    <properties>
     <property name="collision" type="bool" value="true"/>
@@ -928,6 +933,11 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
+  <tile id="469">
+   <properties>
+    <property name="collision" value=""/>
+   </properties>
+  </tile>
   <tile id="470">
    <properties>
     <property name="collision" type="bool" value="true"/>
@@ -936,6 +946,11 @@
   <tile id="471">
    <properties>
     <property name="collision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="473">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="494">
@@ -963,9 +978,14 @@
     <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
+  <tile id="507">
+   <properties>
+    <property name="collision" value=""/>
+   </properties>
+  </tile>
   <tile id="508">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="509">
@@ -988,6 +1008,11 @@
     <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
+  <tile id="545">
+   <properties>
+    <property name="collision" value=""/>
+   </properties>
+  </tile>
   <tile id="546">
    <properties>
     <property name="collision" type="bool" value="true"/>
@@ -996,6 +1021,11 @@
   <tile id="547">
    <properties>
     <property name="collision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="549">
+   <properties>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="647">
@@ -1189,7 +1219,7 @@
  </layer>
  <layer name="obstacles" width="50" height="51">
   <data encoding="base64" compression="zlib">
-   eJztmL1Ow0AMgPPDgyDBkrfI1LmFvgA/zdyNto/BwMbPY3RnhxEWHoAdxgoscRKnk9PzETvxhfskK2ni+uzcnWVfluGclFl2CjIvf36/5S2KCFRdbj2MFfi/BtmYOMqC/l+qLrcexh34fw/yYOKoAmxRdbn1EjqYDe0AE1dDO8BEmg9d3A7tABNpXeliLOvqUdj+0qrvpua+tt5fM43zzmSnjRtPHBOhcasDIcNKeMnDRCu7nC6aOSrC5HjgfuHLfM888r7FFwfWJ7vPDlk9+htYHLX1HuuT3WdSuTQE33xgfbLG3lnj/mise+pca4zjP9PnfHQ5I/TRZxxdzgh9cMSB1VuvyLeXzHNpn//CUW/tq6WxuaXyDH48FbSrZj7Bv4+CduVAcy3tY8tgw83lkrldEjeXS+Z2SdxcrrGGTYyTWPe+S6x732Usez+tK110XVeUs68YoJx9xUAsZ1+JhM0ZrNFzkAuQS5AFSNPyrE2Xw0bIGJjON3uMctE=
+   eJztmL1uAjEMgO+HB0GC5d7iJuYW+gL9u5mNto/BwAbtY3TvTsd26QN0h25VMeKkRpGPOJzDOVE+ybojZxI7sa0kSYIzzpNkAnKVH35/pQ2KCFRdbj2MB7D/EeSp9iPP6P+l6nLrYazA/meQl9qPwqIvqi63XkQGl10bwMSsawOYiOshi2XXBjAR40oWocTVm+P+p8r+7qJ+L5Xvc6Zxvpn6aWJh8GPkaNyi56hjIXykdiKV35QukhlkdjLs+LzwV89n6vm5xeQHdk7W2/qsFp0G5kepfMfOyXobtZb+WNhli2k9sHOyxLPz3o/9PEnKj0p5p651KHkeCueMqzZ3hCbOGVdt7ghNcPiB7bc+kbl3Wedinv/Dsd86tpfG1pbKO9ixzmhPyWzBvk1Ge3IgeS9t4pWhD72Wu6ztLtFrucva7hK9lkvcw0bCxNfc1/E193VCyf0YV7JoG1eUuy8foNx9+YAvd1+RiMo1xOgNyC3IHcg9SNXQ1qTL0YfNGJjODjyudbM=
   </data>
  </layer>
  <objectgroup name="objects">
@@ -1372,7 +1402,7 @@
   </object>
   <object id="50" name="Gehen wir Nuesse" x="929" y="1505.25" width="29.75" height="30.0833">
    <properties>
-    <property name="text" value="Okay. Gehen wir Nuesse"/>
+    <property name="text" value="Okay. Gehen wir!"/>
    </properties>
   </object>
   <object id="54" type="npc" x="1316.25" y="867.25" width="24.75" height="26.5">
@@ -1386,21 +1416,11 @@
     <property name="text" value="Schon durch? Naja. Ist halt kein Dark Souls."/>
    </properties>
   </object>
-  <object id="57" name="Lord Cashew" type="npc" x="897.515" y="899.394" width="28.303" height="25.5152">
+  <object id="57" name="Lord Cashew" type="npc" x="930.515" y="931.394" width="28.303" height="25.5152">
    <properties>
-    <property name="info" value="Lord Cashew. Oh mein Gott.  Es hat ihn vollkommen zerktuemelt.  Was fuer ein Monster"/>
+    <property name="info" value="Lord Cashew. Oh mein Gott.  Es hat ihn vollkommen zerkruemelt.  Was fuer ein Monster!"/>
     <property name="nut" value="cashew"/>
    </properties>
-  </object>
-  <object id="60" name="light" type="light" x="891.136" y="892.545" width="41" height="40">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="0"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
   </object>
   <object id="61" name="Nussfakten 1" x="1185.75" y="257.75" width="28.25" height="28.25">
    <properties>
@@ -1420,6 +1440,11 @@
   <object id="69" name="Raketen" x="994.833" y="357.167" width="27.6667" height="22.5833">
    <properties>
     <property name="text" value="Ob man mit einem Treibstoff aus Nuessen auch Raketen antreiben koennte?"/>
+   </properties>
+  </object>
+  <object id="72" name="Angst" x="194.125" y="352.958" width="29.75" height="30.0833">
+   <properties>
+    <property name="text" value="Ich habe Angst..."/>
    </properties>
   </object>
  </objectgroup>
