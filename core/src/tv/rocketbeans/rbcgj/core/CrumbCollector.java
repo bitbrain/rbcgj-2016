@@ -36,7 +36,7 @@ public class CrumbCollector implements MapActionHandler.MapActionListener {
                 api.removeObjectAt(indexX, indexY);
                 world.remove(gameObject);
                 AssetManager.getSound(Assets.Sounds.COLLECT_NUT).play();
-                Tooltip.getInstance().create(object.getLeft() + object.getWidth() * 2f, object.getTop() + object.getHeight() * 3f, Styles.STORY, "nom nom nom...", Colors.INFO, null);
+                Tooltip.getInstance().create(object.getLeft() + object.getWidth() * 2f, object.getTop() + object.getHeight() * 3f, Styles.STORY, "nom..", Colors.INFO, null);
             }
         }
     }

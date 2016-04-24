@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="114">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="119">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1555,7 +1555,7 @@
   </object>
   <object id="63" name="Nussfakten 2" x="1093.33" y="996.667" width="25.3333" height="24.6667">
    <properties>
-    <property name="text" value="Man kann aus Nuessen so tolle Sachen machen."/>
+    <property name="text" value="Aus Nuessen werden so viele Sachen gemacht.."/>
    </properties>
   </object>
   <object id="67" name="Arena" x="464.5" y="719.5">
@@ -1600,7 +1600,7 @@
   </object>
   <object id="80" name="Nussfakten 5" x="1540.33" y="227.667" width="25.3333" height="24.6667">
    <properties>
-    <property name="text" value="Wir Erdnuesse sind einfach besser als ihr Menschen."/>
+    <property name="text" value="Mein Onkel wurde letztens erst verschleppt.."/>
    </properties>
   </object>
   <object id="81" name="Crumb" type="crumb" x="547" y="1220" width="24" height="22"/>
@@ -1635,5 +1635,25 @@
   <object id="111" name="Crumb" type="crumb" x="773" y="1094" width="24" height="22"/>
   <object id="112" name="Crumb" type="crumb" x="932" y="774" width="24" height="22"/>
   <object id="113" name="Crumb" type="crumb" x="355" y="1224" width="24" height="22"/>
+  <object id="114" name="Gehen wir Nuesse" x="576.125" y="1375.96" width="29.75" height="30.0833">
+   <properties>
+    <property name="text" value="Oh.. da liegen Leckereien.."/>
+   </properties>
+  </object>
+  <object id="115" name="Gehen wir Nuesse" x="96.125" y="1121.96" width="29.75" height="30.0833">
+   <properties>
+    <property name="text" value="Irgendwie glaube ich, dass das Nuss-Teile waren.."/>
+   </properties>
+  </object>
+  <object id="116" name="Gehen wir Nuesse" x="33.125" y="704.958" width="29.75" height="30.0833">
+   <properties>
+    <property name="text" value="Oh.. bitte nicht.."/>
+   </properties>
+  </object>
+  <object id="117" name="Nussfakten 5" x="898.333" y="99.6667" width="25.3333" height="24.6667">
+   <properties>
+    <property name="text" value="Wie kann man uns bloss essen?"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
