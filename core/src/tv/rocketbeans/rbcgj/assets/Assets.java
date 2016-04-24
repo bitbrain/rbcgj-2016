@@ -33,7 +33,8 @@ public final class Assets {
         ALMOND_DEAD("textures/almond-dead.png"),
         CASHEW_DEAD("textures/cashew-dead.png"),
         BRAZILNUT_DEAD("textures/brazilnut-dead.png"),
-        RUISIN_DEAD("textures/ruisin-dead.png");
+        RUISIN_DEAD("textures/ruisin-dead.png"),
+        CRUMB("textures/crumb.png");
 
         private String path;
 

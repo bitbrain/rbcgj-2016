@@ -23,4 +23,5 @@ public interface Tmx {
     String ALMOND = "almond";
     String INFO = "info";
     String ANSWER = "answer";
+    String CRUMB = "crumb";
 }

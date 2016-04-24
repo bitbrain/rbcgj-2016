@@ -20,6 +20,7 @@ import tv.rocketbeans.rbcgj.core.Teleporter;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
+import tv.rocketbeans.rbcgj.graphics.ShadowSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
 import tv.rocketbeans.rbcgj.ui.Styles;
 import tv.rocketbeans.rbcgj.ui.TooltipHandler;
@@ -104,5 +105,6 @@ public class IngameScreen extends AbstractScreen {
         world.registerRenderer(GameObjectType.RUISIN, new SpriteRenderer(Assets.Textures.RUISIN_DEAD));
         world.registerRenderer(GameObjectType.CASHEW, new SpriteRenderer(Assets.Textures.CASHEW_DEAD));
         world.registerRenderer(GameObjectType.BRAZIL, new SpriteRenderer(Assets.Textures.BRAZILNUT_DEAD));
+        world.registerRenderer(GameObjectType.CRUMB, new ShadowSpriteRenderer(Assets.Textures.CRUMB));
     }
 }

@@ -72,10 +72,10 @@ public class LevelManager {
             mapRenderer.dispose();
         }
         TiledMap map = AssetManager.getMap(levels.getMaps());
+        collisions.updateCollisions(map);
         layers = map.getLayers();
         mapRenderer = new OrthogonalTiledMapRenderer(map);
         updateObjects();
-        collisions.updateCollisions(map);
         actionHandler.load(map);
         player.setPosition(spawn.x, spawn.y);
         if (music != null) {
@@ -149,6 +149,17 @@ public class LevelManager {
                     npc.setPosition(x, y);
                     npc.setType(getNPCType(type));
                     gameObjects.add(npc);
+                } else if (properties.get(Tmx.TYPE).equals(Tmx.CRUMB)) {
+                    float x = (Float)properties.get(Tmx.X) + GameConfig.CELL_SCALE / 2f;
+                    float y = (Float)properties.get(Tmx.Y) + GameConfig.CELL_SCALE / 2f;
+                    // Normalize spawn position
+                    x = (int)Math.floor(x / GameConfig.CELL_SCALE) * GameConfig.CELL_SCALE;
+                    y = (int)Math.floor(y / GameConfig.CELL_SCALE) * GameConfig.CELL_SCALE;
+                    GameObject crumb = world.addObject();
+                    crumb.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
+                    crumb.setPosition(x, y);
+                    crumb.setType(GameObjectType.CRUMB);
+                    gameObjects.add(crumb);
                 }
             }
         }

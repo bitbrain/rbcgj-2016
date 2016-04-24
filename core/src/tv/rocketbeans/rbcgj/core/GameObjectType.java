@@ -7,4 +7,5 @@ public interface GameObjectType {
     int ALMOND = 3;
     int BRAZIL = 4;
     int CASHEW = 5;
+    int CRUMB  = 6;
 }

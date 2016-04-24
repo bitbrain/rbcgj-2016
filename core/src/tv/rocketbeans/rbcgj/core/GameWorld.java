@@ -13,6 +13,7 @@ import java.util.Map;
 
 import tv.rocketbeans.rbcgj.graphics.CameraTracker;
 import tv.rocketbeans.rbcgj.graphics.RenderManager;
+import tv.rocketbeans.rbcgj.tweens.SharedTweenManager;
 import tv.rocketbeans.rbcgj.util.ZIndexComparator;
 
 public class GameWorld {
@@ -149,6 +150,7 @@ public class GameWorld {
             objects.remove(removal);
             controllers.remove(removal);
             pool.free(removal);
+            SharedTweenManager.getInstance().killTarget(removal);
         }
         removals.clear();
     }
