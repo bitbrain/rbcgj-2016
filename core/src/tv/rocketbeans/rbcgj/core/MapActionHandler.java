@@ -25,6 +25,7 @@ public class MapActionHandler {
     public interface MapAPI {
         MapObject getPortalById(String id);
         MapObject getObjectAt(int indexX, int indexY);
+        void removeObjectAt(int indexX, int indexY);
     }
 
     private MapObject[][] objects;
@@ -45,6 +46,13 @@ public class MapActionHandler {
                 return objects[indexX][indexY];
             } else {
                 return null;
+            }
+        }
+
+        @Override
+        public void removeObjectAt(int indexX, int indexY) {
+            if (indexX >= 0 && indexX < width && indexY >= 0 && indexY < height) {
+                objects[indexX][indexY] = null;
             }
         }
     };

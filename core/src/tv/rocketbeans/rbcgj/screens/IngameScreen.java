@@ -11,11 +11,13 @@ import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.core.CollisionDetector;
+import tv.rocketbeans.rbcgj.core.CrumbCollector;
 import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.GameObjectType;
 import tv.rocketbeans.rbcgj.core.LevelManager;
 import tv.rocketbeans.rbcgj.core.Levels;
 import tv.rocketbeans.rbcgj.core.MapActionHandler;
+import tv.rocketbeans.rbcgj.core.PlayerManager;
 import tv.rocketbeans.rbcgj.core.Teleporter;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
@@ -43,6 +45,8 @@ public class IngameScreen extends AbstractScreen {
 
     private Teleporter teleporter;
 
+    private PlayerManager playerManager;
+
     public IngameScreen(NutGame game) {
         super(game);
     }
@@ -51,6 +55,9 @@ public class IngameScreen extends AbstractScreen {
     protected void onCreateStage(Stage stage, int width, int height) {
         initRenderers();
         setBackgroundColor(Colors.BACKGROUND);
+
+        playerManager = new PlayerManager();
+
         eddy = world.addObject();
         eddy.setPosition(0f, 0f);
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
@@ -60,6 +67,7 @@ public class IngameScreen extends AbstractScreen {
         lightingManager = new LightingManager();
         lightingManager.setAmbientLight(new Color(0f, 0.1f, 0.2f, 0.37f));
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
+
         collisions = new CollisionDetector();
         levelManager = new LevelManager(lightingManager, world, handler, collisions);
         world.setController(eddy, new WASDMovementController(collisions, handler));
@@ -69,6 +77,7 @@ public class IngameScreen extends AbstractScreen {
         teleporter = new Teleporter(levelManager);
         handler.addListener(teleporter);
         handler.addListener(new TooltipHandler());
+        handler.addListener(new CrumbCollector(levelManager, world, playerManager));
     }
 
     @Override

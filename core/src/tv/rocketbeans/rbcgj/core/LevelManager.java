@@ -13,8 +13,10 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import aurelienribon.tweenengine.Tween;
@@ -57,12 +59,15 @@ public class LevelManager {
 
     private GameWorld world;
 
+    private Map<MapObject, GameObject> mapping;
+
     public LevelManager(LightingManager lightingManager, GameWorld world, MapActionHandler handler, CollisionDetector collisions) {
         this.lightingManager = lightingManager;
         staticLights = new ArrayList<PointLight>();
         this.collisions = collisions;
         this.actionHandler = handler;
         this.world = world;
+        mapping = new HashMap<MapObject, GameObject>();
         this.gameObjects = new HashSet<GameObject>();
     }
 
@@ -74,6 +79,7 @@ public class LevelManager {
         for (GameObject object : gameObjects) {
             world.remove(object);
         }
+        mapping.clear();
         gameObjects.clear();
         staticLights.clear();
         lightingManager.setAmbientLight(levels.getAmbientColor());
@@ -110,6 +116,14 @@ public class LevelManager {
             mapRenderer.getBatch().end();
         }
         initialized = false;
+    }
+
+    public GameObject getGameObjectByMapObject(MapObject object) {
+        if (mapping.containsKey(object)) {
+            return mapping.get(object);
+        } else {
+            return null;
+        }
     }
 
     public void renderBackground(OrthographicCamera camera) {
@@ -159,6 +173,7 @@ public class LevelManager {
                     npc.setPosition(x, y);
                     npc.setType(getNPCType(type));
                     gameObjects.add(npc);
+                    mapping.put(object, npc);
                 } else if (properties.get(Tmx.TYPE).equals(Tmx.CRUMB)) {
                     float x = (Float)properties.get(Tmx.X) + GameConfig.CELL_SCALE / 2f;
                     float y = (Float)properties.get(Tmx.Y) + GameConfig.CELL_SCALE / 2f;
@@ -173,6 +188,7 @@ public class LevelManager {
                     // Animate crumbs
                     Tween.to(crumb, GameObjectTween.OFFSET_Y, 0.5f).delay(1f * (float)Math.random()).ease(TweenEquations.easeOutQuad).target(GameConfig.CELL_SCALE / 4f)
                             .repeatYoyo(Tween.INFINITY, 0.5f).start(SharedTweenManager.getInstance());
+                    mapping.put(object, crumb);
                 }
             }
         }
