@@ -20,6 +20,7 @@ import tv.rocketbeans.rbcgj.core.Teleporter;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
+import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
 import tv.rocketbeans.rbcgj.ui.Styles;
 import tv.rocketbeans.rbcgj.ui.TooltipHandler;
 import tv.rocketbeans.rbcgj.util.Colors;
@@ -47,12 +48,12 @@ public class IngameScreen extends AbstractScreen {
 
     @Override
     protected void onCreateStage(Stage stage, int width, int height) {
+        initRenderers();
         setBackgroundColor(Colors.BACKGROUND);
         eddy = world.addObject();
         eddy.setPosition(0f, 0f);
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
-        eddy.setType(GameObjectType.EDDY);
-        world.registerRenderer(GameObjectType.EDDY, new DirectionalSpriteRenderer(Assets.Textures.EDDY));
+        eddy.setType(GameObjectType.PEANUT);
 
         handler = new MapActionHandler();
         lightingManager = new LightingManager();
@@ -95,5 +96,13 @@ public class IngameScreen extends AbstractScreen {
         levelManager.renderForeground(camera);
         lightingManager.updateAndRender(camera);
         batch.begin();
+    }
+
+    private void initRenderers() {
+        world.registerRenderer(GameObjectType.PEANUT, new DirectionalSpriteRenderer(Assets.Textures.EDDY));
+        world.registerRenderer(GameObjectType.ALMOND, new SpriteRenderer(Assets.Textures.ALMOND_DEAD));
+        world.registerRenderer(GameObjectType.RUISIN, new SpriteRenderer(Assets.Textures.RUISIN_DEAD));
+        world.registerRenderer(GameObjectType.CASHEW, new SpriteRenderer(Assets.Textures.CASHEW_DEAD));
+        world.registerRenderer(GameObjectType.BRAZIL, new SpriteRenderer(Assets.Textures.BRAZILNUT_DEAD));
     }
 }
