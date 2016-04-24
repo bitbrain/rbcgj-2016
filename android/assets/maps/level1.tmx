@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="61">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="72">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1187,13 +1187,13 @@
    eJzlmVmMFUUUhqv6Mi4oq8AggpCAoKC4sCpghgeNG8xcFvcNF3zAaGRHXHHFgERjQhSBQdlcntBE4hJBFo3L+KCRTXlTHFBQHB40Af1Pug59+lDVt+/ciZJ4ki/dVV1dt06dpetWjS0YUwvqQBGMAWNFHV2v8dQXj7N63Yaf63aRMQYX0wpUgRPAieAkcLKjVJtSzyup03pMA9Pd9Rw8n4HrTNCI+71gH/gF/AoGWWMGgyFgKBgGhtu4bejZxTZ5v1H1NwPMBLPAbDDHtdHtfGMhPXy/dbaJ9ehg42s7XNvbuNwRnAaKGfUaXztdXoJ2r4KlYBlYHnjPV0e2uMHG3Jhxvcn624Xqy+nP1ybUXt7T/NS5eWKf0vGgy4/ivcfA42CeTcqyXrfx3Yf6CT3Ler66VeyHReH/HBeh8ip6D6wBa21SlvW6je8+1E/oWdbzd6PEHp1x3wVUg65RUtb1lUp30EPQ3XPvq9PlM0FP0AvsjBJ7jMD9SDAKXBolZV1fqSwGz7cQl4HLqdNCnBeKlQ+vbD2uAFfl4OoMPaaAe+le+NUZJm2zUvd52+nrR24M74MPPKyMYlaB+1F+IEOPF8CLTg/2q9EZ7f8L7jP59aA4Z7+SepDNd4CdYBf4HvygyqWe63vuu1Td6EJYDxrXlSbxN44PivNPPHpQHw149nWU/5pVR3DfDaJutBtLg3hnXhTWg+u4XsbHz06Pe1T7Jjw7FOW/ZtU1CT2aVN0UUUft12bo8ZLQY7HyK173LFR69Mc3coBgIC1OnXQz2XnBV8d919m4jwXuN3ksLFn24NzwoYnzhfQr1uMd0b4WY64DRTAOjAcTwERHjWl+XmA9uI+j3wAnbA+e+6w4Z7+i74dPjxm0XgGzwGwwBywFcx2TTdoP87BI6cF9HB2LsgfN/YhCkqez8lVfoYec3yVOBxr7MrAc1IMVDvaJ5uix3o035Fdro/x98hxMA11AtdJjI8UC+tuE62awBWwV8bEOdFJk5VwuU27eLfogH3hP6EbSCXNbU4jzL19D33SeA9JjJBhl0n6yx+nRiOtesM8hY1vrIeOb1m8yv0pY/rbxbxBW1HO+lswL2IjnoGiTOuknf7r+2+EPcHvQwZE3til2ZX6VsJyF+76u3E/Uc76WhHzNp4eMc5pP0mMIxj4UDKsqL7bJ3jJ2KxWyI/nYVNd/jfM59lOph55riiGZD8uJbbKHjN0s2Ykx7LLZbdiWnN/Y3w45O0o99FzrfFjj0TUrj8jY9cmOQHyEROY3Gtch8U4oPmQuYCnXr0L24LVAD9Fe/78LvcPfTd0uFB8yhvR85NUjZI8aE7ZryB/1O3oNIPWgdfh3YJuJ8z7Ze31GX6Xioy7g85PQ7x3gTnAXuBtMdr6vx8fC35rQHEs9jNDDePQox6+mZOjxDPp9FswHz7nrgii2tY5Jlu0mnmf5X2e3eF6OHuWuRQ7bYzli43Fr1kXxfGfFlf5PIEXqYYUe9Dk/18T7v63VnORdf4Ts8Q3G8G2U7Atsw/32KFmj+PZ1fEJteH0h/xf0A7Um6X88mAAuEO/69ulDe/os+r8KrRX+ipI5O4z7I5HfZ302lbZd5HlnjEnvc9Me94NKj6me/UVf3Syhh46rnnjWq5Do0Rv3fQpJG/oPHooDKXKPQPoFrRnlPjftcdeDa8W7bbA+aVuVXnd1DNSx6LgK2YPakF9lxYEWvXaj9j+a9F496bACPCTeG4TxDa5Kr7uGB+pYdM5kH9P2KBXneeUUG++dbAKbwVbwKXitwn5rTP7vjv4uNEcutPHeCZ/x8PnO7SLv8JKIz89851qtTVpkntP5zrcHFoqHvHIdBnm9Tc54Orry00IPyml0PiXzGuXn88BAcL5J5wWWrL0vXVepPIzxTrLp/3jzUX5b6EE5baxJ57VxJsnRE006L7BQDLIts843tS2bI68H9JBCOW26Sec1PoekHD3XpPOCFLYlnTH2BwNMPls2R0iPLSZB6/Ex2AA2mnROoLal8gLbUvpkHlu2hB6rwGrBGvAT2GPSOUGe+34W6Jtt6TtTLmXLSvWQ8PnvqWjTBrS1/nPf/WizzabZbmN7vGL8Z8r1Jv5WVZrjpR6f4/oF+BJ8BRpEeQi4yGaf7ZNNfGshssMGk+2TIVuWKwfAb+B3cBD8AZpEmXOzPL++GdwCbgW32fh70ztK0yeK7SFjXPsk6bK/hfTojDF0AdWgKzgddBNXys2P2GPPr58AT4Kn1PdGCsWHjHGfT3YqsW/SUkK5eaU99vz6DfAmeEt9b6S8bNIx7vPJS/4lPSoR7ZOcr7RPHu8iffKATfLVwRw+eTyJ9EmtRymf/D/KPzPwf+A=
   </data>
  </layer>
- <layer name="obstacles" width="50" height="51" visible="0">
+ <layer name="obstacles" width="50" height="51">
   <data encoding="base64" compression="zlib">
    eJztmL1Ow0AMgPPDgyDBkrfI1LmFvgA/zdyNto/BwMbPY3RnhxEWHoAdxgoscRKnk9PzETvxhfskK2ni+uzcnWVfluGclFl2CjIvf36/5S2KCFRdbj2MFfi/BtmYOMqC/l+qLrcexh34fw/yYOKoAmxRdbn1EjqYDe0AE1dDO8BEmg9d3A7tABNpXeliLOvqUdj+0qrvpua+tt5fM43zzmSnjRtPHBOhcasDIcNKeMnDRCu7nC6aOSrC5HjgfuHLfM888r7FFwfWJ7vPDlk9+htYHLX1HuuT3WdSuTQE33xgfbLG3lnj/mise+pca4zjP9PnfHQ5I/TRZxxdzgh9cMSB1VuvyLeXzHNpn//CUW/tq6WxuaXyDH48FbSrZj7Bv4+CduVAcy3tY8tgw83lkrldEjeXS+Z2SdxcrrGGTYyTWPe+S6x732Usez+tK110XVeUs68YoJx9xUAsZ1+JhM0ZrNFzkAuQS5AFSNPyrE2Xw0bIGJjON3uMctE=
   </data>
  </layer>
  <objectgroup name="objects">
-  <object id="1" name="spawn" type="spawn" x="911" y="1588" width="34" height="37"/>
+  <object id="1" name="spawn" type="spawn" x="929.273" y="1568.91" width="29.3636" height="30"/>
   <object id="2" name="light" type="light" x="907.061" y="1506.67" width="43.6061" height="134.939">
    <properties>
     <property name="a" type="float" value="1"/>
@@ -1204,7 +1204,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="9" name="light" type="light" x="1326.17" y="846.667" width="41" height="40">
+  <object id="9" name="light" type="light" x="1308.17" y="860.667" width="41" height="40">
    <properties>
     <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="0"/>
@@ -1224,7 +1224,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="13" name="light" type="light" x="1355.5" y="298" width="41" height="40">
+  <object id="13" name="light" type="light" x="1338.83" y="285.667" width="41" height="40">
    <properties>
     <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="0"/>
@@ -1370,34 +1370,29 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="50" name="Shout" x="845.333" y="1465.33" width="159.333" height="38">
+  <object id="50" name="Gehen wir Nuesse" x="929" y="1505.25" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Okay. Gehen wir Nuesse"/>
    </properties>
   </object>
-  <object id="53" x="1273.33" y="290.667" width="122.667" height="45.3333">
-   <properties>
-    <property name="text" value="Gruenes Licht..."/>
-   </properties>
-  </object>
-  <object id="54" type="npc" x="1308" y="832" width="76" height="63">
+  <object id="54" type="npc" x="1316.25" y="867.25" width="24.75" height="26.5">
    <properties>
     <property name="info" value="Jeremy, die teilweise paralysierte Paranuss! Jemanden zu toeten, der nur wegen des Wortspiels hier ist... Dieses Eichhoernchen wird bezahlen!"/>
     <property name="nut" value="brazilnut"/>
    </properties>
   </object>
-  <object id="55" x="260.667" y="75.3333" width="27.3333" height="70.6667">
+  <object id="55" x="290.667" y="99.3333" width="27.3333" height="25">
    <properties>
     <property name="text" value="Schon durch? Naja. Ist halt kein Dark Souls."/>
    </properties>
   </object>
-  <object id="57" type="npc" x="909.333" y="912.667" width="38" height="34">
+  <object id="57" name="Lord Cashew" type="npc" x="897.515" y="899.394" width="28.303" height="25.5152">
    <properties>
     <property name="info" value="Lord Cashew. Oh mein Gott.  Es hat ihn vollkommen zerktuemelt.  Was fuer ein Monster"/>
     <property name="nut" value="cashew"/>
    </properties>
   </object>
-  <object id="60" name="light" type="light" x="907.5" y="910" width="41" height="40">
+  <object id="60" name="light" type="light" x="891.136" y="892.545" width="41" height="40">
    <properties>
     <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="0"/>
@@ -1406,6 +1401,26 @@
     <property name="radius" type="float" value="50"/>
    </properties>
    <ellipse/>
+  </object>
+  <object id="61" name="Nussfakten 1" x="1185.75" y="257.75" width="28.25" height="28.25">
+   <properties>
+    <property name="text" value="Hoffentlich machen mich die ganzen Nusskruemel nicht fett. Immerhin, enthalten Nuesse viel Fett und Vitamine. Die sind gut fuer euch Kinder."/>
+   </properties>
+  </object>
+  <object id="63" name="Nussfakten 2" x="1155.33" y="996.667" width="25.3333" height="24.6667">
+   <properties>
+    <property name="text" value="Man kann aus Nuessen so tolle Sachen machen. Schon mal von Erdnussbutter gehoert? Oder Erdnussflips? Wir Erdnuesse sind viel besser, als ihr Menschen."/>
+   </properties>
+  </object>
+  <object id="67" name="Arena" x="431.5" y="720.5">
+   <properties>
+    <property name="text" value="Ein grosser Platz - wie eine Arena. Hier koennte man bestimmt super kaempfen. Wenn man denn Zeit haette..."/>
+   </properties>
+  </object>
+  <object id="69" name="Raketen" x="994.833" y="357.167" width="27.6667" height="22.5833">
+   <properties>
+    <property name="text" value="Ob man mit einem Treibstoff aus Nuessen auch Raketen antreiben koennte?"/>
+   </properties>
   </object>
  </objectgroup>
 </map>
