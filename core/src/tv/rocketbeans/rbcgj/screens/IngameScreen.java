@@ -74,7 +74,7 @@ public class IngameScreen extends AbstractScreen {
         levelManager.loadLevel(Levels.LEVEL_1, eddy);
         world.setCameraTracking(eddy);
 
-        teleporter = new Teleporter(levelManager);
+        teleporter = new Teleporter(levelManager, this, game);
         handler.addListener(teleporter);
         handler.addListener(new TooltipHandler());
         handler.addListener(new CrumbCollector(levelManager, world, playerManager));

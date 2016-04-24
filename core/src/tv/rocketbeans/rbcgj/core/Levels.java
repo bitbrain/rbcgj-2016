@@ -10,7 +10,7 @@ public enum Levels {
 
     LEVEL_1(Assets.Maps.LEVEL1, Assets.Musics.LEVEL_1, Colors.AMBIENT_LEVEL_1),
     LEVEL_2(Assets.Maps.LEVEL2, Assets.Musics.LEVEL_2, Colors.AMBIENT_LEVEL_2),
-    DEMO(Assets.Maps.DEFAULT, Assets.Musics.LEVEL_1, Colors.AMBIENT_LEVEL_BOSS);
+    BOSS(Assets.Maps.BOSS, Assets.Musics.LEVEL_4, Colors.AMBIENT_LEVEL_BOSS);
 
     private Assets.Maps maps;
 
