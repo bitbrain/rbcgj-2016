@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="81">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="114">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1537,7 +1537,7 @@
     <property name="nut" value="brazilnut"/>
    </properties>
   </object>
-  <object id="55" x="290.667" y="99.3333" width="27.3333" height="25">
+  <object id="55" x="356.667" y="98.3333" width="27.3333" height="25">
    <properties>
     <property name="text" value="Schon durch? Naja. Ist halt kein Dark Souls."/>
    </properties>
@@ -1558,7 +1558,7 @@
     <property name="text" value="Man kann aus Nuessen so tolle Sachen machen."/>
    </properties>
   </object>
-  <object id="67" name="Arena" x="431.5" y="720.5">
+  <object id="67" name="Arena" x="464.5" y="719.5">
    <properties>
     <property name="text" value="Ein grosser Platz - wie eine Arena. Hier koennte man bestimmt super kaempfen. Wenn man denn Zeit haette..."/>
    </properties>
@@ -1588,20 +1588,52 @@
     <property name="text" value="Hier hinten ist nichts. Geh zurueck."/>
    </properties>
   </object>
-  <object id="78" name="Nussfakten 3" x="1251.33" y="992.667" width="25.3333" height="24.6667">
+  <object id="78" name="Nussfakten 3" x="1539.33" y="994.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Schon mal von Erdnussflips gehoert?"/>
    </properties>
   </object>
-  <object id="79" name="Nussfakten 4" x="1380.33" y="989.667" width="25.3333" height="24.6667">
+  <object id="79" name="Nussfakten 4" x="1539.33" y="643.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Oder Erdnussbutter?"/>
    </properties>
   </object>
-  <object id="80" name="Nussfakten 5" x="1505.33" y="994.667" width="25.3333" height="24.6667">
+  <object id="80" name="Nussfakten 5" x="1540.33" y="227.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Wir Erdnuesse sind einfach besser als ihr Menschen."/>
    </properties>
   </object>
+  <object id="81" name="Crumb" type="crumb" x="547" y="1220" width="24" height="22"/>
+  <object id="83" name="Crumb" type="crumb" x="484" y="1222" width="24" height="22"/>
+  <object id="84" name="Crumb" type="crumb" x="418" y="1220" width="24" height="22"/>
+  <object id="85" name="Crumb" type="crumb" x="133" y="903" width="24" height="22"/>
+  <object id="86" name="Crumb" type="crumb" x="132" y="965" width="24" height="22"/>
+  <object id="87" name="Crumb" type="crumb" x="133" y="551" width="24" height="22"/>
+  <object id="88" name="Crumb" type="crumb" x="198" y="548" width="24" height="22"/>
+  <object id="89" name="Crumb" type="crumb" x="1411" y="293" width="24" height="22"/>
+  <object id="90" name="Crumb" type="crumb" x="1316" y="292" width="24" height="22"/>
+  <object id="91" name="Crumb" type="crumb" x="1317" y="357" width="24" height="22"/>
+  <object id="92" name="Crumb" type="crumb" x="1412" y="359" width="24" height="22"/>
+  <object id="93" name="Crumb" type="crumb" x="1316" y="550" width="24" height="22"/>
+  <object id="94" name="Crumb" type="crumb" x="1314" y="614" width="24" height="22"/>
+  <object id="95" name="Crumb" type="crumb" x="1412" y="549" width="24" height="22"/>
+  <object id="96" name="Crumb" type="crumb" x="1412" y="615" width="24" height="22"/>
+  <object id="97" name="Crumb" type="crumb" x="1318" y="772" width="24" height="22"/>
+  <object id="98" name="Crumb" type="crumb" x="354" y="902" width="24" height="22"/>
+  <object id="99" name="Crumb" type="crumb" x="420" y="903" width="24" height="22"/>
+  <object id="100" name="Crumb" type="crumb" x="485" y="903" width="24" height="22"/>
+  <object id="101" name="Crumb" type="crumb" x="773" y="1062" width="24" height="22"/>
+  <object id="102" name="Crumb" type="crumb" x="966" y="774" width="24" height="22"/>
+  <object id="103" name="Crumb" type="crumb" x="1540" y="422" width="24" height="22"/>
+  <object id="104" name="Crumb" type="crumb" x="1156" y="70" width="24" height="22"/>
+  <object id="105" name="Crumb" type="crumb" x="1252" y="70" width="24" height="22"/>
+  <object id="106" name="Crumb" type="crumb" x="1058" y="71" width="24" height="22"/>
+  <object id="107" name="Crumb" type="crumb" x="356" y="838" width="24" height="22"/>
+  <object id="108" name="Crumb" type="crumb" x="355" y="775" width="24" height="22"/>
+  <object id="109" name="Crumb" type="crumb" x="580" y="774" width="24" height="22"/>
+  <object id="110" name="Crumb" type="crumb" x="578" y="708" width="24" height="22"/>
+  <object id="111" name="Crumb" type="crumb" x="773" y="1094" width="24" height="22"/>
+  <object id="112" name="Crumb" type="crumb" x="932" y="774" width="24" height="22"/>
+  <object id="113" name="Crumb" type="crumb" x="355" y="1224" width="24" height="22"/>
  </objectgroup>
 </map>

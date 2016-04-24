@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="56">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="57">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1416,8 +1416,12 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="52" name="Crumb" type="crumb" x="260" y="389" width="24" height="25"/>
-  <object id="54" name="Crumb" type="crumb" x="324" y="387.5" width="24" height="25"/>
-  <object id="55" name="Crumb" type="crumb" x="292" y="419.5" width="24" height="25"/>
+  <object id="56" name="Rosina" type="npc" x="291" y="325" width="29" height="26">
+   <properties>
+    <property name="answer" value="Ich.. ich habe dich immer geliebt.. urgh..."/>
+    <property name="info" value="Oh Rosina.. alle unsere Freunde sind tot."/>
+    <property name="nut" value="raisin"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
