@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="119">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="120">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1642,17 +1642,22 @@
   </object>
   <object id="115" name="Gehen wir Nuesse" x="96.125" y="1121.96" width="29.75" height="30.0833">
    <properties>
-    <property name="text" value="Irgendwie glaube ich, dass das Nuss-Teile waren.."/>
+    <property name="text" value="Irgendwie glaube ich, dass der Geschmack mich an was erinnert.."/>
    </properties>
   </object>
   <object id="116" name="Gehen wir Nuesse" x="33.125" y="704.958" width="29.75" height="30.0833">
    <properties>
-    <property name="text" value="Oh.. bitte nicht.."/>
+    <property name="text" value="Ich sollte der Spur folgen.."/>
    </properties>
   </object>
   <object id="117" name="Nussfakten 5" x="898.333" y="99.6667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Wie kann man uns bloss essen?"/>
+   </properties>
+  </object>
+  <object id="119" name="oh nein" x="773" y="933" width="22" height="21">
+   <properties>
+    <property name="text" value="Oh nein.. wer liegt denn da?!"/>
    </properties>
   </object>
  </objectgroup>
