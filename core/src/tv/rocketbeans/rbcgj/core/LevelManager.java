@@ -17,14 +17,23 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import aurelienribon.tweenengine.Tween;
+import aurelienribon.tweenengine.TweenEquation;
+import aurelienribon.tweenengine.TweenEquations;
 import box2dLight.PointLight;
 import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.core.tmx.Tmx;
 import tv.rocketbeans.rbcgj.graphics.FX;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
+import tv.rocketbeans.rbcgj.tweens.GameObjectTween;
+import tv.rocketbeans.rbcgj.tweens.SharedTweenManager;
 
 public class LevelManager {
+
+    static {
+        Tween.registerAccessor(GameObject.class, new GameObjectTween());
+    }
 
     private OrthogonalTiledMapRenderer mapRenderer;
 
@@ -79,6 +88,7 @@ public class LevelManager {
         actionHandler.load(map);
         player.setPosition(spawn.x, spawn.y);
         if (music != null) {
+            music.setLooping(false);
             music.stop();
         }
         music = AssetManager.getMusic(levels.getMusics());
@@ -160,6 +170,9 @@ public class LevelManager {
                     crumb.setPosition(x, y);
                     crumb.setType(GameObjectType.CRUMB);
                     gameObjects.add(crumb);
+                    // Animate crumbs
+                    Tween.to(crumb, GameObjectTween.OFFSET_Y, 0.5f).delay(1f * (float)Math.random()).ease(TweenEquations.easeOutQuad).target(GameConfig.CELL_SCALE / 4f)
+                            .repeatYoyo(Tween.INFINITY, 0.5f).start(SharedTweenManager.getInstance());
                 }
             }
         }
