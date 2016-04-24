@@ -10,12 +10,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 
-import javax.swing.GroupLayout;
-
 import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenCallback;
-import aurelienribon.tweenengine.TweenEquation;
 import aurelienribon.tweenengine.TweenEquations;
 import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
@@ -34,6 +31,8 @@ public class StoryScreen extends AbstractScreen {
     private Label label, action;
 
     private StoryTeller teller;
+
+    private boolean aborted = false;
 
     public StoryScreen(NutGame game) {
         super(game);
@@ -73,11 +72,12 @@ public class StoryScreen extends AbstractScreen {
     @Override
     protected void beforeWorldRender(Batch batch, float delta) {
         super.beforeWorldRender(batch, delta);
-        if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE) && !aborted) {
             AssetManager.getMusic(Assets.Musics.STORY_SCREEN).stop();
             setScreen(new IngameScreen(game));
             AssetManager.getSound(Assets.Sounds.START_GAME).play();
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.ANY_KEY)) {
+            aborted = true;
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.ANY_KEY) && !aborted) {
             if (teller.hasNextStoryPoint()) {
                 AssetManager.getSound(Assets.Sounds.MENU_CHOOSE).play();
                 tweenManager.killTarget(label);
@@ -96,7 +96,8 @@ public class StoryScreen extends AbstractScreen {
                         })
                         .setCallbackTriggers(TweenCallback.COMPLETE)
                         .start(tweenManager);
-            } else {
+            } else if (!aborted) {
+                aborted = true;
                 AssetManager.getMusic(Assets.Musics.STORY_SCREEN).stop();
                 setScreen(new IngameScreen(game));
                 AssetManager.getSound(Assets.Sounds.START_GAME).play();

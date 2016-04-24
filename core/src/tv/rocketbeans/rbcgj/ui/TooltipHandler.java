@@ -22,6 +22,7 @@ public class TooltipHandler implements MapActionHandler.MapActionListener {
     public TooltipHandler() {
         looper = new SoundPoolLooper(Assets.Sounds.EDDY_BLA_1, Assets.Sounds.EDDY_BLA_2, Assets.Sounds.EDDY_BLA_3, Assets.Sounds.EDDY_BLA_4, Assets.Sounds.EDDY_BLA_5, Assets.Sounds.EDDY_BLA_6);
         looper.setInterval(0.4f);
+        looper.update(2f);
     }
     
     @Override
