@@ -717,7 +717,7 @@
   </tile>
   <tile id="234">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="collision" type="bool" value="false"/>
    </properties>
   </tile>
   <tile id="235">
@@ -1366,7 +1366,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJy108kuBFEUBuB720xMiXewJUTS3sGYIMay7bVotSDGaqwkdoKWEGM1HkG0XthWeAVpQ+IZ/Cd1Tuq2vtVWJF/I/U8dXVV/K/U/PxqqoBpqoBbqoB4aIFEhb7Ts64QhGIYRGIUkG4PBCnmXZd8ALEIKlsAFh8l1lKeNPMX5uGXfAhzCEc9lwWOyV/JjnpF82bLvAB4hD0887zO5TnLKCkZ+GnO/RXiHD/jk6wLjuiKfJTkP2HPM/TbjJbfocL4Nv9t1tDPgXZQ7nMtz/Y653x7M9PJ8H89nYBt2YFeFuce5vKsOXb7vQUV9oHnqA83n4Bbu4J5zn3NP/d2XNM+7PEv3+AKv/Hea793lOZqJ64t8voD/vzx76bPDZ9LngPO4vph9lX6ZfU5ynuLPJ/tsfaHn97vP0j3HYPb5hM9sfXlTYV9pjvpcUFH3PEPeyOUebH1p0uV9/lKlffYtOZ3Z+tKtoz636qjP0mVhy/st+yZwNglTMA0zMAv7ifBdkr1EaTZHnYZ5y74VnK3CGqzDBmzqsEcuo16Y2RZ9VyBj2XeGs3O4gEu4gmsd9ijLqBdmdgM+5Ix9P76LjYI=
+   eJy91D9OQkEQx/FdRFBpvYMtFDbewViYSFBR7kALEUHBjsROQoPGP/jvCtjpRWw5g9+XhTjKvN0XEiD5JC87836wmQnGLOZjsYI0VpFBFmtYR8pT31DyttCfU17J253UuoF3t+3v87T3QMmrmtm+qZ6SK3tqSt6Np9+XFbn13Fe7T+h7vgL37cW8L5/3xfM4wX2lDq489U07mzfy9L/hPaYW3SVuX0JzjJtRaF+SzONTnC1jX0YJs7QebV++A1lyL/9navuSU/qT0valIPK0OfvsKHlFzko4xBGOUcY1f3x7xumm/tZOcIqKklfn7AwNnKOJlnVzj37vwLg5ytoFLtFW8u44u8cDHvGEoXVz/zBu36I5ytozXvAq8n4Aw2+liQ==
   </data>
  </layer>
  <layer name="obstacles" width="20" height="20">

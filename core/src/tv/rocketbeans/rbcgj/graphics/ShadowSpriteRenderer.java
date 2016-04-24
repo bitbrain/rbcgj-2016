@@ -18,9 +18,9 @@ public class ShadowSpriteRenderer extends SpriteRenderer {
 
     @Override
     public void render(GameObject object, Batch batch, float delta) {
-        shadow.setPosition(object.getLeft(), object.getTop() - 2);
+        shadow.setPosition(object.getLeft() + object.getWidth() / 4f, object.getTop() + 6);
         shadow.setAlpha(0.2f);
-        shadow.setSize(object.getWidth(), object.getHeight() / 2f);
+        shadow.setSize(object.getWidth() / 2f, object.getHeight() / 2f);
         shadow.draw(batch, 1f);
         super.render(object, batch, delta);
     }
