@@ -21,11 +21,12 @@ public class StoryTeller {
     }
 
     private void initTexts() {
-        texts.add("Eddy die Erdnuss ist ein geselliger, freundlicher Kompane, der mit seinen Freunden Rosina die Rosine, Bernhardt die Mandel, Lord William Cashew II und Jeremy die teils paralysierten Paranuss ein wundervolles Leben in einer Studentenfutter-Packung lebt.");
-        texts.add("Eines Tages gab es ein Krachen und Rumpeln und das Schicksal der 5 Freunde wurde auf eine harte Probe gestellt. Die Packung wurde von ihrem Besitzer, einem faulen und unachtsamen Studenten, fallengelassen - und das auch noch mitten im Wald!");
-        texts.add("Leider direkt neben einem grossen Baum, welcher von einem Eichhoernchen bewohnt war.");
-        texts.add("Dieses griff sofort die Freunde an und Eddy musste mitansehen, wie seine Freunde von dem Ungeheuer in dessen Bau verschleppt wurden.");
-        texts.add("Eddy schlich sich in den tiefen Bau des grausamen Eichhorns, um sich auf die Suche zu machen.");
-        texts.add("Nun liegt das Schicksal der Freunde in Deiner Hand!");
+        texts.add("Das Leben war gut fuer Eddy die Erdnuss und seine vier Freunde Rosina die Rosine, Bernhardt die Mandoline spielende Mandel, Lord William Chashew II. und Jeremy die teilweise paralysierte Paranuss.")  
+        texts.add("In ihrer eigenen Studentenfutter-Packungs-WG, ganz in der Naehe des Stadtkerns, lachten, liebten und feierten sie ohne Unterlass.");
+        texts.add("Bis eines Tages ein fauler Student die Packung der fuenf Freunde mitnahm und - faul wie er nun mal war - mitten in einem dunklen Wald wegwarf.");
+        texts.add("Die Nuss-Gang hoerte seltsame Geraeusche von draussen, als ploetzlich gigantische Krallen in die Tuete langten und Eddies Freunde verschleppten.");
+        texts.add("Eddy konnte nur mitansehen, wie ein riesiges, grauenhaftes Eichhoernchen die Genussnapten in seinen Bau trug.");
+        texts.add("Er musste etwas tun! Die kleine Erdnuss kruemelte all ihren Mut zusammen und schlich in der Nacht dem Eichhoernchen hinterher.");
+        texts.add("Doch wer weiss, ob es da nicht schon zu spaet war...");
     }
 }
