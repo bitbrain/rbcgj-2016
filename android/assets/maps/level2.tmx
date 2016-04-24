@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32" nextobjectid="58">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32" nextobjectid="62">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1289,7 +1289,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   eJztmslu1TAUhpO6TG2BFngDFqXAgnl6ANjQiZa2zKxYwYYyqdAySuUV2KAyTypCvABSaXkBFqxgx1QQb4DgN/da100cZ7CT60vOJ/26tZW4ye9zTpzB8/5vZpo97y00C801m7dFn+gnCIIgiuOjn6yPUMOakvWpiPO5DPPQpfBK1acizuek81BW4nxOOg9RHGCeNwANMrNxyobI+0tV38aY/VoQnJu0bdeQ/RF5f7d6rFNsYS2w4aUYY6z6P8RcqeZO1XYN2Z+4mmyjrooxpqp+iLlSzZ2q7RppaqVpXdWNYWNsQRnWH3lC6w8zbMayq/yp5phfgnPNAxP/qL6Z+Uf1LexfmpgqQ32LI+hfETGVZo5crxFB/4qIqTRzRDUiTNH3CoQbvLI8ly7XplYc2zf8fod+1ftgInC5Nm2GfyugldCajPOc9zM712rTXhzPPovH5Pozu6Tw8OG28NPgn1kskn4XQ0ugpdBpbHRG45+v2G8Z1BKxffCZXZH1ymbsd0LroC5oPbRB+t0IzUJz0DtPn6ud0nbyPpsSHkeR9cok9mXv+Zx3o68H6oX6oH6+DTQADULz0A/oJ7RH41+3tJ28z1DC4yqyXpk8r5a953P+GX9/gb56tWvqvNRuh2cd0Cp/YY7Luf0v51ltO3mfel+fT1keT/aezzlfi7RBy6VraruiLfxYrWjrts16fbbF65zH52uRLdBWaBu0HdqhaO+EdkG7FW3dtrqc/x8YxvmNQIegw9AR6KiifQw6Dp1QtHXbnnTQvxaed02137YUtXcIeTsMjcTUTt16Yj/27YZ6oF6oD+pn0f0u8qKqtFzB+YxDEzHnpVtPnMW+o9A56Dx0AbrIovtdJKt/SdGtJxop/voi8ihv/3Q0UvyNcvkLNYm+2179/Guk+Lvjhf2bRt9LL5l/uutA1vvACYx5FboGXffdjr83Xtg/rqT5q7sOZL0PfIj//wh6DD3xa3HnYvxF1b+k6K4Dtr5bEnHnYvzNOLD+jMtzl+PPBf/i8pziT09cnrscf58sjZPnt0wux58t8vRv3A+vaW5AN6FbDuSPDfL074EfXtM8hZ5Bzx3xz/SdR9m/RRT3EWnfU7VG9HekGIPP2UFWefbVqIj7iHq8V+frlsus8uzL5e8idIj7iCTvqT74YZnA1y33oPvM7e8iikT2dpJVJHwO9su49l1EHqxtCkvHNKtI8NuvKNhP1JB9fc8qkvu55H6CIIiy06jrP1eg9Z8ZZVj/yVC+mUH5ZkbZ8s0Gtp4bNDpZaldwnzLXvyy1iwWeG5S5/mWpXcF9qP4RBEEQBEEQBEEQRHH8BUFD+sI=
   </data>
  </layer>
  <objectgroup name="objects">
@@ -1677,5 +1677,8 @@
     <property name="text" value="Hoert nur! Ich glaube ich rieche etwas..."/>
    </properties>
   </object>
+  <object id="58" name="Crumb" type="crumb" x="2055" y="1962" width="19" height="17"/>
+  <object id="60" name="Crumb" type="crumb" x="2053.5" y="2025.5" width="19" height="17"/>
+  <object id="61" name="Crumb" type="crumb" x="2053.5" y="2089.5" width="19" height="17"/>
  </objectgroup>
 </map>

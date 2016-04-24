@@ -37,6 +37,7 @@ public class GameObjectMover {
         this.handler = handler;
         timer.update(GameConfig.MOVEMENT_TIME);
         movementSoundLooper = new SoundPoolLooper(Assets.Sounds.STEP_1, Assets.Sounds.STEP_2, Assets.Sounds.STEP_3);
+        movementSoundLooper.setVolume(0.5f);
     }
 
     public void update(float delta) {

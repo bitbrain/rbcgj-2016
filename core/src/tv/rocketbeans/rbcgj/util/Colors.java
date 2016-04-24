@@ -9,4 +9,7 @@ public interface Colors {
     Color UI_HIGHLIGHTED = Color.valueOf("ddaf65");
     Color INFO = Color.valueOf("9ce830");
     Color ANSWER = Color.valueOf("c13232");
+    Color AMBIENT_LEVEL_1 = Color.valueOf("25092c");
+    Color AMBIENT_LEVEL_2 = Color.valueOf("130217");
+    Color AMBIENT_LEVEL_BOSS = Color.valueOf("360614");
 }
