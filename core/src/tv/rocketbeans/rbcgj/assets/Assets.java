@@ -74,10 +74,8 @@ public final class Assets {
 
         LEVEL_1("music/Level_1.ogg"),
         LEVEL_2("music/Level_2.ogg"),
-        LEVEL_3("music/Level_3.ogg"),
-        LEVEL_4("music/Level_4.ogg"),
+        BOSS("music/boss_atmo.ogg"),
         TITLE_SCREEN("music/Title_Screen.ogg"),
-        PAUSE_SCREEN("music/Pause_Screen.ogg"),
         STORY_SCREEN("music/story_screen.ogg");
 
         private String path;
