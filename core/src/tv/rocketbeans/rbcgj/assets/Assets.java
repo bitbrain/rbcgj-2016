@@ -107,7 +107,8 @@ public final class Assets {
         EDDY_BLA_3("sound/eddy_bla_3.ogg"),
         EDDY_BLA_4("sound/eddy_bla_4.ogg"),
         EDDY_BLA_5("sound/eddy_bla_5.ogg"),
-        EDDY_BLA_6("sound/eddy_bla_6.ogg");
+        EDDY_BLA_6("sound/eddy_bla_6.ogg"),
+        COLLECT_NUT("sound/collect_nut.ogg");
 
         private String path;
 

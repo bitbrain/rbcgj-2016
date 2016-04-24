@@ -78,6 +78,11 @@ public class IngameScreen extends AbstractScreen {
         handler.addListener(teleporter);
         handler.addListener(new TooltipHandler());
         handler.addListener(new CrumbCollector(levelManager, world, playerManager));
+
+
+        PlayerUI ui = new PlayerUI(playerManager);
+        ui.setPosition(20f, 20f);
+        stage.addActor(ui);
     }
 
     @Override

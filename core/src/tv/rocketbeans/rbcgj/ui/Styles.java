@@ -3,8 +3,6 @@ package tv.rocketbeans.rbcgj.ui;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
-import com.sun.corba.se.impl.orbutil.graph.Graph;
 
 import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.assets.Assets;
@@ -17,6 +15,7 @@ public class Styles {
 
     public static final Label.LabelStyle CREDITS = new Label.LabelStyle();
     public static final Label.LabelStyle STORY = new Label.LabelStyle();
+    public static final Label.LabelStyle PLAYER_INFO = new Label.LabelStyle();
 
     public static void init() {
         MENU_BUTTON.font = AssetManager.getFont(Assets.Fonts.MEDIUM);
@@ -32,6 +31,9 @@ public class Styles {
 
         STORY.font = AssetManager.getFont(Assets.Fonts.STORY);
         STORY.fontColor = Colors.UI_HIGHLIGHTED.cpy();
+
+        PLAYER_INFO.font = AssetManager.getFont(Assets.Fonts.MEDIUM);
+        PLAYER_INFO.fontColor = Colors.UI_HIGHLIGHTED.cpy();
 
     }
 }
