@@ -4,6 +4,9 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapProperties;
 
 import tv.rocketbeans.rbcgj.GameConfig;
+import tv.rocketbeans.rbcgj.ui.Styles;
+import tv.rocketbeans.rbcgj.ui.Tooltip;
+import tv.rocketbeans.rbcgj.util.Colors;
 
 public class CrumbCollector implements MapActionHandler.MapActionListener {
 
@@ -30,6 +33,7 @@ public class CrumbCollector implements MapActionHandler.MapActionListener {
                 playerManager.addCrumb();
                 api.removeObjectAt(indexX, indexY);
                 world.remove(gameObject);
+                Tooltip.getInstance().create(object.getLeft() + object.getWidth() * 2f, object.getTop() + object.getHeight() * 3f, Styles.STORY, "Nuss-Kruemel gefunden!", Colors.INFO, null);
             }
         }
     }
