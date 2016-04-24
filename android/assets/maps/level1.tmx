@@ -1379,7 +1379,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="13" name="light" type="light" x="1347.5" y="423" width="41" height="40">
+  <object id="13" name="light" type="light" x="1355.5" y="427" width="41" height="40">
    <properties>
     <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="0"/>
@@ -1530,9 +1530,10 @@
     <property name="text" value="Okay. Gehen wir!"/>
    </properties>
   </object>
-  <object id="54" type="npc" x="1316.25" y="867.25" width="24.75" height="26.5">
+  <object id="54" name="Jeremy" type="npc" x="1316.25" y="867.25" width="24.75" height="26.5">
    <properties>
-    <property name="info" value="Jeremy, die teilweise paralysierte Paranuss! Jemanden zu toeten, der nur wegen des Wortspiels hier ist... Dieses Eichhoernchen wird bezahlen!"/>
+    <property name="answer" value="Das Eichhoernchen... Es hat.. Rosina.. Ich.. bin nur ein Wortspiel..."/>
+    <property name="info" value="Jeremy, die teilweise paralysierte Paranuss!"/>
     <property name="nut" value="brazilnut"/>
    </properties>
   </object>
@@ -1543,7 +1544,7 @@
   </object>
   <object id="57" name="Lord Cashew" type="npc" x="897.515" y="900.394" width="28.303" height="25.5152">
    <properties>
-    <property name="info" value="Lord Cashew. Oh mein Gott.  Es hat ihn vollkommen zerkruemelt.  Was fuer ein Monster!"/>
+    <property name="info" value="Lord Cashew. Oh mein Gott. Ich komme zu spaet. Es hat ihn vollkommen zerkruemelt..."/>
     <property name="nut" value="cashew"/>
    </properties>
   </object>
@@ -1587,17 +1588,17 @@
     <property name="text" value="Hier hinten ist nichts. Geh zurueck."/>
    </properties>
   </object>
-  <object id="78" name="Nussfakten 2" x="1251.33" y="992.667" width="25.3333" height="24.6667">
+  <object id="78" name="Nussfakten 3" x="1251.33" y="992.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Schon mal von Erdnussflips gehoert?"/>
    </properties>
   </object>
-  <object id="79" name="Nussfakten 2" x="1380.33" y="989.667" width="25.3333" height="24.6667">
+  <object id="79" name="Nussfakten 4" x="1380.33" y="989.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Oder Erdnussbutter?"/>
    </properties>
   </object>
-  <object id="80" name="Nussfakten 2" x="1505.33" y="994.667" width="25.3333" height="24.6667">
+  <object id="80" name="Nussfakten 5" x="1505.33" y="994.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Wir Erdnuesse sind einfach besser als ihr Menschen."/>
    </properties>
