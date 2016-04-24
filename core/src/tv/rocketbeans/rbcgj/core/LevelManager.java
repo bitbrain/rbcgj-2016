@@ -13,12 +13,13 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import box2dLight.PointLight;
 import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
-import tv.rocketbeans.rbcgj.assets.Assets;
 import tv.rocketbeans.rbcgj.core.tmx.Tmx;
 import tv.rocketbeans.rbcgj.graphics.FX;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
@@ -35,8 +36,6 @@ public class LevelManager {
 
     private CollisionDetector collisions;
 
-    private Vector2 spawnPoint = new Vector2();
-
     private Vector2 spawn = new Vector2();
 
     private Music music;
@@ -45,11 +44,17 @@ public class LevelManager {
 
     private boolean initialized;
 
-    public LevelManager(LightingManager lightingManager, MapActionHandler handler, CollisionDetector collisions) {
+    private Set<GameObject> gameObjects;
+
+    private GameWorld world;
+
+    public LevelManager(LightingManager lightingManager, GameWorld world, MapActionHandler handler, CollisionDetector collisions) {
         this.lightingManager = lightingManager;
         staticLights = new ArrayList<PointLight>();
         this.collisions = collisions;
         this.actionHandler = handler;
+        this.world = world;
+        this.gameObjects = new HashSet<GameObject>();
     }
 
     public void loadLevel(Levels levels, GameObject player) {
@@ -57,6 +62,10 @@ public class LevelManager {
         for (PointLight light : staticLights) {
             light.remove(true);
         }
+        for (GameObject object : gameObjects) {
+            world.remove(object);
+        }
+        gameObjects.clear();
         staticLights.clear();
         lightingManager.setAmbientLight(levels.getAmbientColor());
         if (mapRenderer != null) {
@@ -128,8 +137,33 @@ public class LevelManager {
                     int yIndex = (int)Math.floor(y / GameConfig.CELL_SCALE);
                     spawn.x = xIndex * GameConfig.CELL_SCALE;
                     spawn.y = yIndex * GameConfig.CELL_SCALE;
+                } else if (properties.get(Tmx.TYPE).equals(Tmx.NPC)) {
+                    float x = (Float)properties.get(Tmx.X) + GameConfig.CELL_SCALE / 2f;
+                    float y = (Float)properties.get(Tmx.Y) + GameConfig.CELL_SCALE / 2f;
+                    String type = (String)properties.get(Tmx.NUT);
+                    // Normalize spawn position
+                    x = (int)Math.floor(x / GameConfig.CELL_SCALE) * GameConfig.CELL_SCALE;
+                    y = (int)Math.floor(y / GameConfig.CELL_SCALE) * GameConfig.CELL_SCALE;
+                    GameObject npc = world.addObject();
+                    npc.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
+                    npc.setPosition(x, y);
+                    npc.setType(getNPCType(type));
+                    gameObjects.add(npc);
                 }
             }
         }
+    }
+
+    private int getNPCType(String type) {
+        if (type.equals(Tmx.RAISIN)) {
+            return GameObjectType.RUISIN;
+        } else if (type.equals(Tmx.ALMOND)) {
+            return GameObjectType.ALMOND;
+        } else if (type.equals(Tmx.BRAZIL)) {
+            return GameObjectType.BRAZIL;
+        } else if (type.equals(Tmx.CASHEW)) {
+            return GameObjectType.CASHEW;
+        }
+        return -1;
     }
 }

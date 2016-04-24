@@ -29,7 +29,11 @@ public final class Assets {
         RBCGJ("textures/rbcgj.png"),
         LOGO("textures/logo.png"),
         BUTTON_9("textures/button.9.png"),
-        BACKGROUND("textures/background.png");
+        BACKGROUND("textures/background.png"),
+        ALMOND_DEAD("textures/almond-dead.png"),
+        CASHEW_DEAD("textures/cashew-dead.png"),
+        BRAZILNUT_DEAD("textures/brazilnut-dead.png"),
+        RUISIN_DEAD("textures/ruisin-dead.png");
 
         private String path;
 
