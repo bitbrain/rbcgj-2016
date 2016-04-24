@@ -64,7 +64,10 @@ public class GameObjectMover {
                     .target(0f).start(tweenManager);
             animateMovement(object);
         } else if (isReadyToMove()) {
-            object.setDirection(Direction.LEFT);
+            if (object.getDirection() != Direction.LEFT) {
+                object.setDirection(Direction.LEFT);
+                handler.enter(object, object.getLeft(), object.getTop());
+            }
         }
     }
 
@@ -88,7 +91,10 @@ public class GameObjectMover {
                     .target(0f).start(tweenManager);
             animateMovement(object);
         } else if (isReadyToMove()) {
-            object.setDirection(Direction.RIGHT);
+            if (object.getDirection() != Direction.RIGHT) {
+                object.setDirection(Direction.RIGHT);
+                handler.enter(object, object.getLeft(), object.getTop());
+            }
         }
     }
 
@@ -112,7 +118,10 @@ public class GameObjectMover {
                     .target(0f).start(tweenManager);
             animateMovement(object);
         } else if (isReadyToMove()) {
-            object.setDirection(Direction.UP);
+            if (object.getDirection() != Direction.UP) {
+                object.setDirection(Direction.UP);
+                handler.enter(object, object.getLeft(), object.getTop());
+            }
         }
     }
 
@@ -136,7 +145,10 @@ public class GameObjectMover {
                     .target(0f).start(tweenManager);
             animateMovement(object);
         } else if (isReadyToMove()) {
-            object.setDirection(Direction.DOWN);
+            if (object.getDirection() != Direction.DOWN) {
+                object.setDirection(Direction.DOWN);
+                handler.enter(object, object.getLeft(), object.getTop());
+            }
         }
     }
 
