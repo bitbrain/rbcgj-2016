@@ -20,10 +20,16 @@ public class SoundPoolLooper {
 
     private Random random;
 
+    private float volume = 1f;
+
     public SoundPoolLooper(Assets.Sounds... sounds) {
         this.timer = new DeltaTimer();
         this.sounds = sounds;
         this.random = new Random();
+    }
+
+    public void setVolume(float volume) {
+        this.volume = volume;
     }
 
     public void setInterval(float interval) {
@@ -44,6 +50,6 @@ public class SoundPoolLooper {
     private void playRandomSound() {
         int randomIndex = random.nextInt(sounds.length);
         Sound sound = AssetManager.getSound(sounds[randomIndex]);
-        sound.play(0.7f - random.nextFloat() * 0.2f, 1f - random.nextFloat() * 0.2f, 0f);
+        sound.play(volume - random.nextFloat() * 0.2f, 1f - random.nextFloat() * 0.2f, 0f);
     }
 }

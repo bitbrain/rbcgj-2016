@@ -8,7 +8,7 @@ import tv.rocketbeans.rbcgj.util.Colors;
 public enum Levels {
 
 
-    LEVEL_1(Assets.Maps.BOSS, Assets.Musics.LEVEL_1, Colors.BACKGROUND),
+    LEVEL_1(Assets.Maps.LEVEL1, Assets.Musics.LEVEL_1, Colors.BACKGROUND),
     LEVEL_2(Assets.Maps.LEVEL2, Assets.Musics.LEVEL_2, Colors.BACKGROUND),
     DEMO(Assets.Maps.DEFAULT, Assets.Musics.LEVEL_1, Colors.BACKGROUND);
 
