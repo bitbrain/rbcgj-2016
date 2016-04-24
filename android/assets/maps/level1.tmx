@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="57">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="51" tilewidth="32" tileheight="32" nextobjectid="61">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -290,7 +290,7 @@
   </tile>
   <tile id="117">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="118">
@@ -340,7 +340,7 @@
   </tile>
   <tile id="141">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="142">
@@ -550,7 +550,7 @@
   </tile>
   <tile id="229">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="230">
@@ -560,12 +560,12 @@
   </tile>
   <tile id="231">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="232">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="233">
@@ -585,7 +585,7 @@
   </tile>
   <tile id="236">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="237">
@@ -680,7 +680,7 @@
   </tile>
   <tile id="311">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="312">
@@ -1005,7 +1005,7 @@
   </tile>
   <tile id="648">
    <properties>
-    <property name="collision" type="bool" value="false"/>
+    <property name="collision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="649">
@@ -1184,7 +1184,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="obstacles" width="50" height="51">
@@ -1380,15 +1380,32 @@
     <property name="text" value="Gruenes Licht..."/>
    </properties>
   </object>
-  <object id="54" x="1308" y="832" width="76" height="18.6667">
+  <object id="54" type="npc" x="1308" y="832" width="76" height="63">
    <properties>
-    <property name="text" value="...es leuchtet gruen"/>
+    <property name="info" value="Jeremy, die teilweise paralysierte Paranuss! Jemanden zu toeten, der nur wegen des Wortspiels hier ist... Dieses Eichhoernchen wird bezahlen!"/>
+    <property name="nut" value="brazilnut"/>
    </properties>
   </object>
   <object id="55" x="260.667" y="75.3333" width="27.3333" height="70.6667">
    <properties>
     <property name="text" value="Schon durch? Naja. Ist halt kein Dark Souls."/>
    </properties>
+  </object>
+  <object id="57" type="npc" x="909.333" y="912.667" width="38" height="34">
+   <properties>
+    <property name="info" value="Lord Cashew. Oh mein Gott.  Es hat ihn vollkommen zerktuemelt.  Was fuer ein Monster"/>
+    <property name="nut" value="cashew"/>
+   </properties>
+  </object>
+  <object id="60" name="light" type="light" x="907.5" y="910" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="0"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="50"/>
+   </properties>
+   <ellipse/>
   </object>
  </objectgroup>
 </map>
