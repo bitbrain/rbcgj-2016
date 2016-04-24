@@ -1416,7 +1416,7 @@
     <property name="text" value="Schon durch? Naja. Ist halt kein Dark Souls."/>
    </properties>
   </object>
-  <object id="57" name="Lord Cashew" type="npc" x="930.515" y="931.394" width="28.303" height="25.5152">
+  <object id="57" name="Lord Cashew" type="npc" x="897.515" y="900.394" width="28.303" height="25.5152">
    <properties>
     <property name="info" value="Lord Cashew. Oh mein Gott.  Es hat ihn vollkommen zerkruemelt.  Was fuer ein Monster!"/>
     <property name="nut" value="cashew"/>
