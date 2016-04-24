@@ -99,7 +99,13 @@ public final class Assets {
         STEP_3("sound/steps_3.ogg"),
         MENU_CHOOSE("sound/menu_choose.ogg"),
         START_GAME("sound/start_new_game.ogg"),
-        PORTAL("sound/portal.ogg");
+        PORTAL("sound/portal.ogg"),
+        EDDY_BLA_1("sound/eddy_bla_1.ogg"),
+        EDDY_BLA_2("sound/eddy_bla_2.ogg"),
+        EDDY_BLA_3("sound/eddy_bla_3.ogg"),
+        EDDY_BLA_4("sound/eddy_bla_4.ogg"),
+        EDDY_BLA_5("sound/eddy_bla_5.ogg"),
+        EDDY_BLA_6("sound/eddy_bla_6.ogg");
 
         private String path;
 

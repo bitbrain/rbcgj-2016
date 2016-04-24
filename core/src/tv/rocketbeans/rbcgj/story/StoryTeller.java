@@ -3,6 +3,9 @@ package tv.rocketbeans.rbcgj.story;
 import java.util.ArrayList;
 import java.util.List;
 
+import tv.rocketbeans.rbcgj.assets.Assets;
+import tv.rocketbeans.rbcgj.audio.SoundPoolLooper;
+
 public class StoryTeller {
 
     private List<String> texts;

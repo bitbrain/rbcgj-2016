@@ -7,6 +7,8 @@ import com.badlogic.gdx.math.Vector2;
 import aurelienribon.tweenengine.BaseTween;
 import aurelienribon.tweenengine.TweenCallback;
 import tv.rocketbeans.rbcgj.GameConfig;
+import tv.rocketbeans.rbcgj.assets.Assets;
+import tv.rocketbeans.rbcgj.audio.SoundPoolLooper;
 import tv.rocketbeans.rbcgj.core.Direction;
 import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.MapActionHandler;
@@ -14,10 +16,19 @@ import tv.rocketbeans.rbcgj.core.tmx.Tmx;
 import tv.rocketbeans.rbcgj.util.Colors;
 
 public class TooltipHandler implements MapActionHandler.MapActionListener {
+
+    private SoundPoolLooper looper;
+
+    public TooltipHandler() {
+        looper = new SoundPoolLooper(Assets.Sounds.EDDY_BLA_1, Assets.Sounds.EDDY_BLA_2, Assets.Sounds.EDDY_BLA_3, Assets.Sounds.EDDY_BLA_4, Assets.Sounds.EDDY_BLA_5, Assets.Sounds.EDDY_BLA_6);
+        looper.setInterval(0.4f);
+    }
     
     @Override
     public void onObjectEnter(final GameObject object, MapProperties properties, MapActionHandler.MapAPI api) {
         if (properties != null && properties.containsKey("text")) {
+            looper.play();
+            looper.update(2f);
             String text = (String)properties.get("text");
             Tooltip.getInstance().create(object.getLeft(), object.getTop() + object.getHeight() * 3f, Styles.STORY, text);
         } else {
@@ -28,6 +39,8 @@ public class TooltipHandler implements MapActionHandler.MapActionListener {
             if (o != null) {
                 final MapProperties p = o.getProperties();
                 if (p.get(Tmx.INFO) != null) {
+                    looper.play();
+                    looper.update(2f);
                     String text = (String) p.get(Tmx.INFO);
                     Tooltip.getInstance().create(object.getLeft(), object.getTop() + object.getHeight() * 3f, Styles.STORY, text, Colors.INFO, new TweenCallback() {
                         @Override
