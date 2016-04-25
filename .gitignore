@@ -62,3 +62,14 @@ build/
 
 ## OS Specific
 .DS_Store
+android/assets/Thumbs.db
+android/assets/maps/Thumbs.db
+*.db
+android/assets/music/victory_preview.ogg
+android/assets/music/story_screen_preview.ogg
+android/assets/music/Pause_Screen_Preview.ogg
+android/assets/music/Level_3_Preview.ogg
+android/assets/music/Level_1_Preview.ogg
+android/assets/music/Level_2_Preview.ogg
+android/assets/music/Level_4_Preview.ogg
+android/assets/music/Title_Screen_preview.ogg
