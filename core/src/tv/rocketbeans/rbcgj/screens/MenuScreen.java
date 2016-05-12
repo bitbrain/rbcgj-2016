@@ -21,6 +21,8 @@ import aurelienribon.tweenengine.TweenEquations;
 import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.assets.Assets;
+import tv.rocketbeans.rbcgj.i18n.Bundle;
+import tv.rocketbeans.rbcgj.i18n.Messages;
 import tv.rocketbeans.rbcgj.tweens.ActorTween;
 import tv.rocketbeans.rbcgj.tweens.SpriteTween;
 import tv.rocketbeans.rbcgj.ui.Styles;
@@ -49,11 +51,11 @@ public class MenuScreen extends AbstractScreen {
 
         logo = new Sprite(AssetManager.getTexture(Assets.Textures.LOGO));
         logo.setScale(0.65f);
-        Tween.to(logo, SpriteTween.SCALE, 1f).target(0.8f).ease(TweenEquations.easeOutCubic).repeatYoyo(Tween.INFINITY, 0f).start(tweenManager);
+        Tween.to(logo, SpriteTween.SCALE, 4f).target(0.8f).ease(TweenEquations.easeOutCubic).repeatYoyo(Tween.INFINITY, 0f).start(tweenManager);
         logo.getColor().a = 0f;
         Tween.to(logo, SpriteTween.ALPHA, 2f).target(1f).ease(TweenEquations.easeInCubic).start(tweenManager);
 
-        TextButton playButton = new TextButton("Starten", Styles.MENU_BUTTON);
+        TextButton playButton = new TextButton(Bundle.general.get(Messages.MENU_START), Styles.MENU_BUTTON);
         playButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -69,8 +71,8 @@ public class MenuScreen extends AbstractScreen {
                 }
             }
         });
-        layout.center().add(playButton).height(70).width(270f).padBottom(20f).padTop(150f).row();
-        TextButton closeButton = new TextButton("Beenden", Styles.MENU_BUTTON);
+        layout.center().add(playButton).height(70).width(320f).padBottom(20f).padTop(150f).row();
+        TextButton closeButton = new TextButton(Bundle.general.get(Messages.MENU_CLOSE), Styles.MENU_BUTTON);
         closeButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -86,7 +88,7 @@ public class MenuScreen extends AbstractScreen {
                 }
             }
         });
-        layout.center().add(closeButton).height(70).width(270).row();
+        layout.center().add(closeButton).height(70).width(320).row();
 
         Label credits = new Label("game by Miguel Gonzalez and Simon Janssen", Styles.CREDITS);
         layout.center().add(credits).padTop(90f).row();
