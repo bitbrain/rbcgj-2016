@@ -24,7 +24,7 @@ public final class Assets {
      */
     public enum Textures {
 
-        EDDY("textures/nut-eddy.png"),
+        PEANUT("textures/nut-eddy.png"),
         SHADOW("textures/shadow.png"),
         RBCGJ("textures/rbcgj.png"),
         LOGO("textures/logo.png"),
@@ -32,7 +32,7 @@ public final class Assets {
         BACKGROUND("textures/background.png"),
         ALMOND_DEAD("textures/almond-dead.png"),
         CASHEW_DEAD("textures/cashew-dead.png"),
-        BRAZILNUT_DEAD("textures/brazilnut-dead.png"),
+        BRAZIL_DEAD("textures/brazilnut-dead.png"),
         RUISIN_DEAD("textures/ruisin-dead.png"),
         CRUMB("textures/crumb.png");
 

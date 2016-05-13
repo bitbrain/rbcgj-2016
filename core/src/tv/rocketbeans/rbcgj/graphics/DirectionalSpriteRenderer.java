@@ -14,17 +14,16 @@ public class DirectionalSpriteRenderer implements RenderManager.Renderer {
 
     protected Sprite[] sprites;
 
-    private Assets.Textures textureId;
+    private Texture texture;
 
     private Sprite shadow;
 
-    public DirectionalSpriteRenderer(Assets.Textures textureId) {
-        this.textureId = textureId;
+    public DirectionalSpriteRenderer(Texture texture) {
+        this.texture = texture;
     }
 
     @Override
     public void init() {
-        Texture texture = AssetManager.getTexture(textureId);
         sprites = new Sprite[4];
         sprites[Direction.DOWN] = new Sprite(new TextureRegion(texture, 0, 0, 16, 16));
         sprites[Direction.UP] = new Sprite(new TextureRegion(texture, 0, 16, 16, 16));

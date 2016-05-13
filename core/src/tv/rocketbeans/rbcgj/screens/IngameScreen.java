@@ -27,6 +27,9 @@ import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
 import tv.rocketbeans.rbcgj.ui.*;
 import tv.rocketbeans.rbcgj.util.Colors;
 
+import static tv.rocketbeans.rbcgj.core.GameObjectType.*;
+import static tv.rocketbeans.rbcgj.graphics.TextureResolver.resolveTexture;
+
 public class IngameScreen extends AbstractScreen {
 
     // Lighting
@@ -114,11 +117,11 @@ public class IngameScreen extends AbstractScreen {
     }
 
     private void initRenderers() {
-        world.registerRenderer(GameObjectType.PEANUT, new DirectionalSpriteRenderer(Assets.Textures.EDDY));
-        world.registerRenderer(GameObjectType.ALMOND, new SpriteRenderer(Assets.Textures.ALMOND_DEAD));
-        world.registerRenderer(GameObjectType.RUISIN, new SpriteRenderer(Assets.Textures.RUISIN_DEAD));
-        world.registerRenderer(GameObjectType.CASHEW, new SpriteRenderer(Assets.Textures.CASHEW_DEAD));
-        world.registerRenderer(GameObjectType.BRAZIL, new SpriteRenderer(Assets.Textures.BRAZILNUT_DEAD));
-        world.registerRenderer(GameObjectType.CRUMB, new ShadowSpriteRenderer(Assets.Textures.CRUMB));
+        world.registerRenderer(PEANUT, new DirectionalSpriteRenderer(resolveTexture(PEANUT, false)));
+        world.registerRenderer(ALMOND, new SpriteRenderer(resolveTexture(ALMOND, true)));
+        world.registerRenderer(RUISIN, new SpriteRenderer(resolveTexture(RUISIN, true)));
+        world.registerRenderer(CASHEW, new SpriteRenderer(resolveTexture(CASHEW, true)));
+        world.registerRenderer(BRAZIL, new SpriteRenderer(resolveTexture(BRAZIL, true)));
+        world.registerRenderer(CRUMB, new ShadowSpriteRenderer(resolveTexture(CRUMB, true)));
     }
 }

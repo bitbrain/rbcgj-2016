@@ -1,5 +1,6 @@
 package tv.rocketbeans.rbcgj.graphics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
@@ -11,15 +12,15 @@ public class SpriteRenderer implements RenderManager.Renderer {
 
     protected Sprite sprite;
 
-    private Assets.Textures textureId;
+    private Texture texture;
 
-    public SpriteRenderer(Assets.Textures textureId) {
-        this.textureId = textureId;
+    public SpriteRenderer(Texture texture) {
+        this.texture = texture;
     }
 
     @Override
     public void init() {
-        sprite = new Sprite(AssetManager.getTexture(textureId));
+        sprite = new Sprite(texture);
     }
 
     @Override
