@@ -17,7 +17,11 @@ public class NutGame extends Game {
         AssetManager.init();
         Styles.init();
         ScreenHandler.setFull();
-        setScreen(new LoadingScreen(this));
+        if (GameConfig.DEV_MODE) {
+            setScreen(new IngameScreen(this));
+        } else {
+            setScreen(new LoadingScreen(this));
+        }
     }
 
     @Override
