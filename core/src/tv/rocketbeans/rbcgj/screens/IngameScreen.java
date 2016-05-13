@@ -24,8 +24,7 @@ import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
 import tv.rocketbeans.rbcgj.graphics.ShadowSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
-import tv.rocketbeans.rbcgj.ui.Styles;
-import tv.rocketbeans.rbcgj.ui.TooltipHandler;
+import tv.rocketbeans.rbcgj.ui.*;
 import tv.rocketbeans.rbcgj.util.Colors;
 
 public class IngameScreen extends AbstractScreen {
@@ -81,7 +80,7 @@ public class IngameScreen extends AbstractScreen {
         handler.addListener(new CrumbCollector(levelManager, world, playerManager));
 
 
-        PlayerUI ui = new PlayerUI(playerManager);
+        tv.rocketbeans.rbcgj.ui.PlayerUI ui = new tv.rocketbeans.rbcgj.ui.PlayerUI(playerManager);
         ui.setPosition(20f, 20f);
         stage.addActor(ui);
     }

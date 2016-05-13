@@ -1,4 +1,4 @@
-package tv.rocketbeans.rbcgj.screens;
+package tv.rocketbeans.rbcgj.ui;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
