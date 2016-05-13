@@ -11,6 +11,7 @@ import tv.rocketbeans.rbcgj.core.PlayerManager;
 import tv.rocketbeans.rbcgj.graphics.TextureResolver;
 import tv.rocketbeans.rbcgj.tweens.ActorTween;
 import tv.rocketbeans.rbcgj.tweens.SharedTweenManager;
+import tv.rocketbeans.rbcgj.util.Colors;
 
 /**
  * Widget to display a certain collectible identified by GameObject id
@@ -36,7 +37,9 @@ public class CollectibleWidget extends Actor implements PlayerManager.PlayerList
     public void draw(Batch batch, float parentAlpha) {
         icon.setPosition(getX(), getY());
         icon.setSize(getHeight(), getHeight());
+        icon.setColor(getColor());
         icon.draw(batch, parentAlpha * getColor().a);
+        text.setColor(getColor());
         text.setPosition(getX() + icon.getWidth(), getY() + icon.getHeight() / 2f - text.getHeight() / 2f - 3f);
         text.draw(batch, parentAlpha * getColor().a);
     }
@@ -46,13 +49,18 @@ public class CollectibleWidget extends Actor implements PlayerManager.PlayerList
         if (collectible.getType() == type) {
             if (collectible.getMaxAmount() > 0) {
                 text.setText(collectible.getCurrentAmount() + "/" + collectible.getMaxAmount());
+                if (collectible.getCurrentAmount() == collectible.getMaxAmount()) {
+                    setColor(Colors.SUCCESS);
+                }
             } else {
                 text.setText(String.valueOf(collectible.getCurrentAmount()));
             }
             TweenManager mgr = SharedTweenManager.getInstance();
             mgr.killTarget(this);
             getColor().a = 1f;
-            Tween.to(this, ActorTween.ALPHA, .7f).target(DEFAULT_ALPHA).start(mgr);
+            if (collectible.getCurrentAmount() != collectible.getMaxAmount()) {
+                Tween.to(this, ActorTween.ALPHA, .7f).target(DEFAULT_ALPHA).start(mgr);
+            }
         }
     }
 }
