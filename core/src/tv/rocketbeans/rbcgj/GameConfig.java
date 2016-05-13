@@ -13,8 +13,8 @@ public interface GameConfig {
     float MOVEMENT_TIME = 0.26f;
 
     // Auto fullscreen enabled
-    boolean AUTO_FULLSCREEN = false;
+    boolean AUTO_FULLSCREEN = true;
 
     // Debug mode
-    boolean DEV_MODE = true;
+    boolean DEV_MODE = false;
 }

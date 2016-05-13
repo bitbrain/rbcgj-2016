@@ -34,10 +34,10 @@ public final class Assets {
         CASHEW_DEAD("textures/cashew-dead.png"),
         BRAZIL_DEAD("textures/brazilnut-dead.png"),
         RUISIN_DEAD("textures/ruisin-dead.png"),
-        ALMOND("textures/almond-dead.png"),
-        CASHEW("textures/cashew-dead.png"),
-        BRAZIL("textures/brazilnut-dead.png"),
-        RUISIN("textures/ruisin-dead.png"),
+        ALMOND("textures/almond.png"),
+        CASHEW("textures/cashew.png"),
+        BRAZIL("textures/brazilnut.png"),
+        RUISIN("textures/ruisin.png"),
         CRUMB("textures/crumb.png");
 
         private String path;
