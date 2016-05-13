@@ -13,7 +13,7 @@ import tv.rocketbeans.rbcgj.tweens.ActorTween;
 import tv.rocketbeans.rbcgj.tweens.SharedTweenManager;
 import tv.rocketbeans.rbcgj.ui.Styles;
 
-public class PlayerUI extends Actor implements PlayerManager.PlayerListener {
+public class CrumbUI extends Actor implements PlayerManager.PlayerListener {
 
     private static final float DEFAULT_ALPHA = 0.4f;
 
@@ -23,7 +23,7 @@ public class PlayerUI extends Actor implements PlayerManager.PlayerListener {
 
     private Label label;
 
-    public PlayerUI(PlayerManager playerManager) {
+    public CrumbUI(PlayerManager playerManager) {
         this.playerManager = playerManager;
         this.playerManager.addListener(this);
         setHeight(80f);
@@ -45,8 +45,8 @@ public class PlayerUI extends Actor implements PlayerManager.PlayerListener {
     }
 
     @Override
-    public void onAddCrumb(int newAmount) {
-        label.setText(String.valueOf(newAmount));
+    public void onAddCollectible(PlayerManager.Collectible collectible) {
+        label.setText(String.valueOf(collectible.getCurrentAmount()));
         getColor().a = 1f;
         Tween.to(this, ActorTween.ALPHA, 1f).target(DEFAULT_ALPHA).start(SharedTweenManager.getInstance());
     }

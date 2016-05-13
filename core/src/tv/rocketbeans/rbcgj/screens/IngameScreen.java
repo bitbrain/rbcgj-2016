@@ -80,7 +80,7 @@ public class IngameScreen extends AbstractScreen {
         handler.addListener(new CrumbCollector(levelManager, world, playerManager));
 
 
-        tv.rocketbeans.rbcgj.ui.PlayerUI ui = new tv.rocketbeans.rbcgj.ui.PlayerUI(playerManager);
+        CrumbUI ui = new CrumbUI(playerManager);
         ui.setPosition(20f, 20f);
         stage.addActor(ui);
     }
