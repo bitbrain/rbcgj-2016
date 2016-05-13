@@ -3,8 +3,10 @@ package tv.rocketbeans.rbcgj.ui;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 
 import aurelienribon.tweenengine.BaseTween;
+import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenCallback;
 import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.assets.Assets;
@@ -13,11 +15,16 @@ import tv.rocketbeans.rbcgj.core.Direction;
 import tv.rocketbeans.rbcgj.core.GameObject;
 import tv.rocketbeans.rbcgj.core.MapActionHandler;
 import tv.rocketbeans.rbcgj.core.tmx.Tmx;
+import tv.rocketbeans.rbcgj.tweens.ActorTween;
 import tv.rocketbeans.rbcgj.util.Colors;
 
 public class TooltipHandler implements MapActionHandler.MapActionListener {
 
     private SoundPoolLooper looper;
+
+    static {
+        Tween.registerAccessor(Actor.class, new ActorTween());
+    }
 
     public TooltipHandler() {
         looper = new SoundPoolLooper(Assets.Sounds.EDDY_BLA_1, Assets.Sounds.EDDY_BLA_2, Assets.Sounds.EDDY_BLA_3, Assets.Sounds.EDDY_BLA_4, Assets.Sounds.EDDY_BLA_5, Assets.Sounds.EDDY_BLA_6);

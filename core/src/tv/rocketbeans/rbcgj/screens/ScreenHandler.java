@@ -11,8 +11,12 @@ public final class ScreenHandler {
 
     public static void setFull() {
         if (GameConfig.AUTO_FULLSCREEN) {
-            Gdx.graphics.setWindowedMode(Gdx.graphics.getDisplayMode().width, Gdx.graphics.getDisplayMode().height);
-            Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+            try {
+                Gdx.graphics.setWindowedMode(Gdx.graphics.getDisplayMode().width, Gdx.graphics.getDisplayMode().height);
+                Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+            } catch (Exception e) {
+                // noOp
+            }
         }
 
     }
