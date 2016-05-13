@@ -17,11 +17,11 @@ public class CrumbUI extends Actor {
 
     public CrumbUI(PlayerManager playerManager) {
         this.playerManager = playerManager;
-        addCollectibleWidget(GameObjectType.CRUMB);
         addCollectibleWidget(GameObjectType.CASHEW);
         addCollectibleWidget(GameObjectType.ALMOND);
         addCollectibleWidget(GameObjectType.BRAZIL);
         addCollectibleWidget(GameObjectType.RUISIN);
+        addCollectibleWidget(GameObjectType.CRUMB).setDefaultAlpha(0.5f);
     }
 
     @Override
@@ -34,10 +34,11 @@ public class CrumbUI extends Actor {
 
     }
 
-    private void addCollectibleWidget(int type) {
+    private CollectibleWidget addCollectibleWidget(int type) {
         CollectibleWidget widget = new CollectibleWidget(type);
         widget.setHeight(64f);
         playerManager.addListener(widget);
         widgets.add(widget);
+        return widget;
     }
 }

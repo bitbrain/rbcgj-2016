@@ -18,7 +18,7 @@ import tv.rocketbeans.rbcgj.util.Colors;
  */
 public class CollectibleWidget extends Actor implements PlayerManager.PlayerListener {
 
-    private static final float DEFAULT_ALPHA = 0.4f;
+    private static final float DEFAULT_ALPHA = 0.35f;
 
     private final int type;
 
@@ -26,11 +26,20 @@ public class CollectibleWidget extends Actor implements PlayerManager.PlayerList
 
     private Label text;
 
+    private float defaultAlpha = DEFAULT_ALPHA;
+
     public CollectibleWidget(int gameObjectType) {
         type = gameObjectType;
         icon = new Sprite(TextureResolver.resolveTexture(gameObjectType, false));
         text = new Label("0", Styles.STORY);
-        getColor().a = DEFAULT_ALPHA;
+        getColor().a = defaultAlpha;
+    }
+
+    public void setDefaultAlpha(float alpha) {
+        defaultAlpha = alpha;
+        TweenManager mgr = SharedTweenManager.getInstance();
+        mgr.killTarget(this);
+        getColor().a = defaultAlpha;
     }
 
     @Override
@@ -59,7 +68,7 @@ public class CollectibleWidget extends Actor implements PlayerManager.PlayerList
             mgr.killTarget(this);
             getColor().a = 1f;
             if (collectible.getCurrentAmount() != collectible.getMaxAmount()) {
-                Tween.to(this, ActorTween.ALPHA, .7f).target(DEFAULT_ALPHA).start(mgr);
+                Tween.to(this, ActorTween.ALPHA, .7f).target(defaultAlpha).start(mgr);
             }
         }
     }
