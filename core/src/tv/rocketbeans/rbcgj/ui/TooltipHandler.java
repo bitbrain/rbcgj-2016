@@ -40,10 +40,7 @@ public class TooltipHandler implements MapActionHandler.MapActionListener {
             String text = (String)properties.get("text");
             Tooltip.getInstance().create(object.getLeft(), object.getTop() + object.getHeight() * 3f, Styles.STORY, text);
         } else {
-            Vector2 lookAt = directionToVector(object.getDirection());
-            int indexX = (int)Math.floor(object.getLeft() / GameConfig.CELL_SCALE) + (int)lookAt.x;
-            int indexY = (int)Math.floor(object.getTop() / GameConfig.CELL_SCALE) + (int)lookAt.y;
-            MapObject o = api.getObjectAt(indexX, indexY);
+            MapObject o = api.getObjectInfront(object);
             if (o != null) {
                 final MapProperties p = o.getProperties();
                 if (p.get(Tmx.INFO) != null) {
@@ -70,21 +67,4 @@ public class TooltipHandler implements MapActionHandler.MapActionListener {
             }
         }
     }
-
-
-
-    private Vector2 directionToVector(int direction) {
-        Vector2 v = new Vector2();
-        if (direction == Direction.LEFT) {
-            v.set(-1, 0);
-        } else if (direction == Direction.RIGHT) {
-            v.set(1, 0);
-        } else if (direction == Direction.UP) {
-            v.set(0, 1);
-        } else if (direction == Direction.DOWN) {
-            v.set(0, -1);
-        }
-        return v;
-    }
-
 }

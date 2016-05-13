@@ -18,6 +18,7 @@ import tv.rocketbeans.rbcgj.core.LevelManager;
 import tv.rocketbeans.rbcgj.core.Levels;
 import tv.rocketbeans.rbcgj.core.MapActionHandler;
 import tv.rocketbeans.rbcgj.core.PlayerManager;
+import tv.rocketbeans.rbcgj.core.QuestHandler;
 import tv.rocketbeans.rbcgj.core.Teleporter;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
@@ -86,6 +87,7 @@ public class IngameScreen extends AbstractScreen {
         handler.addListener(teleporter);
         handler.addListener(new TooltipHandler());
         handler.addListener(new CrumbCollector(levelManager, world, playerManager));
+        handler.addListener(new QuestHandler(playerManager, levelManager));
 
         CrumbUI ui = new CrumbUI(playerManager);
         ui.setPosition(Gdx.graphics.getWidth() - 150f, Gdx.graphics.getHeight() - 220f);
