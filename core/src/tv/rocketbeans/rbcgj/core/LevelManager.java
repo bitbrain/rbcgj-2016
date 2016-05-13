@@ -82,7 +82,7 @@ public class LevelManager {
             light.remove(true);
         }
         for (GameObject object : gameObjects) {
-            world.remove(object);
+            world.remove(true, object);
         }
         mapping.clear();
         gameObjects.clear();

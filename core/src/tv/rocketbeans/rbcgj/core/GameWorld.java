@@ -183,4 +183,18 @@ public class GameWorld {
             removals.add(object);
         }
     }
+
+    /**
+     * Removes the given game objects from this world
+     *
+     * @param removals
+     */
+    public void remove(boolean force, GameObject... removals) {
+        for (GameObject removal : removals) {
+            objects.remove(removal);
+            controllers.remove(removal);
+            pool.free(removal);
+            SharedTweenManager.getInstance().killTarget(removal);
+        }
+    }
 }
