@@ -61,8 +61,13 @@ public class LevelManager {
 
     private Map<MapObject, GameObject> mapping;
 
-    public LevelManager(LightingManager lightingManager, GameWorld world, MapActionHandler handler, CollisionDetector collisions) {
+    private int crumbCount = 0;
+
+    private PlayerManager playerManager;
+
+    public LevelManager(LightingManager lightingManager, GameWorld world, MapActionHandler handler, CollisionDetector collisions, PlayerManager playerManager) {
         this.lightingManager = lightingManager;
+        this.playerManager = playerManager;
         staticLights = new ArrayList<PointLight>();
         this.collisions = collisions;
         this.actionHandler = handler;
@@ -175,6 +180,8 @@ public class LevelManager {
                     gameObjects.add(npc);
                     mapping.put(object, npc);
                 } else if (properties.get(Tmx.TYPE).equals(Tmx.CRUMB)) {
+                    crumbCount++;
+                    playerManager.setMaxAmount(GameObjectType.CRUMB, crumbCount);
                     float x = (Float)properties.get(Tmx.X);
                     float y = (Float)properties.get(Tmx.Y);
                     // Normalize spawn position

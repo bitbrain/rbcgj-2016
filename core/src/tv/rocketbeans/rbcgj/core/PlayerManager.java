@@ -58,11 +58,17 @@ public class PlayerManager {
 
     public void addListener(PlayerListener l) {
         listeners.add(l);
+        for (Collectible c : collectibles.values()) {
+            l.onAddCollectible(c);
+        }
     }
 
     public void setMaxAmount(int type, int amount) {
         ensureCollectible(type);
         collectibles.get(type).setMaxAmount(amount);
+        for (PlayerListener l : listeners) {
+            l.onAddCollectible(getCollectible(type));
+        }
     }
 
     public void addCollectible(int type) {

@@ -60,6 +60,11 @@ public class IngameScreen extends AbstractScreen {
 
         playerManager = new PlayerManager();
 
+        playerManager.setMaxAmount(GameObjectType.BRAZIL, 1);
+        playerManager.setMaxAmount(GameObjectType.RUISIN, 1);
+        playerManager.setMaxAmount(GameObjectType.ALMOND, 1);
+        playerManager.setMaxAmount(GameObjectType.CASHEW, 1);
+
         eddy = world.addObject();
         eddy.setPosition(0f, 0f);
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
@@ -71,9 +76,9 @@ public class IngameScreen extends AbstractScreen {
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
 
         collisions = new CollisionDetector();
-        levelManager = new LevelManager(lightingManager, world, handler, collisions);
+        levelManager = new LevelManager(lightingManager, world, handler, collisions, playerManager);
         world.setController(eddy, new WASDMovementController(collisions, handler));
-        Levels level = GameConfig.DEV_MODE ? Levels.LEVEL_2 : Levels.LEVEL_1;
+        Levels level = Levels.LEVEL_1;
         levelManager.loadLevel(level, eddy);
         world.setCameraTracking(eddy);
 
@@ -82,9 +87,8 @@ public class IngameScreen extends AbstractScreen {
         handler.addListener(new TooltipHandler());
         handler.addListener(new CrumbCollector(levelManager, world, playerManager));
 
-
         CrumbUI ui = new CrumbUI(playerManager);
-        ui.setPosition(20f, 20f);
+        ui.setPosition(Gdx.graphics.getWidth() - 150f, Gdx.graphics.getHeight() - 220f);
         stage.addActor(ui);
     }
 
