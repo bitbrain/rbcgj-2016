@@ -78,12 +78,11 @@ public class LevelManager {
 
     public void loadLevel(Levels levels, GameObject player) {
         initialized = true;
+        System.out.println("Load level!");
         for (PointLight light : staticLights) {
             light.remove(true);
         }
-        for (GameObject object : gameObjects) {
-            world.remove(true, object);
-        }
+        world.remove(true, gameObjects.toArray(new GameObject[gameObjects.size()]));
         mapping.clear();
         gameObjects.clear();
         staticLights.clear();
@@ -177,6 +176,7 @@ public class LevelManager {
                     npc.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
                     npc.setPosition(x, y);
                     npc.setType(getNPCType(type));
+                    System.out.println("Load NPC with type " + getNPCType(type));
                     gameObjects.add(npc);
                     mapping.put(object, npc);
                 } else if (properties.get(Tmx.TYPE).equals(Tmx.CRUMB)) {

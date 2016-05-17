@@ -147,6 +147,7 @@ public class GameWorld {
         }
         tracker.update(delta);
         for (GameObject removal : removals) {
+            System.out.println("Dynamically remove " + removal.getType());
             objects.remove(removal);
             controllers.remove(removal);
             pool.free(removal);
@@ -190,11 +191,16 @@ public class GameWorld {
      * @param removals
      */
     public void remove(boolean force, GameObject... removals) {
-        for (GameObject removal : removals) {
-            objects.remove(removal);
-            controllers.remove(removal);
-            pool.free(removal);
-            SharedTweenManager.getInstance().killTarget(removal);
+        if (force) {
+            for (GameObject removal : removals) {
+                System.out.println("Force remove " +removal.getType());
+                objects.remove(removal);
+                controllers.remove(removal);
+                pool.free(removal);
+                SharedTweenManager.getInstance().killTarget(removal);
+            }
+        } else {
+            remove(removals);
         }
     }
 }
