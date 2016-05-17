@@ -1529,13 +1529,16 @@
   <object id="54" name="Jeremy" type="npc" x="1316.25" y="867.25" width="24.75" height="26.5">
    <properties>
     <property name="answer" value="Das Eichhoernchen... Es hat.. Rosina.. Ich.. bin nur ein Wortspiel..."/>
+    <property name="answer_key" value="ANSWER_JEREMY"/>
     <property name="info" value="Jeremy, die teilweise paralysierte Paranuss!"/>
+    <property name="info_key" value="INFO_JEREMY"/>
     <property name="nut" value="brazilnut"/>
    </properties>
   </object>
   <object id="55" x="356.667" y="98.3333" width="27.3333" height="25">
    <properties>
     <property name="text" value="Schon durch? Naja. Ist halt kein Dark Souls."/>
+    <property name="text_key" value="DARKSOULS_PUN"/>
    </properties>
   </object>
   <object id="57" name="Lord Cashew" type="npc" x="897.515" y="900.394" width="28.303" height="25.5152">
@@ -1547,11 +1550,13 @@
   <object id="61" name="Nussfakten 1" x="1088.42" y="257.083" width="28.25" height="28.25">
    <properties>
     <property name="text" value="Immerhin enthalten Nuesse viel Fett und Vitamine."/>
+    <property name="text_key" value="NUT_FACT_2"/>
    </properties>
   </object>
   <object id="63" name="Nussfakten 2" x="1093.33" y="996.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Aus Nuessen werden so viele Sachen gemacht.."/>
+    <property name="text_key" value="NUTFACT_4"/>
    </properties>
   </object>
   <object id="67" name="Arena" x="464.5" y="719.5">
@@ -1562,41 +1567,49 @@
   <object id="69" name="Raketen" x="994.833" y="357.167" width="27.6667" height="22.5833">
    <properties>
     <property name="text" value="Ob man mit einem Treibstoff aus Nuessen auch Raketen antreiben koennte?"/>
+    <property name="text_key" value="ROCKETS"/>
    </properties>
   </object>
   <object id="72" name="Angst" x="194.125" y="352.958" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Ich habe Angst..."/>
+    <property name="text_key" value="SCARED"/>
    </properties>
   </object>
   <object id="74" name="Nussfakten 1" x="931.875" y="253.875" width="28.25" height="28.25">
    <properties>
     <property name="text" value="Hoffentlich machen mich die ganzen Nusskruemel nicht fett..."/>
+    <property name="text_key" value="NUTFACT_1"/>
    </properties>
   </object>
   <object id="75" name="Nussfakten 1" x="1216.54" y="259.208" width="28.25" height="28.25">
    <properties>
     <property name="text" value="Die sind gut für euch, Kinder!"/>
+    <property name="text_key" value="NUT_FACT_3"/>
    </properties>
   </object>
   <object id="76" name="Hier ist nix" x="36" y="99" width="24" height="24.5">
    <properties>
     <property name="text" value="Hier hinten ist nichts. Geh zurueck."/>
+    <property name="text_key" value="NOTHING_HERE"/>
    </properties>
   </object>
   <object id="78" name="Nussfakten 3" x="1539.33" y="994.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Schon mal von Erdnussflips gehoert?"/>
+    <property name="text_key" value="NUTFACT_5"/>
    </properties>
   </object>
   <object id="79" name="Nussfakten 4" x="1539.33" y="643.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Oder Erdnussbutter?"/>
+    <property name="text_key" value="NUTFACT_6"/>
    </properties>
   </object>
   <object id="80" name="Nussfakten 5" x="1540.33" y="227.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Mein Onkel wurde letztens erst verschleppt.."/>
+    <property name="text_key" value="NUTFACT_7"/>
    </properties>
   </object>
   <object id="81" name="Crumb" type="crumb" x="547" y="1220" width="24" height="22"/>
@@ -1604,8 +1617,8 @@
   <object id="84" name="Crumb" type="crumb" x="418" y="1220" width="24" height="22"/>
   <object id="85" name="Crumb" type="crumb" x="133" y="903" width="24" height="22"/>
   <object id="86" name="Crumb" type="crumb" x="132" y="965" width="24" height="22"/>
-  <object id="87" name="Crumb" type="crumb" x="133" y="551" width="24" height="22"/>
-  <object id="88" name="Crumb" type="crumb" x="198" y="548" width="24" height="22"/>
+  <object id="87" name="Crumb" type="crumb" x="99" y="805" width="24" height="22"/>
+  <object id="88" name="Crumb" type="crumb" x="36" y="806" width="24" height="22"/>
   <object id="89" name="Crumb" type="crumb" x="1411" y="293" width="24" height="22"/>
   <object id="90" name="Crumb" type="crumb" x="1316" y="292" width="24" height="22"/>
   <object id="91" name="Crumb" type="crumb" x="1317" y="357" width="24" height="22"/>
@@ -1634,11 +1647,13 @@
   <object id="114" name="Gehen wir Nuesse" x="576.125" y="1375.96" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Oh.. da liegen Leckereien.."/>
+    <property name="text_key" value="OH_SWEETS"/>
    </properties>
   </object>
   <object id="115" name="Gehen wir Nuesse" x="96.125" y="1121.96" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Irgendwie glaube ich, dass der Geschmack mich an was erinnert.."/>
+    <property name="text_key" value="TASTE_REMINDES_ME"/>
    </properties>
   </object>
   <object id="116" name="Gehen wir Nuesse" x="33.125" y="704.958" width="29.75" height="30.0833">
@@ -1649,6 +1664,7 @@
   <object id="117" name="Nussfakten 5" x="898.333" y="99.6667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Wie kann man uns bloss essen?"/>
+    <property name="text_key" value="NUTFACT_8"/>
    </properties>
   </object>
   <object id="119" name="oh nein" x="773" y="933" width="22" height="21">
