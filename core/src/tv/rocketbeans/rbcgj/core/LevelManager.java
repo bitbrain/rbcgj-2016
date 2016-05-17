@@ -65,6 +65,19 @@ public class LevelManager {
 
     private PlayerManager playerManager;
 
+    private GameWorld.GameWorldListener gameWorldListener = new GameWorld.GameWorldListener() {
+        @Override
+        public void onRemoveObject(GameObject removal) {
+            gameObjects.remove(removal);
+            for (Map.Entry<MapObject, GameObject> entry : mapping.entrySet()) {
+                if (entry.getValue().equals(removal)) {
+                    mapping.remove(entry.getKey());
+                    break;
+                }
+            }
+        }
+    };
+
     public LevelManager(LightingManager lightingManager, GameWorld world, MapActionHandler handler, CollisionDetector collisions, PlayerManager playerManager) {
         this.lightingManager = lightingManager;
         this.playerManager = playerManager;
@@ -72,6 +85,7 @@ public class LevelManager {
         this.collisions = collisions;
         this.actionHandler = handler;
         this.world = world;
+        this.world.setListener(gameWorldListener);
         mapping = new HashMap<MapObject, GameObject>();
         this.gameObjects = new HashSet<GameObject>();
     }
@@ -176,7 +190,7 @@ public class LevelManager {
                     npc.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
                     npc.setPosition(x, y);
                     npc.setType(getNPCType(type));
-                    System.out.println("Load NPC with type " + getNPCType(type));
+                    System.out.println("Load NPC with type " + getNPCType(type) + "(" + npc + ")");
                     gameObjects.add(npc);
                     mapping.put(object, npc);
                 } else if (properties.get(Tmx.TYPE).equals(Tmx.CRUMB)) {

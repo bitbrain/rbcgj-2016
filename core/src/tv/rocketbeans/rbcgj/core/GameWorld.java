@@ -21,8 +21,12 @@ public class GameWorld {
     /** the default cache size this world uses */
     public static final int DEFAULT_CACHE_SIZE = 100;
 
-    public static interface WorldBounds {
+    public interface WorldBounds {
         boolean isInBounds(GameObject object, OrthographicCamera camera);
+    }
+
+    public interface GameWorldListener {
+        void onRemoveObject(GameObject removal);
     }
 
     private final List<GameObject> removals = new ArrayList<GameObject>();
@@ -42,6 +46,8 @@ public class GameWorld {
     };
 
     private OrthographicCamera camera;
+
+    private GameWorldListener listener;
 
     private RenderManager renderManager;
 
@@ -99,6 +105,10 @@ public class GameWorld {
         controllers.put(object, controller);
     }
 
+    public void setListener(GameWorldListener listener) {
+        this.listener = listener;
+    }
+
     /**
      * Enables camera tracking for the given object. Tracking can be disabled by providing null.
      *
@@ -147,7 +157,10 @@ public class GameWorld {
         }
         tracker.update(delta);
         for (GameObject removal : removals) {
-            System.out.println("Dynamically remove " + removal.getType());
+            System.out.println("Dynamically remove " + removal.getType() + "(" + removal + ")");
+            if (listener != null) {
+                listener.onRemoveObject(removal);
+            }
             objects.remove(removal);
             controllers.remove(removal);
             pool.free(removal);
@@ -193,7 +206,10 @@ public class GameWorld {
     public void remove(boolean force, GameObject... removals) {
         if (force) {
             for (GameObject removal : removals) {
-                System.out.println("Force remove " +removal.getType());
+                System.out.println("Force remove " +removal.getType() + "(" + removal + ")");
+                if (listener != null) {
+                    listener.onRemoveObject(removal);
+                }
                 objects.remove(removal);
                 controllers.remove(removal);
                 pool.free(removal);
