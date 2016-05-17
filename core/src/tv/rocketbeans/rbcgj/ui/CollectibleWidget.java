@@ -1,5 +1,6 @@
 package tv.rocketbeans.rbcgj.ui;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -60,6 +61,8 @@ public class CollectibleWidget extends Actor implements PlayerManager.PlayerList
                 text.setText(collectible.getCurrentAmount() + "/" + collectible.getMaxAmount());
                 if (collectible.getCurrentAmount() == collectible.getMaxAmount()) {
                     setColor(Colors.SUCCESS);
+                } else {
+                    setColor(Color.WHITE.cpy());
                 }
             } else {
                 text.setText(String.valueOf(collectible.getCurrentAmount()));
