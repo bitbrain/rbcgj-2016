@@ -15,7 +15,7 @@ public class Bundle {
     public static void load() {
         Gdx.app.log("LOAD", "Loading bundles...");
         generalHandle = Gdx.files.internal("i18n/general");
-        Locale locale = Locale.getDefault();
+        Locale locale = Locale.ENGLISH;
         setLocale(locale);
         Gdx.app.log("INFO", "Done loading bundles.");
     }

@@ -1523,6 +1523,7 @@
   <object id="50" name="Gehen wir Nuesse" x="929" y="1505.25" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Okay. Gehen wir!"/>
+    <property name="text_key" value="LETS_GO"/>
    </properties>
   </object>
   <object id="54" name="Jeremy" type="npc" x="1316.25" y="867.25" width="24.75" height="26.5">
