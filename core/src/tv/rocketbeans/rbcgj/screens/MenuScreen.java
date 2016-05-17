@@ -18,6 +18,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenEquations;
+import tv.rocketbeans.rbcgj.GameConfig;
 import tv.rocketbeans.rbcgj.NutGame;
 import tv.rocketbeans.rbcgj.assets.AssetManager;
 import tv.rocketbeans.rbcgj.assets.Assets;
@@ -71,7 +72,7 @@ public class MenuScreen extends AbstractScreen {
                 }
             }
         });
-        layout.center().add(playButton).height(70).width(320f).padBottom(20f).padTop(150f).row();
+        layout.center().add(playButton).height(70).width(320f).padBottom(20f).padTop(180f).row();
         TextButton closeButton = new TextButton(Bundle.general.get(Messages.MENU_CLOSE), Styles.MENU_BUTTON);
         closeButton.addListener(new ClickListener() {
             @Override
@@ -90,8 +91,12 @@ public class MenuScreen extends AbstractScreen {
         });
         layout.center().add(closeButton).height(70).width(320).row();
 
-        Label credits = new Label("game by Miguel Gonzalez and Simon Janssen", Styles.CREDITS);
-        layout.center().add(credits).padTop(90f).row();
+        Label credits = new Label("game by Miguel Gonzalez and Simon Janssen", Styles.STORY);
+        layout.center().add(credits).padTop(70f).row();
+
+        Label version = new Label("Version " + GameConfig.GAME_VERSION, Styles.STORY);
+        version.getColor().a = 0.7f;
+        layout.center().add(version).padTop(20f).row();
 
         stage.addActor(layout);
     }

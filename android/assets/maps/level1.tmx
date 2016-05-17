@@ -1378,9 +1378,9 @@
    <properties>
     <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="0"/>
-    <property name="g" type="float" value="50"/>
-    <property name="r" type="float" value="100"/>
-    <property name="radius" type="float" value="100"/>
+    <property name="g" type="float" value="1"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="500"/>
    </properties>
    <ellipse/>
   </object>
