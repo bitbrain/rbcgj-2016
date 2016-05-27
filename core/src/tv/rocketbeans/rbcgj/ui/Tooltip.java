@@ -5,7 +5,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import aurelienribon.tweenengine.BaseTween;
@@ -53,12 +55,13 @@ public class Tooltip {
 
     public void create(float x, float y, Label.LabelStyle style, String text, Color color, final TweenCallback callback) {
         if (lastTooltip != null) {
+            final Label tooltip = lastTooltip;
             tweenManager.killTarget(lastTooltip);
-            Tween.to(lastTooltip, ActorTween.ALPHA, 1f).target(0f).setCallbackTriggers(TweenCallback.COMPLETE)
+            Tween.to(tooltip, ActorTween.ALPHA, 1f).target(0f).setCallbackTriggers(TweenCallback.COMPLETE)
                     .setCallback(new TweenCallback() {
                         @Override
                         public void onEvent(int type, BaseTween<?> source) {
-                            stage.getActors().removeValue(lastTooltip, true);
+                            stage.getActors().removeValue(tooltip, true);
                             lastTooltip = null;
                         }
                     }).ease(equation).start(tweenManager);
