@@ -23,6 +23,7 @@ public class PlayerManager {
 
         private void setMaxAmount(int maxAmount) {
             this.maxAmount = maxAmount;
+            justAchieved = false;
         }
 
         private boolean addCurrent() {
