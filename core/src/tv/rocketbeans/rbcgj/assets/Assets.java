@@ -110,7 +110,8 @@ public final class Assets {
         EDDY_BLA_4("sound/eddy_bla_4.ogg"),
         EDDY_BLA_5("sound/eddy_bla_5.ogg"),
         EDDY_BLA_6("sound/eddy_bla_6.ogg"),
-        COLLECT_NUT("sound/collect_nut.ogg");
+        COLLECT_NUT("sound/collect_nut.ogg"),
+        ACHIEVEMENT_UNLOCKED("sound/achievement_unlocked.ogg");
 
         private String path;
 

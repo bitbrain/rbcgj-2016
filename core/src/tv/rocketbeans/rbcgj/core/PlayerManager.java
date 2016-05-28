@@ -15,6 +15,8 @@ public class PlayerManager {
 
         private int type;
 
+        private boolean justAchieved = false;
+
         public Collectible(int type) {
             this.type = type;
         }
@@ -24,11 +26,23 @@ public class PlayerManager {
         }
 
         private boolean addCurrent() {
-            if (maxAmount < 0 || currentAmount < maxAmount) {
+            if (isNotAchieved()) {
                 currentAmount++;
+                if (!isNotAchieved()) {
+                    justAchieved = true;
+                }
                 return true;
             }
+            justAchieved = false;
             return false;
+        }
+
+        public boolean isJustAchieved() {
+            return justAchieved;
+        }
+
+        public boolean isNotAchieved() {
+            return maxAmount < 0 || currentAmount < maxAmount;
         }
 
         public int getCurrentAmount() {

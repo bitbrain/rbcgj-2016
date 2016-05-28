@@ -38,15 +38,12 @@ public class Tooltip {
 
     private TweenEquation equation;
 
-    private float duration;
-
     private float scale;
 
     private Actor lastTooltip;
 
     private Tooltip() {
         setTweenEquation(TweenEquations.easeOutCubic);
-        duration = 2.5f;
         scale = 1.0f;
     }
 
@@ -58,8 +55,8 @@ public class Tooltip {
         create(x, y, style, text, Color.WHITE, null);
     }
 
-    public void create(float x, float y, final Label.LabelStyle style, final String text, Color color, final TweenCallback callback) {
-        create(x, y, style, text, color, callback, new TooltipFactory() {
+    public void create(final float x, final float y, final Label.LabelStyle style, final String text, final Color color, final TweenCallback callback) {
+        create(callback, 2.5f, new TooltipFactory() {
             @Override
             public Actor create() {
                 final Label tooltip = new Label(text, style) {
@@ -83,14 +80,16 @@ public class Tooltip {
                         return super.getOriginY() + this.getHeight() / 2f;
                     }
                 };
+                tooltip.setColor(color);
+                tooltip.setPosition(x, y);
                 tooltip.setWrap(true);
                 tooltip.setWidth(400f);
                 return tooltip;
             }
-        });
+        }, true);
     }
 
-    public void create(float x, float y, Label.LabelStyle style, String text, Color color, final TweenCallback callback, TooltipFactory factory) {
+    public void create(final TweenCallback callback, float duration, TooltipFactory factory, boolean removable) {
         if (lastTooltip != null) {
             final Actor tooltip = lastTooltip;
             tweenManager.killTarget(lastTooltip);
@@ -104,11 +103,9 @@ public class Tooltip {
                     }).ease(equation).start(tweenManager);
         }
         final Actor tooltip = factory.create();
-        tooltip.setColor(color);
-        tooltip.setPosition(x, y);
         stage.addActor(tooltip);
         tooltips.add(tooltip);
-        Tween.to(tooltip, ActorTween.ALPHA, this.duration).delay(2.8f).target(0f).setCallbackTriggers(TweenCallback.COMPLETE)
+        Tween.to(tooltip, ActorTween.ALPHA, duration).delay(2.8f).target(0f).setCallbackTriggers(TweenCallback.COMPLETE)
                 .setCallback(new TweenCallback() {
                     @Override
                     public void onEvent(int type, BaseTween<?> source) {
@@ -119,14 +116,10 @@ public class Tooltip {
                         stage.getActors().removeValue(tooltip, true);
                     }
                 }).ease(equation).start(tweenManager);
-        Tween.to(tooltip, ActorTween.SCALE, this.duration).target(scale).ease(equation).start(tweenManager);
-        if (lastTooltip != tooltip) {
+        Tween.to(tooltip, ActorTween.SCALE, duration).target(scale).ease(equation).start(tweenManager);
+        if (lastTooltip != tooltip && removable) {
             lastTooltip = tooltip;
         }
-    }
-
-    public void setDuration(float duration) {
-        this.duration = duration;
     }
 
     public void setTweenEquation(TweenEquation equation) {
