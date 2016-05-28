@@ -90,7 +90,7 @@ public class Tooltip {
     }
 
     public void create(final TweenCallback callback, float duration, TooltipFactory factory, boolean removable) {
-        if (lastTooltip != null) {
+        if (lastTooltip != null && removable) {
             final Actor tooltip = lastTooltip;
             tweenManager.killTarget(lastTooltip);
             Tween.to(tooltip, ActorTween.ALPHA, 1f).target(0f).setCallbackTriggers(TweenCallback.COMPLETE)
