@@ -13,7 +13,7 @@ zip -r game.zip game
 rm -rf game/
 
 echo "Deploying to itch.io.."
-wget https://dl.itch.ovh/butler/linux-amd64/head/butler
+wget http://dl.itch.ovh/butler/linux-amd64/head/butler
 chmod +x butler
 touch butler_creds
 echo -n $ITCH_API_KEY > butler_creds
