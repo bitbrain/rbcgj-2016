@@ -13,3 +13,7 @@ script: ./gradlew desktop:dist
 
 after_script:
   ./deploy-desktop.sh
+
+branches:
+  only:
+    - deployment
