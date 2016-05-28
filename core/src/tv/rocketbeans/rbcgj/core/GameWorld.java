@@ -157,7 +157,6 @@ public class GameWorld {
         }
         tracker.update(delta);
         for (GameObject removal : removals) {
-            System.out.println("Dynamically remove " + removal.getType() + "(" + removal + ")");
             if (listener != null) {
                 listener.onRemoveObject(removal);
             }
@@ -206,7 +205,6 @@ public class GameWorld {
     public void remove(boolean force, GameObject... removals) {
         if (force) {
             for (GameObject removal : removals) {
-                System.out.println("Force remove " +removal.getType() + "(" + removal + ")");
                 if (listener != null) {
                     listener.onRemoveObject(removal);
                 }
