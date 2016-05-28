@@ -88,8 +88,8 @@ public class IngameScreen extends AbstractScreen {
         handler.addListener(new TooltipHandler());
         handler.addListener(new CrumbCollector(levelManager, world, playerManager));
         handler.addListener(new QuestHandler(playerManager, levelManager));
-
         CrumbUI ui = new CrumbUI(playerManager);
+        playerManager.addListener(new AchievementHandler());
         ui.setPosition(Gdx.graphics.getWidth() - 150f, Gdx.graphics.getHeight() - 220f);
         stage.addActor(ui);
     }
