@@ -1,4 +1,6 @@
 # rbcgj-2016
+![deployment](https://travis-ci.org/MyRealityCoding/rbcgj-2016.svg?branch=master)
+
 The gamejam submission of the #rbcgj 2016, created within 48 hours. 
 
 RocketBeans TV - Alles muss. Nix kann.
