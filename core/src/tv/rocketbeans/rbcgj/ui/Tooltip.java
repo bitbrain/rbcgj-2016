@@ -2,6 +2,7 @@ package tv.rocketbeans.rbcgj.ui;
 
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 
@@ -21,6 +22,10 @@ import tv.rocketbeans.rbcgj.tweens.SharedTweenManager;
 
 public class Tooltip {
 
+    public interface TooltipFactory {
+        Actor create();
+    }
+
     private static final Tooltip instance = new Tooltip();
 
     private TweenManager tweenManager = SharedTweenManager.getInstance();
@@ -29,7 +34,7 @@ public class Tooltip {
 
     private Camera camera;
 
-    private Set<Label> tooltips = new HashSet<Label>();
+    private Set<Actor> tooltips = new HashSet<Actor>();
 
     private TweenEquation equation;
 
@@ -37,7 +42,7 @@ public class Tooltip {
 
     private float scale;
 
-    private Label lastTooltip;
+    private Actor lastTooltip;
 
     private Tooltip() {
         setTweenEquation(TweenEquations.easeOutCubic);
@@ -53,9 +58,41 @@ public class Tooltip {
         create(x, y, style, text, Color.WHITE, null);
     }
 
-    public void create(float x, float y, Label.LabelStyle style, String text, Color color, final TweenCallback callback) {
+    public void create(float x, float y, final Label.LabelStyle style, final String text, Color color, final TweenCallback callback) {
+        create(x, y, style, text, color, callback, new TooltipFactory() {
+            @Override
+            public Actor create() {
+                final Label tooltip = new Label(text, style) {
+                    @Override
+                    public float getX() {
+                        return super.getX() - camera.position.x + camera.viewportWidth / 2f - this.getWidth() / 2f;
+                    }
+
+                    @Override
+                    public float getY() {
+                        return super.getY() - camera.position.y + camera.viewportHeight / 2f - this.getHeight() / 2f;
+                    }
+
+                    @Override
+                    public float getOriginX() {
+                        return super.getOriginX() + this.getWidth() / 2f;
+                    }
+
+                    @Override
+                    public float getOriginY() {
+                        return super.getOriginY() + this.getHeight() / 2f;
+                    }
+                };
+                tooltip.setWrap(true);
+                tooltip.setWidth(400f);
+                return tooltip;
+            }
+        });
+    }
+
+    public void create(float x, float y, Label.LabelStyle style, String text, Color color, final TweenCallback callback, TooltipFactory factory) {
         if (lastTooltip != null) {
-            final Label tooltip = lastTooltip;
+            final Actor tooltip = lastTooltip;
             tweenManager.killTarget(lastTooltip);
             Tween.to(tooltip, ActorTween.ALPHA, 1f).target(0f).setCallbackTriggers(TweenCallback.COMPLETE)
                     .setCallback(new TweenCallback() {
@@ -66,29 +103,7 @@ public class Tooltip {
                         }
                     }).ease(equation).start(tweenManager);
         }
-        final Label tooltip = new Label(text, style) {
-            @Override
-            public float getX() {
-                return super.getX() - camera.position.x + camera.viewportWidth / 2f - this.getWidth() / 2f;
-            }
-
-            @Override
-            public float getY() {
-                return super.getY() - camera.position.y + camera.viewportHeight / 2f - this.getHeight() / 2f;
-            }
-
-            @Override
-            public float getOriginX() {
-                return super.getOriginX() + this.getWidth() / 2f;
-            }
-
-            @Override
-            public float getOriginY() {
-                return super.getOriginY() + this.getHeight() / 2f;
-            }
-        };
-        tooltip.setWrap(true);
-        tooltip.setWidth(400f);
+        final Actor tooltip = factory.create();
         tooltip.setColor(color);
         tooltip.setPosition(x, y);
         stage.addActor(tooltip);
@@ -123,9 +138,9 @@ public class Tooltip {
     }
 
     public void clear() {
-        for (Label l : tooltips) {
-            tweenManager.killTarget(l);
-            stage.getActors().removeValue(l, true);
+        for (Actor a : tooltips) {
+            tweenManager.killTarget(a);
+            stage.getActors().removeValue(a, true);
         }
         tooltips.clear();
     }
