@@ -19,14 +19,14 @@ butler -V
 touch butler_creds
 echo -n $ITCH_API_KEY > butler_creds
 
-butler login -i butler_creds --assume-yes
+./butler login -i butler_creds --assume-yes
 
 # Upload game
-butler push game.zip myrealitycoding/the-legend-of-studentenfutter:linux-universal
+./butler push game.zip myrealitycoding/the-legend-of-studentenfutter:linux-universal
 
 # Cleanup
 echo "Cleanup.."
-butler logout -i butler_creds --assume-yes
+./butler logout -i butler_creds --assume-yes
 rm -rf game
 rm butler
 rm game.zip
