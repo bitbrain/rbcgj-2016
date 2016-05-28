@@ -17,3 +17,5 @@ after_script:
 branches:
   only:
     - deployment
+  except:
+    - master
