@@ -1544,13 +1544,14 @@
   <object id="57" name="Lord Cashew" type="npc" x="897.515" y="900.394" width="28.303" height="25.5152">
    <properties>
     <property name="info" value="Lord Cashew. Oh mein Gott. Ich komme zu spaet. Es hat ihn vollkommen zerkruemelt..."/>
+    <property name="info_key" value="INFO_LORD_CASHEW"/>
     <property name="nut" value="cashew"/>
    </properties>
   </object>
   <object id="61" name="Nussfakten 1" x="1088.42" y="257.083" width="28.25" height="28.25">
    <properties>
     <property name="text" value="Immerhin enthalten Nuesse viel Fett und Vitamine."/>
-    <property name="text_key" value="NUT_FACT_2"/>
+    <property name="text_key" value="NUTFACT_2"/>
    </properties>
   </object>
   <object id="63" name="Nussfakten 2" x="1093.33" y="996.667" width="25.3333" height="24.6667">
@@ -1562,6 +1563,7 @@
   <object id="67" name="Arena" x="464.5" y="719.5">
    <properties>
     <property name="text" value="Ein grosser Platz - wie eine Arena. Hier koennte man bestimmt super kaempfen. Wenn man denn Zeit haette..."/>
+    <property name="text_key" value="ARENA"/>
    </properties>
   </object>
   <object id="69" name="Raketen" x="994.833" y="357.167" width="27.6667" height="22.5833">
@@ -1585,7 +1587,7 @@
   <object id="75" name="Nussfakten 1" x="1216.54" y="259.208" width="28.25" height="28.25">
    <properties>
     <property name="text" value="Die sind gut für euch, Kinder!"/>
-    <property name="text_key" value="NUT_FACT_3"/>
+    <property name="text_key" value="NUTFACT_3"/>
    </properties>
   </object>
   <object id="76" name="Hier ist nix" x="36" y="99" width="24" height="24.5">
@@ -1659,6 +1661,7 @@
   <object id="116" name="Gehen wir Nuesse" x="33.125" y="704.958" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Ich sollte der Spur folgen.."/>
+    <property name="text_key" value="FOLLOW_TRACE"/>
    </properties>
   </object>
   <object id="117" name="Nussfakten 5" x="898.333" y="99.6667" width="25.3333" height="24.6667">
@@ -1670,6 +1673,7 @@
   <object id="119" name="oh nein" x="773" y="933" width="22" height="21">
    <properties>
     <property name="text" value="Oh nein.. wer liegt denn da?!"/>
+    <property name="text_key" value="OH_NO"/>
    </properties>
   </object>
  </objectgroup>

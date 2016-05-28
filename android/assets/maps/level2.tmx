@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32" nextobjectid="191">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32" nextobjectid="192">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1641,29 +1641,34 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="45" name="Geht mir auf die Nüsse" x="769.955" y="416.894" width="29" height="30.3333">
+  <object id="45" name="Geht mir auf die Nüsse" x="1060.95" y="547.894" width="22.045" height="22.106">
    <properties>
     <property name="text" value="Oh Gott, geht mir das alles auf die Nuesse"/>
+    <property name="text_key" value="GOING_NUTS"/>
    </properties>
   </object>
-  <object id="47" name="Wer wohnt hier" x="2212.25" y="355.667" width="23.5833" height="24.5833">
+  <object id="47" name="Wer wohnt hier" x="2211.25" y="389.667" width="23.5833" height="24.5833">
    <properties>
     <property name="text" value="Wer wohnt wohl hier..."/>
+    <property name="text_key" value="WHAT_NEXT"/>
    </properties>
   </object>
   <object id="48" name="Dunkel hier..." x="1156" y="1222" width="24.6667" height="23">
    <properties>
     <property name="text" value="Ziemlich dunkel hier"/>
+    <property name="text_key" value="DARK_INSIDE"/>
    </properties>
   </object>
   <object id="50" name="Noch ein Level?" x="1697.67" y="1154" width="28.6667" height="29">
    <properties>
     <property name="text" value="Noch ein Level? Das ist alles so laecherlich"/>
+    <property name="text_key" value="ANOTHER_LEVEL"/>
    </properties>
   </object>
   <object id="52" name="Bernhardt" type="npc" x="770.5" y="1313.25" width="28" height="28.75">
    <properties>
     <property name="info" value="B-b-b-b-Berhardt! Nicht du auch noch! Deine kruemeligen Uebereste... Und deine Mandel-Mandoline... Alles zerbrochen. Oh Bernhardt..."/>
+    <property name="info_key" value="INFO_BERNHARDT"/>
     <property name="nut" value="almond"/>
    </properties>
   </object>

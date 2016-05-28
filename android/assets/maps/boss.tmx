@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="61">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" nextobjectid="63">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1419,18 +1419,37 @@
   <object id="56" name="Rosina" type="npc" x="291" y="325" width="29" height="26">
    <properties>
     <property name="answer" value="Ich.. ich habe dich immer geliebt.. urgh..."/>
+    <property name="answer_key" value="ANSWER_ROSINA"/>
     <property name="info" value="Oh Rosina.. alle unsere Freunde sind tot."/>
+    <property name="info_key" value="INFO_ROSINA"/>
     <property name="nut" value="raisin"/>
    </properties>
   </object>
-  <object id="57" x="326" y="40" width="22" height="18">
+  <object id="57" x="326" y="105" width="22" height="18">
    <properties>
     <property name="text" value="The squirrel is a lie!"/>
+    <property name="text_key" value="SQUIRREL_LIE"/>
    </properties>
   </object>
   <object id="58" name="portal" type="portal" x="331" y="8" width="22" height="21">
    <properties>
     <property name="portal" value="@gameover"/>
+   </properties>
+  </object>
+  <object id="61" name="light" type="light" x="297.5" y="269" width="41" height="40">
+   <properties>
+    <property name="a" type="float" value="1"/>
+    <property name="b" type="float" value="3"/>
+    <property name="g" type="float" value="0"/>
+    <property name="r" type="float" value="1"/>
+    <property name="radius" type="float" value="250"/>
+   </properties>
+   <ellipse/>
+  </object>
+  <object id="62" x="327" y="39" width="22" height="18">
+   <properties>
+    <property name="text" value="Spring!"/>
+    <property name="text_key" value="JUMP"/>
    </properties>
   </object>
  </objectgroup>
