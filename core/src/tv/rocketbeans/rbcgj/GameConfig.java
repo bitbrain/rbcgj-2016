@@ -3,7 +3,7 @@ package tv.rocketbeans.rbcgj;
 public interface GameConfig {
 
     String GAME_NAME = "The Legend of Studentenfutter";
-    String GAME_VERSION = "1.3.0";
+    String GAME_VERSION = "1.3.1";
 
     // Scale of cells
     int CELL_SCALE = 32;
