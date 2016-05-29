@@ -19,7 +19,7 @@ touch butler_creds
 echo -n $ITCH_API_KEY > butler_creds
 
 # Upload game
-./butler push game.zip myrealitycoding/the-legend-of-studentenfutter:linux-universal -i butler_creds
+./butler push game.zip myrealitycoding/the-legend-of-studentenfutter:windows-linux-mac -i butler_creds
 
 # Cleanup
 echo "Cleanup.."
