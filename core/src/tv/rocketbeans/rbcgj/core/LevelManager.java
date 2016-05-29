@@ -61,12 +61,31 @@ public class LevelManager {
 
     private Map<MapObject, GameObject> mapping;
 
-    public LevelManager(LightingManager lightingManager, GameWorld world, MapActionHandler handler, CollisionDetector collisions) {
+    private int crumbCount = 0;
+
+    private PlayerManager playerManager;
+
+    private GameWorld.GameWorldListener gameWorldListener = new GameWorld.GameWorldListener() {
+        @Override
+        public void onRemoveObject(GameObject removal) {
+            gameObjects.remove(removal);
+            for (Map.Entry<MapObject, GameObject> entry : mapping.entrySet()) {
+                if (entry.getValue().equals(removal)) {
+                    mapping.remove(entry.getKey());
+                    break;
+                }
+            }
+        }
+    };
+
+    public LevelManager(LightingManager lightingManager, GameWorld world, MapActionHandler handler, CollisionDetector collisions, PlayerManager playerManager) {
         this.lightingManager = lightingManager;
+        this.playerManager = playerManager;
         staticLights = new ArrayList<PointLight>();
         this.collisions = collisions;
         this.actionHandler = handler;
         this.world = world;
+        this.world.setListener(gameWorldListener);
         mapping = new HashMap<MapObject, GameObject>();
         this.gameObjects = new HashSet<GameObject>();
     }
@@ -76,9 +95,7 @@ public class LevelManager {
         for (PointLight light : staticLights) {
             light.remove(true);
         }
-        for (GameObject object : gameObjects) {
-            world.remove(object);
-        }
+        world.remove(true, gameObjects.toArray(new GameObject[gameObjects.size()]));
         mapping.clear();
         gameObjects.clear();
         staticLights.clear();
@@ -175,6 +192,8 @@ public class LevelManager {
                     gameObjects.add(npc);
                     mapping.put(object, npc);
                 } else if (properties.get(Tmx.TYPE).equals(Tmx.CRUMB)) {
+                    crumbCount++;
+                    playerManager.setMaxAmount(GameObjectType.CRUMB, crumbCount);
                     float x = (Float)properties.get(Tmx.X);
                     float y = (Float)properties.get(Tmx.Y);
                     // Normalize spawn position

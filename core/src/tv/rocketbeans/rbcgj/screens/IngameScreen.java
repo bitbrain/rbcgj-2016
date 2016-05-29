@@ -18,15 +18,18 @@ import tv.rocketbeans.rbcgj.core.LevelManager;
 import tv.rocketbeans.rbcgj.core.Levels;
 import tv.rocketbeans.rbcgj.core.MapActionHandler;
 import tv.rocketbeans.rbcgj.core.PlayerManager;
+import tv.rocketbeans.rbcgj.core.QuestHandler;
 import tv.rocketbeans.rbcgj.core.Teleporter;
 import tv.rocketbeans.rbcgj.core.controller.WASDMovementController;
 import tv.rocketbeans.rbcgj.graphics.DirectionalSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.LightingManager;
 import tv.rocketbeans.rbcgj.graphics.ShadowSpriteRenderer;
 import tv.rocketbeans.rbcgj.graphics.SpriteRenderer;
-import tv.rocketbeans.rbcgj.ui.Styles;
-import tv.rocketbeans.rbcgj.ui.TooltipHandler;
+import tv.rocketbeans.rbcgj.ui.*;
 import tv.rocketbeans.rbcgj.util.Colors;
+
+import static tv.rocketbeans.rbcgj.core.GameObjectType.*;
+import static tv.rocketbeans.rbcgj.graphics.TextureResolver.resolveTexture;
 
 public class IngameScreen extends AbstractScreen {
 
@@ -58,6 +61,11 @@ public class IngameScreen extends AbstractScreen {
 
         playerManager = new PlayerManager();
 
+        playerManager.setMaxAmount(GameObjectType.BRAZIL, 1);
+        playerManager.setMaxAmount(GameObjectType.RUISIN, 1);
+        playerManager.setMaxAmount(GameObjectType.ALMOND, 1);
+        playerManager.setMaxAmount(GameObjectType.CASHEW, 1);
+
         eddy = world.addObject();
         eddy.setPosition(0f, 0f);
         eddy.setDimensions(GameConfig.CELL_SCALE, GameConfig.CELL_SCALE);
@@ -69,19 +77,20 @@ public class IngameScreen extends AbstractScreen {
         lantern = lightingManager.addPointLight(250f, new Color(1f, 0.4f, 0.2f, 1f), eddy.getLeft(), eddy.getTop());
 
         collisions = new CollisionDetector();
-        levelManager = new LevelManager(lightingManager, world, handler, collisions);
+        levelManager = new LevelManager(lightingManager, world, handler, collisions, playerManager);
         world.setController(eddy, new WASDMovementController(collisions, handler));
-        levelManager.loadLevel(Levels.LEVEL_1, eddy);
+        Levels level = Levels.LEVEL_1;
+        levelManager.loadLevel(level, eddy);
         world.setCameraTracking(eddy);
 
         teleporter = new Teleporter(levelManager, this, game);
         handler.addListener(teleporter);
         handler.addListener(new TooltipHandler());
         handler.addListener(new CrumbCollector(levelManager, world, playerManager));
-
-
-        PlayerUI ui = new PlayerUI(playerManager);
-        ui.setPosition(20f, 20f);
+        handler.addListener(new QuestHandler(playerManager, levelManager));
+        CrumbUI ui = new CrumbUI(playerManager);
+        playerManager.addListener(new AchievementHandler());
+        ui.setPosition(Gdx.graphics.getWidth() - 150f, Gdx.graphics.getHeight() - 220f);
         stage.addActor(ui);
     }
 
@@ -114,11 +123,11 @@ public class IngameScreen extends AbstractScreen {
     }
 
     private void initRenderers() {
-        world.registerRenderer(GameObjectType.PEANUT, new DirectionalSpriteRenderer(Assets.Textures.EDDY));
-        world.registerRenderer(GameObjectType.ALMOND, new SpriteRenderer(Assets.Textures.ALMOND_DEAD));
-        world.registerRenderer(GameObjectType.RUISIN, new SpriteRenderer(Assets.Textures.RUISIN_DEAD));
-        world.registerRenderer(GameObjectType.CASHEW, new SpriteRenderer(Assets.Textures.CASHEW_DEAD));
-        world.registerRenderer(GameObjectType.BRAZIL, new SpriteRenderer(Assets.Textures.BRAZILNUT_DEAD));
-        world.registerRenderer(GameObjectType.CRUMB, new ShadowSpriteRenderer(Assets.Textures.CRUMB));
+        world.registerRenderer(PEANUT, new DirectionalSpriteRenderer(resolveTexture(PEANUT, false)));
+        world.registerRenderer(ALMOND, new SpriteRenderer(resolveTexture(ALMOND, true)));
+        world.registerRenderer(RUISIN, new SpriteRenderer(resolveTexture(RUISIN, true)));
+        world.registerRenderer(CASHEW, new SpriteRenderer(resolveTexture(CASHEW, true)));
+        world.registerRenderer(BRAZIL, new SpriteRenderer(resolveTexture(BRAZIL, true)));
+        world.registerRenderer(CRUMB, new ShadowSpriteRenderer(resolveTexture(CRUMB, true)));
     }
 }

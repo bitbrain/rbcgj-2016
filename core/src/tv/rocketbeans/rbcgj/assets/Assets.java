@@ -24,7 +24,7 @@ public final class Assets {
      */
     public enum Textures {
 
-        EDDY("textures/nut-eddy.png"),
+        PEANUT("textures/nut-eddy.png"),
         SHADOW("textures/shadow.png"),
         RBCGJ("textures/rbcgj.png"),
         LOGO("textures/logo.png"),
@@ -32,8 +32,12 @@ public final class Assets {
         BACKGROUND("textures/background.png"),
         ALMOND_DEAD("textures/almond-dead.png"),
         CASHEW_DEAD("textures/cashew-dead.png"),
-        BRAZILNUT_DEAD("textures/brazilnut-dead.png"),
+        BRAZIL_DEAD("textures/brazilnut-dead.png"),
         RUISIN_DEAD("textures/ruisin-dead.png"),
+        ALMOND("textures/almond.png"),
+        CASHEW("textures/cashew.png"),
+        BRAZIL("textures/brazilnut.png"),
+        RUISIN("textures/ruisin.png"),
         CRUMB("textures/crumb.png");
 
         private String path;
@@ -106,7 +110,8 @@ public final class Assets {
         EDDY_BLA_4("sound/eddy_bla_4.ogg"),
         EDDY_BLA_5("sound/eddy_bla_5.ogg"),
         EDDY_BLA_6("sound/eddy_bla_6.ogg"),
-        COLLECT_NUT("sound/collect_nut.ogg");
+        COLLECT_NUT("sound/collect_nut.ogg"),
+        ACHIEVEMENT_UNLOCKED("sound/achievement_unlocked.ogg");
 
         private String path;
 

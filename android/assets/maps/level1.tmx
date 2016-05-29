@@ -1344,26 +1344,16 @@
    <property name="collision" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="obstacles" width="50" height="51">
   <data encoding="base64" compression="zlib">
-   eJztmLFuAjEMQO8u/ZBKsPAXTJ0r4AdoJeaOiB9gZ2As/QGkdutXlKEDXfgLYKvAJyLdKTLExzngnPwkK3DxBTvElp0kwemZJOmDDMzp+yY9o4hA1eXWwxhb+yd2NBn9Xaoutx7GO9i/APmwfnQqrEXV5dZTFEVRFEU5x1upvnu2n7ul+dktjanB3OPHU6Df7TwEWlgIU1PIOvWLVJamkP/0skjm1xTSyvzSvnO/cLD7mUbet/j8wPpk99kjq0XXgfnRLc1jfbL7jJpL9xXsqkruxyfEwJfB57E+WWLvnPuR75Ok+Bhd8U5T4rwp3PJc1bkj9OGLc07q3BH64IgPrN76Q/Y+ZJ7TOC/gqLcu1dLYf0tlBXb8ZLRRMjuwb5vRRg4k19I+vhnWcHN5yNweEjeXh8ztIXFzucQaVmkmsca+S6yx79KU2NdzJYu654py9xUDlLuvGIjl7ktR7sUI4mEI8gLyyhwbRwl7YHk=
+   eJztmLFuwjAQQJO4H4IES/4iU2cEfAMzY8UPdO/A2PIDlcrGV7QDA136F203BI6wlMi6xJfkDGfrnnQyxBdzZ3ynOycJzEwlyVzLQl2//6QNigBYXWo9iCdj/9qMKsO/i9Wl1oN41fa/adkaP/IOa2F1qfUEQRAEQRCaWNXqu6n5XNTmX25pzAA2Dj8ePf1u/uBpYSY8q0qOqVu48q4qOaXtwpmDqmScuWVy537hbPYzDbxvcfkB9cn2sxGpRf2A/Chq81CfbD/D5tL/DnZ1pfTjQ8fATsHzUJ/MsXcu/Sj3iVN8LHu8E0ucx8Itz9WQO0IXrjinZMgdoQuK+IDqrW9g733mOYnzCop6q62Whv5bLF/ajs8MN3LmT9v3m+FGCjjX0i72BGvYudxnbveJnct95naf2LmcYw0rxEmosW8TauzbxBL7cq54MfRcYe6+QgBz9xUCodx9CUKMXACBrF7l
   </data>
  </layer>
  <objectgroup name="objects">
-  <object id="1" name="spawn" type="spawn" x="929.273" y="1568.91" width="29.3636" height="30"/>
-  <object id="2" name="light" type="light" x="907.061" y="1506.67" width="43.6061" height="134.939">
-   <properties>
-    <property name="a" type="float" value="1"/>
-    <property name="b" type="float" value="0"/>
-    <property name="g" type="float" value="0"/>
-    <property name="r" type="float" value="0"/>
-    <property name="radius" type="float" value="50"/>
-   </properties>
-   <ellipse/>
-  </object>
+  <object id="1" name="spawn" type="spawn" x="899.273" y="1535.91" width="29.3636" height="30"/>
   <object id="9" name="light" type="light" x="1308.17" y="860.667" width="41" height="40">
    <properties>
     <property name="a" type="float" value="1"/>
@@ -1378,9 +1368,9 @@
    <properties>
     <property name="a" type="float" value="1"/>
     <property name="b" type="float" value="0"/>
-    <property name="g" type="float" value="50"/>
-    <property name="r" type="float" value="100"/>
-    <property name="radius" type="float" value="100"/>
+    <property name="g" type="float" value="1"/>
+    <property name="r" type="float" value="0"/>
+    <property name="radius" type="float" value="500"/>
    </properties>
    <ellipse/>
   </object>
@@ -1520,82 +1510,98 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="50" name="Gehen wir Nuesse" x="929" y="1505.25" width="29.75" height="30.0833">
+  <object id="50" name="Gehen wir Nuesse" x="898" y="1472.25" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Okay. Gehen wir!"/>
+    <property name="text_key" value="LETS_GO"/>
    </properties>
   </object>
   <object id="54" name="Jeremy" type="npc" x="1316.25" y="867.25" width="24.75" height="26.5">
    <properties>
     <property name="answer" value="Das Eichhoernchen... Es hat.. Rosina.. Ich.. bin nur ein Wortspiel..."/>
+    <property name="answer_key" value="ANSWER_JEREMY"/>
     <property name="info" value="Jeremy, die teilweise paralysierte Paranuss!"/>
+    <property name="info_key" value="INFO_JEREMY"/>
     <property name="nut" value="brazilnut"/>
    </properties>
   </object>
   <object id="55" x="356.667" y="98.3333" width="27.3333" height="25">
    <properties>
     <property name="text" value="Schon durch? Naja. Ist halt kein Dark Souls."/>
+    <property name="text_key" value="DARKSOULS_PUN"/>
    </properties>
   </object>
   <object id="57" name="Lord Cashew" type="npc" x="897.515" y="900.394" width="28.303" height="25.5152">
    <properties>
     <property name="info" value="Lord Cashew. Oh mein Gott. Ich komme zu spaet. Es hat ihn vollkommen zerkruemelt..."/>
+    <property name="info_key" value="INFO_LORD_CASHEW"/>
     <property name="nut" value="cashew"/>
    </properties>
   </object>
   <object id="61" name="Nussfakten 1" x="1088.42" y="257.083" width="28.25" height="28.25">
    <properties>
     <property name="text" value="Immerhin enthalten Nuesse viel Fett und Vitamine."/>
+    <property name="text_key" value="NUTFACT_2"/>
    </properties>
   </object>
   <object id="63" name="Nussfakten 2" x="1093.33" y="996.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Aus Nuessen werden so viele Sachen gemacht.."/>
+    <property name="text_key" value="NUTFACT_4"/>
    </properties>
   </object>
   <object id="67" name="Arena" x="464.5" y="719.5">
    <properties>
     <property name="text" value="Ein grosser Platz - wie eine Arena. Hier koennte man bestimmt super kaempfen. Wenn man denn Zeit haette..."/>
+    <property name="text_key" value="ARENA"/>
    </properties>
   </object>
   <object id="69" name="Raketen" x="994.833" y="357.167" width="27.6667" height="22.5833">
    <properties>
     <property name="text" value="Ob man mit einem Treibstoff aus Nuessen auch Raketen antreiben koennte?"/>
+    <property name="text_key" value="ROCKETS"/>
    </properties>
   </object>
   <object id="72" name="Angst" x="194.125" y="352.958" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Ich habe Angst..."/>
+    <property name="text_key" value="SCARED"/>
    </properties>
   </object>
   <object id="74" name="Nussfakten 1" x="931.875" y="253.875" width="28.25" height="28.25">
    <properties>
     <property name="text" value="Hoffentlich machen mich die ganzen Nusskruemel nicht fett..."/>
+    <property name="text_key" value="NUTFACT_1"/>
    </properties>
   </object>
   <object id="75" name="Nussfakten 1" x="1216.54" y="259.208" width="28.25" height="28.25">
    <properties>
     <property name="text" value="Die sind gut für euch, Kinder!"/>
+    <property name="text_key" value="NUTFACT_3"/>
    </properties>
   </object>
   <object id="76" name="Hier ist nix" x="36" y="99" width="24" height="24.5">
    <properties>
     <property name="text" value="Hier hinten ist nichts. Geh zurueck."/>
+    <property name="text_key" value="NOTHING_HERE"/>
    </properties>
   </object>
   <object id="78" name="Nussfakten 3" x="1539.33" y="994.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Schon mal von Erdnussflips gehoert?"/>
+    <property name="text_key" value="NUTFACT_5"/>
    </properties>
   </object>
   <object id="79" name="Nussfakten 4" x="1539.33" y="643.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Oder Erdnussbutter?"/>
+    <property name="text_key" value="NUTFACT_6"/>
    </properties>
   </object>
   <object id="80" name="Nussfakten 5" x="1540.33" y="227.667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Mein Onkel wurde letztens erst verschleppt.."/>
+    <property name="text_key" value="NUTFACT_7"/>
    </properties>
   </object>
   <object id="81" name="Crumb" type="crumb" x="547" y="1220" width="24" height="22"/>
@@ -1603,8 +1609,8 @@
   <object id="84" name="Crumb" type="crumb" x="418" y="1220" width="24" height="22"/>
   <object id="85" name="Crumb" type="crumb" x="133" y="903" width="24" height="22"/>
   <object id="86" name="Crumb" type="crumb" x="132" y="965" width="24" height="22"/>
-  <object id="87" name="Crumb" type="crumb" x="133" y="551" width="24" height="22"/>
-  <object id="88" name="Crumb" type="crumb" x="198" y="548" width="24" height="22"/>
+  <object id="87" name="Crumb" type="crumb" x="99" y="805" width="24" height="22"/>
+  <object id="88" name="Crumb" type="crumb" x="36" y="806" width="24" height="22"/>
   <object id="89" name="Crumb" type="crumb" x="1411" y="293" width="24" height="22"/>
   <object id="90" name="Crumb" type="crumb" x="1316" y="292" width="24" height="22"/>
   <object id="91" name="Crumb" type="crumb" x="1317" y="357" width="24" height="22"/>
@@ -1633,26 +1639,31 @@
   <object id="114" name="Gehen wir Nuesse" x="576.125" y="1375.96" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Oh.. da liegen Leckereien.."/>
+    <property name="text_key" value="OH_SWEETS"/>
    </properties>
   </object>
   <object id="115" name="Gehen wir Nuesse" x="96.125" y="1121.96" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Irgendwie glaube ich, dass der Geschmack mich an was erinnert.."/>
+    <property name="text_key" value="TASTE_REMINDES_ME"/>
    </properties>
   </object>
   <object id="116" name="Gehen wir Nuesse" x="33.125" y="704.958" width="29.75" height="30.0833">
    <properties>
     <property name="text" value="Ich sollte der Spur folgen.."/>
+    <property name="text_key" value="FOLLOW_TRACE"/>
    </properties>
   </object>
   <object id="117" name="Nussfakten 5" x="898.333" y="99.6667" width="25.3333" height="24.6667">
    <properties>
     <property name="text" value="Wie kann man uns bloss essen?"/>
+    <property name="text_key" value="NUTFACT_8"/>
    </properties>
   </object>
   <object id="119" name="oh nein" x="773" y="933" width="22" height="21">
    <properties>
     <property name="text" value="Oh nein.. wer liegt denn da?!"/>
+    <property name="text_key" value="OH_NO"/>
    </properties>
   </object>
  </objectgroup>

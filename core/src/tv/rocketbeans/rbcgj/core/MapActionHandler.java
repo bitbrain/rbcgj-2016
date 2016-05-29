@@ -5,6 +5,7 @@ import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.math.Vector2;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,6 +27,7 @@ public class MapActionHandler {
         MapObject getPortalById(String id);
         MapObject getObjectAt(int indexX, int indexY);
         void removeObjectAt(int indexX, int indexY);
+        MapObject getObjectInfront(GameObject object);
     }
 
     private MapObject[][] objects;
@@ -54,6 +56,14 @@ public class MapActionHandler {
             if (indexX >= 0 && indexX < width && indexY >= 0 && indexY < height) {
                 objects[indexX][indexY] = null;
             }
+        }
+
+        @Override
+        public MapObject getObjectInfront(GameObject other) {
+            Vector2 lookAt = directionToVector(other.getDirection());
+            int indexX = (int)Math.floor(other.getLeft() / GameConfig.CELL_SCALE) + (int)lookAt.x;
+            int indexY = (int)Math.floor(other.getTop() / GameConfig.CELL_SCALE) + (int)lookAt.y;
+            return getObjectAt(indexX, indexY);
         }
     };
 
@@ -100,5 +110,19 @@ public class MapActionHandler {
                 }
             }
         }
+    }
+
+    private Vector2 directionToVector(int direction) {
+        Vector2 v = new Vector2();
+        if (direction == Direction.LEFT) {
+            v.set(-1, 0);
+        } else if (direction == Direction.RIGHT) {
+            v.set(1, 0);
+        } else if (direction == Direction.UP) {
+            v.set(0, 1);
+        } else if (direction == Direction.DOWN) {
+            v.set(0, -1);
+        }
+        return v;
     }
 }

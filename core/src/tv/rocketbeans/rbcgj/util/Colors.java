@@ -12,4 +12,5 @@ public interface Colors {
     Color AMBIENT_LEVEL_1 = Color.valueOf("25092c");
     Color AMBIENT_LEVEL_2 = Color.valueOf("130217");
     Color AMBIENT_LEVEL_BOSS = Color.valueOf("360614");
+    Color SUCCESS = Color.valueOf("22ff88");
 }

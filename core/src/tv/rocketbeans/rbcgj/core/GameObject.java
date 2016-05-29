@@ -145,6 +145,7 @@ public class GameObject implements Pool.Poolable {
         id = "";
         scale.set(1f, 1f);
         color = Color.WHITE.cpy();
+        type = -1;
         direction = Direction.DOWN;
     }
 }

@@ -1,5 +1,6 @@
 package tv.rocketbeans.rbcgj.graphics;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
@@ -11,8 +12,8 @@ public class ShadowSpriteRenderer extends SpriteRenderer {
 
     private Sprite shadow;
 
-    public ShadowSpriteRenderer(Assets.Textures textureId) {
-        super(textureId);
+    public ShadowSpriteRenderer(Texture texture) {
+        super(texture);
         shadow = new Sprite(AssetManager.getTexture(Assets.Textures.SHADOW));
     }
 

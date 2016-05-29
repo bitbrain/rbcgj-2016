@@ -32,7 +32,7 @@ public class CrumbCollector implements MapActionHandler.MapActionListener {
         if (o != null) {
             GameObject gameObject = levelManager.getGameObjectByMapObject(o);
             if (gameObject != null) {
-                playerManager.addCrumb();
+                playerManager.addCollectible(GameObjectType.CRUMB);
                 api.removeObjectAt(indexX, indexY);
                 world.remove(gameObject);
                 AssetManager.getSound(Assets.Sounds.COLLECT_NUT).play();

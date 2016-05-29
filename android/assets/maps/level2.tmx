@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32" nextobjectid="191">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="80" height="80" tilewidth="32" tileheight="32" nextobjectid="193">
  <tileset firstgid="1" name="dungeon" tilewidth="32" tileheight="32" tilecount="1558" columns="38">
   <properties>
    <property name="collision" type="bool" value="true"/>
@@ -1281,7 +1281,7 @@
    <property name="collision" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
  <layer name="obstacles" width="80" height="80">
@@ -1641,34 +1641,39 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="45" name="Geht mir auf die Nüsse" x="769.955" y="416.894" width="29" height="30.3333">
+  <object id="45" name="Geht mir auf die Nüsse" x="1060.95" y="547.894" width="22.045" height="22.106">
    <properties>
     <property name="text" value="Oh Gott, geht mir das alles auf die Nuesse"/>
+    <property name="text_key" value="GOING_NUTS"/>
    </properties>
   </object>
-  <object id="47" name="Wer wohnt hier" x="2212.25" y="355.667" width="23.5833" height="24.5833">
+  <object id="47" name="Wer wohnt hier" x="2211.25" y="389.667" width="23.5833" height="24.5833">
    <properties>
     <property name="text" value="Wer wohnt wohl hier..."/>
+    <property name="text_key" value="WHAT_NEXT"/>
    </properties>
   </object>
   <object id="48" name="Dunkel hier..." x="1156" y="1222" width="24.6667" height="23">
    <properties>
     <property name="text" value="Ziemlich dunkel hier"/>
+    <property name="text_key" value="DARK_INSIDE"/>
    </properties>
   </object>
   <object id="50" name="Noch ein Level?" x="1697.67" y="1154" width="28.6667" height="29">
    <properties>
     <property name="text" value="Noch ein Level? Das ist alles so laecherlich"/>
+    <property name="text_key" value="ANOTHER_LEVEL"/>
    </properties>
   </object>
   <object id="52" name="Bernhardt" type="npc" x="770.5" y="1313.25" width="28" height="28.75">
    <properties>
     <property name="info" value="B-b-b-b-Berhardt! Nicht du auch noch! Deine kruemeligen Uebereste... Und deine Mandel-Mandoline... Alles zerbrochen. Oh Bernhardt..."/>
+    <property name="info_key" value="INFO_BERNHARDT"/>
     <property name="nut" value="almond"/>
    </properties>
   </object>
-  <object id="58" name="Crumb" type="crumb" x="2066" y="1710"/>
-  <object id="60" name="Crumb" type="crumb" x="1588" y="1683.33"/>
+  <object id="58" name="Crumb" type="crumb" x="2001" y="1522"/>
+  <object id="60" name="Crumb" type="crumb" x="1551" y="1681.33"/>
   <object id="61" name="Crumb" type="crumb" x="1681.33" y="1710.67"/>
   <object id="63" name="Crumb" type="crumb" x="1297.67" y="1745"/>
   <object id="65" name="Crumb" type="crumb" x="1585.33" y="1585.33"/>
@@ -1764,11 +1769,12 @@
   <object id="182" name="Crumb" type="crumb" x="2385" y="560"/>
   <object id="183" name="Crumb" type="crumb" x="2383" y="497"/>
   <object id="184" name="Crumb" type="crumb" x="1870" y="1488"/>
-  <object id="185" name="Crumb" type="crumb" x="1869" y="1586"/>
+  <object id="185" name="Crumb" type="crumb" x="1936" y="1586"/>
   <object id="186" name="Crumb" type="crumb" x="1904" y="1809"/>
   <object id="187" name="Crumb" type="crumb" x="2094" y="2129"/>
   <object id="188" name="Crumb" type="crumb" x="2126" y="2129"/>
   <object id="189" name="Crumb" type="crumb" x="2095" y="2094"/>
   <object id="190" name="Crumb" type="crumb" x="2125" y="2095"/>
+  <object id="192" name="Crumb" type="crumb" x="2095" y="1521"/>
  </objectgroup>
 </map>

@@ -16,6 +16,7 @@ public class Styles {
     public static final Label.LabelStyle CREDITS = new Label.LabelStyle();
     public static final Label.LabelStyle STORY = new Label.LabelStyle();
     public static final Label.LabelStyle PLAYER_INFO = new Label.LabelStyle();
+    public static final Label.LabelStyle ACHIEVEMENT = new Label.LabelStyle();
 
     public static void init() {
         MENU_BUTTON.font = AssetManager.getFont(Assets.Fonts.MEDIUM);
@@ -34,6 +35,9 @@ public class Styles {
 
         PLAYER_INFO.font = AssetManager.getFont(Assets.Fonts.MEDIUM);
         PLAYER_INFO.fontColor = Colors.UI_HIGHLIGHTED.cpy();
+
+        ACHIEVEMENT.font = AssetManager.getFont(Assets.Fonts.MEDIUM);
+        ACHIEVEMENT.fontColor = Color.LIME.cpy();
 
     }
 }
